@@ -4,18 +4,20 @@ It assumes that you have the right tools installed and that you have cloned or d
 This configuration creates is very basic - it does not provide any functions such as device management, authentication, or access control. As such, it should be viewed as part of a Proof of Concept for building an IoT solution, not an integral part of a secure enterprise infrastructure. A recommended configuration will be published shortly.
 
 
-##Hardware requirements ##
+## Hardware requirements ##
 See [Hardware](Hardware.md) file in this folder.
 
 
-##Prerequisites ##
+## Prerequisites ##
 
 To build the project you will need Visual Studio 2013 [Community Edition](http://www.visualstudio.com/downloads/download-visual-studio-vs) or above. You will also need wired Internet access for the device. (Configuration details for wireless connectivity are not provided.)
 
 ## Configure the Raspberry Pi ##
 
-* Connect the Raspberry Pi to a power supply, keyboard, mouse, monitor, and Ethernet cable (or Wi-Fi dongle) with an Internet connection.
 * Get a Raspbian NOOBS SD Card or download a NOOBS image as per the instructions on [http://www.raspberrypi.org/downloads/](http://www.raspberrypi.org/downloads/)
+* You may need to format the SD Card before applying the NOOBS image. You should use the SD Card Formatter tool from the SD Association rather than just formatting it with your computer.  You can download the formatter utility for either Windows or Mac from [http://www.sdcard.org/downloads/formatter_4/index.html] (http://www.sdcard.org/downloads/formatter_4/index.html)
+* Once your SD Card is formatted and has the Noobs on it, insert the SD Card into your Raspberry Pi's SD card slot.
+* Connect the Raspberry Pi to a power supply, keyboard, mouse, monitor, and Ethernet cable (or Wi-Fi dongle) with an Internet connection.
 * Boot the NOOBS SD Card and choose Raspbian (see [http://www.raspberrypi.org/help/noobs-setup/](http://www.raspberrypi.org/help/noobs-setup/) for more information).
 * Connect to the Raspberry Pi from your laptop, either via a USB-Serial adapter or via the network via SSH (enable once as per these instructions while booting via a monitor on HDMI and a USB keyboard). To connect using SSH:
     * For Windows, download PuTTY and PSCP from [here](http://www.putty.org/).

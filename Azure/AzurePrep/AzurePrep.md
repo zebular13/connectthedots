@@ -9,7 +9,7 @@ Make sure you have all software installed and necessary subscriptions as indicat
 
 ## Create Azure resources for IoT infrastructure ##
 
-###Create Event Hubs###
+### Create Event Hub s###
 
 * Open the ConnectTheDots\Azure\AzurePrep\AzurePrep.sln solution in Visual Studio and build the project from the BUILD menu (Select Release, not Debug).
 * Run the application (hitting F5 in Visual Studio or double clicking on the connectthedots\Azure\AzurePrep\AzurePrep\bin\Release\azureprep.exe file)
@@ -40,7 +40,7 @@ It also created four endpoints for AMQP connections from your remote devices suc
 
 Finally, and depending on your choice during the execution the tool created the Azure Stream Analytics jobs that will compute average and trigger alerts on your data.
 
-###Create Website config info###
+### Create Website config info ###
 * Run the application ConnecttheDots\Azure\AzurePrep\CreateWebConfig\bin\Release\CreateWebConfig.exe
 *  Login using your Azure subscription credentials
 * Select the namespace prefix and location you chose when creating the Event Hubs
