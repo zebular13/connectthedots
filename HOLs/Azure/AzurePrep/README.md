@@ -162,6 +162,38 @@ The above messages is a sample temperature reading.  There will also be messages
 <a name="Task4" />
 ## Task 4 - Create the "**ehalerts**" Event Hub ##
 
+In this task, we'll use a similar process to the previous task, but this time we'll create the "**ehalerts**" event hub.  
+
+This event hub is less critical, and is in fact optional if you prefer to not include the alerting features.  The devices in the field (at least as designed) do not write to this event hub.    
+
+The event hub is used as the output for the Stream analytics jobs that generate alerts on the light and temperature readings.  The sample website then reads those messages and uses them to display alert information on the web page.
+
+1. In the [Azure Management Portal](https://manage.windowsazure.com) (https://manage.windowsazure.com) return to the "**Event Hubs**" page for the "***&lt;name&gt;*-ns**" Service Bus namespace, and click the "**+NEW**" button in the lower left corner. 
+2. In the "**NEW**" Panel, select "**APP SERVICES**" | **"SERVICE BUS**" | "**EVENT HUB**" | "**QUICK CREATE**".  Complete the fields as described below, then click the "**CREATE A NEW EVENT HUB &#x2713;**" button.
+
+	| Field         | Value | 
+	| ---           | ---   |
+    |Event Hub Name | "**ehalerts**" - You must use this name, without the quotes.  It is hard coded into multiple projects and would require significant effort to change | 
+    |Region         | "***&lt;region&gt;***" | 
+    |Namespace Name | "***&lt;name&gt;*-ns**" - The name you used when creating the namespace previously | 
+
+
+	![Create ehalerts](./images/04010CreateEhalerts.png)
+
+3. Again, wait until the new Event Hub's status is "**Active**", then click on the "**ehalerts**" name to open it. 
+
+	![ehalerts Active](./images/04020EhalertsActive.png)	
+
+4. Switch to the "**CONFIGURE**" Page, and under the "**Shared Access Policies**" heading, create the following policies.  Make sure to click the "**SAVE**" button when you are done.
+
+	| Name               | Permissions        | Purpose | 
+	| ---                | ---                | ---     |
+    | WebSite            | Manage,Send,Listen | Used by the sample web site to read alert mssages and display them |  
+    | StreamingAnalytics | Manage,Send,Listen | Used by multiple Stream Analytics jobs to output alerts |
+
+	![ehalerts Shared Access Policies](./images/04030EhalertsSharedAccessPolicies.png) 
+
+
 ---
 
 <a name="Task5" />
