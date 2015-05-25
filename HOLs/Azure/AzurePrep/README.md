@@ -71,6 +71,8 @@ In addition to a unique name, you need to make sure to provision all of the reso
 <a name="Task2" />
 ## Task 2 - Create the "***&lt;name&gt;*-ns**" Azure Service Bus Namespace ##
 
+In this task we'll create the "***&lt;name&gt;*-ns**" Azure Service Bus Namespace.  This Namespace will contain the "**ehdevices**" and "**ehalerts**" event hubs. 
+
 1. In your web browser, open the ["**Azure Management Portal**"](https://manage.windowsazure.com) ([https://manage.windowsazure.com](https://manage.windowsazure.com)) and login to your subscription. 
 1. Click on the "**Service Bus**" Icon along the left, then click the "**+CREATE**" button along the bottom to create a new Service Bus Namespace
 
@@ -95,6 +97,27 @@ In addition to a unique name, you need to make sure to provision all of the reso
 
 <a name="Task3" />
 ## Task 3 - Create the "**ehdevices**" Event Hub ##
+
+In this task, we'll create the "**ehdevices**" event hub. You really should make sure to use the name "**ehdevices**" rather than choosing your own.  The name itself doesn't matter, except that it has been assumed and hard coded into a number of the other projects throughout the [ConnectTheDots.io](http://connectthedots.io) repository.  Do yourself a favor and use the name as given, otherwise, you'll have to find all the references to it and fix them. 
+
+The "**ehdevices**" event hub is the primary data ingestion point in the architecture.  It is where all the devices (Arduinos, Raspberry Pis, FEZ Spiders, etc) will be sending their sensor readings to. 
+
+These devices will JSON formatted messages similar to the following: 
+
+```JSON
+{
+  "organization": "Microsoft",
+  "location": "Redmond, WA",
+  "guid": "61b3eb31-4166-487a-8181-69918092cedf",
+  "displayname": "Conference Room SparkFun Temp Sensor",
+  "unitofmeasure": "F",
+  "measurename": "temperature",
+  "value": "78",
+  "timecreated": "01/01/2015 12:00:00 PM"
+}
+```
+  
+The above messages is a sample temperature reading.  There will also be messages for humidity, and light.  If you have other sensors to connect, you can send your own messages using the above format, but provideding appropriate metadata for them.  These messages will the be read by the sample website, and the values displayed in graphical charts.  In addition, the Stream Analytics jobs will read these message and provide various aggregations and alerts based on their values.  
 
 1. In the portal page for your newly created Service Bus Namespace, switch to the "**EVENT HUBS**" page, then click the "**+NEW**" button in the bottom left hand corner. 
 
@@ -133,8 +156,6 @@ In addition to a unique name, you need to make sure to provision all of the reso
 5. Again, make sure to click the "**SAVE**" button.  When you are done, your list of Shared Access Policies for the "**ehdevices**" event hub should match the following:
 
 	![ehdevices Shared Access Policies](./images/03050EhdevicesSharedAccessPolicies.png)
-  
- 
 
 ---
 
