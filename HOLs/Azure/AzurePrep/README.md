@@ -44,7 +44,25 @@ To successfully complete this lab, you will need:
 ---
 
 <a name="Task1" />
-## Task 1 - Choose your "***&lt;name&gt;***" ##
+## Task 1 - Choose your "***&lt;name&gt;***" and "***&lt;region&gt;***"##
+
+Throughout this lab, you will be creating a number of resources in Azure.  Many of those resources require unique names.  In addition, when you are done with the lab you will likely want to delete the resources you provisioned during it.  To aid in both the uniqueness and later location of the azure resource you create we will use a standard "***&lt;name&gt;*___&gt;**" naming convention.  
+
+For example, when creating our Service Bus Namespace in Task 2, we will use a name in the format of "***&lt;name&gt;*-ns&gt;**".  You need to pick an appropriate, short prefix for the "***&lt;name&gt;***" component.  
+The name you choose needs to be:
+- Less than 17 characters long (but shorter is better)
+- Likely to be unique
+
+A convenient solution may be to use a prefix of "**ctd**" (short for "Connect the Dots") followed by your first middle and last initial (or others as the case may be).  Again, an example:  If your name were "**J**ames **T**iberius **K**irk" you may choose a name prefix of "**ctdjtk**". Make sense?
+
+For the rest of the lab, we will assume a name prefix of "**ctdhol**", short for "**Connect the Dots Hands-On Lab**".  You will need to pick something unique for yourself, and replace all subsequent occurrences of "***&lt;name&gt;***" with it.  
+
+1. Pick your name prefix, and make a note of it.  
+2. Help yourself out, and be consistent in its use.  
+
+In addition to a unique name, you need to make sure to provision all of the resources you create in these labs in the same region.  
+
+1. Review the list of [**Azure Regions**](http://azure.microsoft.com/en-us/regions/#Locations) ([http://azure.microsoft.com/en-us/regions](http://azure.microsoft.com/en-us/regions) , scroll down to the **"Locations"** heading) and choose a specific Azure Region to use consistently when ever you are presented with a choice in the labs. 
 
 ---
 
