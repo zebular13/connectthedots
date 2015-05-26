@@ -389,7 +389,9 @@ You will receive a warning in the portal about the Stream Analytics job using th
 
 	![Job Start Time](./images/06200JobStartTime.png)
  
-19. It may take a few minutes for the job to start, watch it until it shows started 
+19. It may take a few minutes for the job to start, watch it until it's status is "**Idle**"
+
+	![Aggregates Job Idle](./images/06210AggregatesIdle.png)
 
 ---
 
