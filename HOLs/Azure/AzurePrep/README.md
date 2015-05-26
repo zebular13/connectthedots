@@ -199,6 +199,29 @@ The event hub is used as the output for the Stream analytics jobs that generate 
 <a name="Task5" />
 ## Task 5 - Create the "***&lt;name&gt;*storage**" Azure Storage Account ##
 
+The Stream Analytics jobs in a region all share a single Azure Storage account for monitoring and logging purposes.  This storage account is referred to as the "**Regional Monitoring Storage Account**". If you already have Stream Analytics jobs running in your target "***&lt;region&gt;***", you must continue to use that same storage account.   If you don't have stream analytics jobs in the target region though you either need to select an existing storage account in that region, or create one for Stream Analaytics use.
+
+Here, we'll assume that you need to create a storage account to use at the "**Regional Montoring Storage Account**". 
+
+1. In the [Azure Management Portal](https://manage.windowsazure.com) (https://manage.windowsazure.com), click the on the "**STORAGE**" icon along the left to view your existing storage accounts (if any), then click the "**+NEW**" button in the lower left corner.
+
+	![New Storage Account](./images/05010NewStorageAccount.png)
+  
+2. In the "**NEW**" panel, select "**DATA SERVICES**" | "**STORAGE**" | "**QUICK CREATE**". Complete the fields as described below, then click the "**CREATE STORAGE ACCOUNT &#x2713;**" button.
+
+	| Field                  | Value | 
+	| ---                    | ---   |
+    |URL                     | "***&lt;name&gt;*storage**" | 
+    |Location/Affinity Group | "***&lt;region&gt;***" | 
+    |Replication             | Leave it at the default "**Geo-Redundant**" | 
+
+
+	![Create Storage](./images/05020CreateStorage.png)
+
+3. Wait for the new storage account's status to show as "**Online**"
+
+	![Storage Account Active](./images/05030StorageAccountActive.png)
+
 ---
 
 <a name="Task6" />
