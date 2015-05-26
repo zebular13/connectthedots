@@ -397,3 +397,52 @@ You will receive a warning in the portal about the Stream Analytics job using th
 
 <a name="Task7" />
 ## Task 7 - Create the "***&lt;name&gt;*&nbsp;&#42;&nbsp;**" Stream Analytics Jobs ##
+
+In this last task of the "**Azure Prep**" lab, you will create the remaining Stream Analytics jobs.  The steps here mimic those taken in Task 6, so the instructions won't be as detailed.  Use what you learned from the previous task to complete these.  
+
+1. Repeat the steps from Task 6 to create and start the following Stream Analytics Jobs:
+
+	- Create the following jobs in the target "***&lt;region&gt;***", using the "***&lt;name&gt;*storage**" storage account
+
+		| Job Name          | Query Source | 
+		| ---               | ---   |
+		| ctdholAlert       | [Alert.sql](/Azure/StreamAnalyticsQueries/Alert.sql)  |
+		| ctdholcg4pbi      | [cg4pbi.sql](/Azure/StreamAnalyticsQueries/cg4pbi.sql)  |
+		| ctdholLightSensor | [LightSensor.sql](/Azure/StreamAnalyticsQueries/LightSensor.sql)  |
+
+
+	- The jobs all have the same input configuration
+
+		| Field                  | Value | 
+		| ---                    | ---   |
+		| Source                 | "**Data Stream**"  |
+		| Source Type            | "**Event Hub**"  |
+	    |Input Alias             | "**DevicesInput**" - It's recommended you use this name | 
+	    |Subscription            | Select "**Use Event Hub from Current Subscription**" | 
+	    |Choose a Namespace      | Select the "***&lt;name&gt;*-ns**" namespace you created previously.  |
+	    |Choose an Event Hub     | Select the "**ehdevices**" event hub you created previously.  |
+	    |Event Hub Policy Name   | Select the "**StreamingAnalytics**" policy you created previously.  |
+	    |Choose a Consumer Group | "**$Default**"  |
+	    |Event Serialization Format | Select "**JSON**" | 
+	    |Encoding                   | Select "**UTF8**" |  
+
+
+	- The jobs all have the same output configuration
+
+		| Field                  | Value | 
+		| ---                    | ---   |
+		|Destination             | "**Event Hub**" | 
+	    |Output Alias            | "**output**" | 
+	    |Subscription            | Select "**Use Event Hub from Current Subscription**" | 
+	    |Choose a Namespace      | Select the "***&lt;name&gt;*-ns**" namespace you created previously.  |
+	    |Choose an Event Hub     | Select the "**ehdevices**" event hub you created previously.  |
+	    |Event Hub Policy Name   | Select the "**StreamingAnalytics**" policy you created previously.  |
+	    |Event Serialization Format | Select "**JSON**" | 
+	    |Encoding                   | Select "**UTF8**" | 
+	    |Format                     | Select "**Array**" | 
+
+2. Once you have successfully created and started all the jobs, your list of Stream Analytics should resemble the following:
+
+	![Stream Analytics Jobs Created](./images/07010JobsCreated.png)
+
+  
