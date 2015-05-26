@@ -39,7 +39,7 @@ To successfully complete this lab, you will need:
 4. [Create the "**ehalerts**" Event Hub](#Task4)
 5. [Create the "***&lt;name&gt;*storage**" Azure Storage Account](#Task5)
 6. [Create the "***&lt;name&gt;**Aggregates*" Stream Analytics Job](#Task6)
-7. [Create the "***&lt;name&gt;*&nbsp;&#42;&nbsp;**" Stream Analytics Job](#Task7)
+7. [Create the "***&lt;name&gt;*&nbsp;&#42;&nbsp;**" Stream Analytics Jobs](#Task7)
 
 ---
 
@@ -211,7 +211,7 @@ Here, we'll assume that you need to create a storage account to use at the "**Re
 
 	| Field                  | Value | 
 	| ---                    | ---   |
-    |URL                     | "***&lt;name&gt;*storage**" | 
+    |URL                     | "***&lt;name&gt;*storage**" (all lower case)| 
     |Location/Affinity Group | "***&lt;region&gt;***" | 
     |Replication             | Leave it at the default "**Geo-Redundant**" | 
 
@@ -227,7 +227,171 @@ Here, we'll assume that you need to create a storage account to use at the "**Re
 <a name="Task6" />
 ## Task 6 - Create the "***&lt;name&gt;**Aggregates*" Stream Analytics Job ##
 
+In this task, we'll create the "***&lt;name&gt;**Aggregates*" Stream Analytics Job.  This job reads messages sent by devices to the "**ehdevices**" event hub, and then calculates a new message with the average temperature value for all messages received within a 10 second window.  It then "tumbles" that window to the next 10 seconds and repeats the process. It emits it's output every ten seconds as a new message to the same "**ehdevices**" event hub.  
+
+You will receive a warning in the portal about the Stream Analytics job using the same event hub for both it's source and destination.  Normally, that would be an odd case.  Here though it works nicely.  By emitting the temperature average aggregates into the same event hub, the downstream website can read a single event hub for both detail and aggregate data.
+
+![Aggregates Job Architecture](./images/06010AggregatesJobArchitecture.png)  
+
+
+1. In the [Azure Management Portal](https://manage.windowsazure.com) (https://manage.windowsazure.com) click the "**STREAM ANALYTICS**" icon along the left, then click the "**+NEW**" button in the bottom left corner.  
+
+	![New Stream Analytics Job](./images/06020NewStreamAnalytics.png)
+
+2. In the "**NEW**" panel, select "**DATA SERVICES**" | "**STREAM ANALYTICS**" | "**QUICK CREATE**".  Complete the fields as described below, then click the "**CREATE STREAM ANALYTICS JOB &#x2713;**"
+
+	| Field                              | Value | 
+	| ---                                | ---   |
+    |Job Name                            | "***&lt;name&gt;*Aggregates**" | 
+    |Region                              | "***&lt;region&gt;***" | 
+    |Regional Monitoring Storage Account | Select the "***&lt;name&gt;*storage**" account you created previously.  Or if you can't change the selection that means that other stream analytics jobs in the region have alredy targeted an account.  That's ok. | 
+
+
+	![Create Aggregates Job](./images/06030CreateAggregatesJob.png)
+
+3. Wait for the new job's status to show "**Created*"" then click on the "***&lt;name&gt;*Aggregates**" job name to open it. 
+
+	![Aggregates Created](./images/06040AggregatesCreated.png)
+
+4. Switch to the "**INPUTS**" page, and click the "**+ADD INPUT**" button along the bottom:
+
+	![Add Input](./images/06050AddInput.png)
+
+5. On the "**ADD AN INPUT**" Page, select "**Data Stream**", then click the "**&#10132;**" button
+
+	![Data Stream](./images/06060DataStream.png)
+
+6. On the "**ADD A DATA STREAM**" Page, select "**EVENT HUB**", then click the "**&#10132;**" button
+
+	![Data Stream](./images/06070EventHub.png)
+
+7. On the "**ADD A SERVICE BUS EVENT HUB**" Page, complete the fields as described below, then click the "**&#10132;**" button
+
+	| Field                  | Value | 
+	| ---                    | ---   |
+    |Input Alias             | "**DevicesInput**" - It's recommended you use this name | 
+    |Subscription            | Select "**Use Event Hub from Current Subscription**" | 
+    |Choose a Namespace      | Select the "***&lt;name&gt;*-ns**" namespace you created previously.  |
+    |Choose an Event Hub     | Select the "**ehdevices**" event hub you created previously.  |
+    |Event Hub Policy Name   | Select the "**StreamingAnalytics**" policy you created previously.  |
+    |Choose a Consumer Group | "**$Default**"  |
+
+	![Data Stream](./images/06080EhdevicesSource.png)
+
+8. On the second "**ADD A SERVICE BUS EVENT HUB**" Page, complete the fields as described below then click the "**&#10004;**" button.
+
+	| Field                     | Value | 
+	| ---                       | ---   |
+    |Event Serialization Format | Select "**JSON**" | 
+    |Encoding                   | Select "**UTF8**" |  
+
+	![Data Stream](./images/06090Serialization.png)
+
+9. Wait for the new "**DevicesInput**" intput's "**Diagnosis**" to show "**OK**". 
+
+	![DevicesInput ok](./images/06100DevicesInputOk.png)
+
+10. Switch to the "**QUERY**" page, and replace the default query syntax with that from the [Aggregates.sql](/Azure/StreamAnalyticsQueries.sql) query file, then click "**SAVE**"
+
+
+	```SQL
+	/*  ---------------------------------------------------------------------------------
+	//  Copyright (c) Microsoft Open Technologies, Inc.  All rights reserved.
+	// 
+	//  The MIT License (MIT)
+	// 
+	//  Permission is hereby granted, free of charge, to any person obtaining a copy
+	//  of this software and associated documentation files (the "Software"), to deal
+	//  in the Software without restriction, including without limitation the rights
+	//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	//  copies of the Software, and to permit persons to whom the Software is
+	//  furnished to do so, subject to the following conditions:
+	// 
+	//  The above copyright notice and this permission notice shall be included in
+	//  all copies or substantial portions of the Software.
+	// 
+	//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+	//  THE SOFTWARE.
+	//  ---------------------------------------------------------------------------------*/
+	
+	Select
+	    measurename,
+	    unitofmeasure,
+	    'All Sensors' AS location,
+	    'All Sensors' AS organization,
+	    'ace60e7c-a6aa-4694-ba86-c3b66952558e' AS guid,
+	    'Temp Average' as displayname,
+	    Max(timecreated) as timecreated,
+	    Avg(value) AS value
+	From
+	    DevicesInput TIMESTAMP BY timecreated
+	where
+	    measurename = 'temperature' OR measurename='Temperature'
+	Group by
+	    measurename, unitofmeasure,
+	    TumblingWindow(Second, 10)
+	```
+
+	![Aggregates Query](./images/06110AggregatesQuery.png)
+
+10. When prompted, click "**YES**" to confirm the changes to the query.
+
+	![Confirm Save](./images/06120ConfirmSave.png)
+
+11. Next, switch to the "**OUTPUTS**" page, and click the "**+ADD OUTPUT**" button along the bottom:
+
+	![Add Output](./images/06130AddOutput.png)
+
+12. On the "**ADD AN OUTPUT**" page, select "**Event Hub"** and click "**&#10132;**"
+
+	![Event Hub](./images/06140EventHub.png)
+
+13. On the "**ADD A SERVICE BUS EVENT HUB**" page, complete the fields as described below, then click "**&#10132;**"
+
+	| Field                  | Value | 
+	| ---                    | ---   |
+    |Output Alias            | "**output**" | 
+    |Subscription            | Select "**Use Event Hub from Current Subscription**" | 
+    |Choose a Namespace      | Select the "***&lt;name&gt;*-ns**" namespace you created previously.  |
+    |Choose an Event Hub     | Select the "**ehdevices**" event hub you created previously.  |
+    |Event Hub Policy Name   | Select the "**StreamingAnalytics**" policy you created previously.  |
+
+	![ehdevices](./images/06150Ehdevices.png)
+
+14. On the "**ADD AN OUTPUT**" page, select "**Event Hub"** and click "**&#10003;**"
+
+	| Field                     | Value | 
+	| ---                       | ---   |
+    |Event Serialization Format | Select "**JSON**" | 
+    |Encoding                   | Select "**UTF8**" | 
+    |Format                     | Select "**Array**" | 
+
+	![Serialization](./images/06160Serialization.png)
+
+15. You should see a warning about the same container being used for both input and output. As was mentioned earlier, this is on purpose, by design, and expected.  The "***&lt;name&gt;*Aggregates**" job reads messages from and writes its output to the same "**ehdevices**" event hub.  You can click "**OK"** to ignore the warning.   
+
+	![Warning](./images/06170Warning.png)
+
+16. Wait for the "**output**"" to diagnostics to show "**OK**", then click the left arrow "**&#8592;**" button on the top left of the page:
+
+	![Confirm Output](./images/06180ConfirmOutput.png)
+
+17. Back on the Stream Analytics page, click the row to the ***right** of the new "**K&lt;name&gt;*Aggregates**" job to select it.  Then click the "**&#9654; START**" button along the bottom:
+
+	![Start Job](./images/06190StartJob.png)
+
+18.  On the "**START OUTPUT**" Page, select "**JOB START TIME"** and click "**&#10003;**"
+
+	![Job Start Time](./images/06200JobStartTime.png)
+ 
+19. It may take a few minutes for the job to start, watch it until it shows started 
+
 ---
 
 <a name="Task7" />
-## Task 7 - Create the "***&lt;name&gt;*&nbsp;&#42;&nbsp;**" Stream Analytics Job ##
+## Task 7 - Create the "***&lt;name&gt;*&nbsp;&#42;&nbsp;**" Stream Analytics Jobs ##
