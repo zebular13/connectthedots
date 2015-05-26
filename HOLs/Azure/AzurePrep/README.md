@@ -293,6 +293,8 @@ You will receive a warning in the portal about the Stream Analytics job using th
 
 10. Switch to the "**QUERY**" page, and replace the default query syntax with that from the [Aggregates.sql](/Azure/StreamAnalyticsQueries/Aggregates.sql) query file, then click "**SAVE**"
 
+	> **Note:** The query source is being shown here as a reference.  You may want to get the latest version from the [Aggregates.sql](/Azure/StreamAnalyticsQueries/Aggregates.sql) file.
+
 
 	```SQL
 	/*  ---------------------------------------------------------------------------------
