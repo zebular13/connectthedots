@@ -12,11 +12,11 @@ The Arduino Uno is an extremely popular micro-controller platform. It has a fant
 However, when it comes to the "Internet of Things", the Arduino has some limitations
 
 - It has relatively low processing power and memory.  
-- It has not built-in communication capabilities other that Serial.   
+- It has no built-in communication capabilities other that Serial (No Ethernet, WiFi, Bluetooth, etc).   
 
 The limitied processing power makes it difficult for it to participate in the secure protocols (AMQPS, HTTPS, SSL, etc) that enterprise grade IoT solutions require.
 
-The limited communications means that we need to either add communication capabilities to it (like WiFi, Ethernet, Bluetooth, etc) , or better yet we could  connect it via a USB-to-Serial connection to a more powerful "gateway" device which handles the secure protocols and Internet communications. 
+The limited communications means that we need to either add communication capabilities to it (like Ethernet, WiFi, Bluetooth, etc) , or better yet we could  connect it via a USB-to-Serial connection to a more powerful "gateway" device which handles the secure protocols and Internet communications. 
 
 In this lab, we'll implement the code that allows the Arduino to read and package Sensor data, the publish it over a serial connection.  We'll then connected it to a Raspberry Pi "Gateway" via a USB-to-Serial connection and allow the Raspberry Pi to encrypt and transmit the messages to Azure.  We'll implement the Raspberry Pi Gateway Service in another lab.  
  
@@ -159,16 +159,54 @@ The SparkFun Weather Shield has a specific code library that the Arduino Sketch 
 	char Units3[] = "lumen";
 	```
 
-8.  Once you have completed your code modifications, In the Arduino IDE, "**Verify**" your code by clicking on the "**&#10003;**" button on the left side of the top toolbar:
+7. You should take a few moments to review the remainder of the WeatherShieldJson.ino sketch file.  Specifically, you may want to review :
+
+
+	- the **setup()** method (around line 180) initializes the serial communications as well as the various sensors.  
+	- the **loop()** method (around line 217) keeps track of time so it can show messages once every second (1000 milliseconds), blinks the on board LED on and off to show that the sketch is running, calculates some running averages, and calls the **printWeather()** method (see below).
+	- The **calcWeather()** method (around line 272) is primarily where the various sensor values are read (or at least calls are made to other methods to read each specific sensor). Note that the weather shield supports other sensors, like wind, rain, * pressure that we are not using here. 
+	- The **printWeather()** calls the "**calcWeather()** method to get current values, then it generates the JSON strings for each of the sensor readings writes them to the Serial port.    
+
+8.  Once you have completed reviwing and modifying your code, In the Arduino IDE, "**Verify**" your code by clicking on the "**&#10003;**" button (Verify) on the left side of the top toolbar.  Review the status at the bottom and correct any errors:
+
+	> **Note:** The screen show below shows a "**Low memory available**" error.  The newer versions of the Arduino IDE give more complete status information that previous versions.  While this isn't ideal, it is expected, and you can ignore the warning. 
 
 	![Verify Code](./images/03030VerifyCode.png)
 
-9.  
+9.  Before you can deploy the code to your Arduino, you need to make sure that the IDE knows what kind of board you have, and what COM port it is on. From the Arduino IDE menu, select "**Tools**" | "**Board**" and select the "**Arduino Uno**":
+
+	![Select Board](./images/03040SelectBoard.png)
+ 
+10.  Then, again from the menu bar, select "**Tools**" | "**Port**" then select the serial port you identified previously when you connected your Arduino to your computer.  On the lab computer, it was on "**COM4**". 
+
+	![Select Port](./images/03050SelectPort.png)
+
+11.  Finally, you are ready to upload your code to the Arduino.  From the Arduino IDE tool bar, click the "**&#10132;**" (Upload) button to deploy your code to your Arduino.  Review the status at the bottom to verify the deployment was correct.
+
+	![Upload Code](./images/03060UploadCode.png)
+   
+12.  You can watch the serial output (those JSON strings generated and sent in the printWeather() method) using the Arduino IDE's "**Serial Monitor**".  To open it, from the menu bar, select "**Tools**" | "**Serial Monitor**"
+
+	![Open Serial Monitor](./images/03070OpenSerialMonitor.png)
+
+13.  When the Serial Monitor opens, you should see messages being sent (three messages, one for each sensor) about once a second (1000ms).  If you are seeing garbage, not clear text, verify that your baud rate is set to 9600 in the lower right corner of the Serial Monitor window:
+
+	![Serial Monitor](./images/03080SerialMonitor.png)
+
+14. You can close the "**Serial Monitor**" window when you are done viewing messages. 
 
 ---
 
 <a name="Task4" />
 ## Task 4 - Connect the Aduino UNO and SparkFun Weather Shield to the Raspberry Pi ##
+
+At this point your Arduino Uno is ready to go.  We saw in the "**printWeather()**" method that it creates a JSON string for each of the sensor readings, the prints them out to the serial port.  
+
+Our problem is that we need those messages to get to Azure, not just some serial port.  To solve that problem, we'll connect the Arduino up to a Raspberry Pi (effectively a small computer) and have the Raspberry Pi forward the messages off to our Azure Event hubs.  We'll configure the Raspbery Pi in a separate lab, but at this point you are ready to connect the Arduino up to 1. 
+
+1. Unplug the USB cable from the Arduino and your computer, and re-connect the USB cable to your Arduino and a Raspberry Pi.
+
+	![Raspberry Pi Connected](./images/04010RaspberryPiConnected.png)
 
 ---
 
