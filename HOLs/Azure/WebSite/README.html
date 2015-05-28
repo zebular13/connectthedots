@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1>
+<a id="user-content-conntect-the-dots-sample-web-site-hands-on-lab" class="anchor" href="#conntect-the-dots-sample-web-site-hands-on-lab" aria-hidden="true"><span class="octicon octicon-link"></span></a>"Conntect the Dots Sample Web Site" Hands-On Lab</h1>
+
+<hr>
+
+<h2>
+<a id="user-content-overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h2>
+
+<p>In this lab you will deploy the sample website provided in the <a href="http://connectthedots.io">ConnectTheDots.io</a> repository to Azure.  </p>
+
+<p><a href="./images/00010WebSiteArchitecture.png" target="_blank"><img src="./images/00010WebSiteArchitecture.png" alt="Web Site Architecture" style="max-width:100%;"></a> </p>
+
+<p>For this lab, we'll focus on just publishing the sample web site to Azure.  The Event Hubs, Streaming Analytics, and device implementations are covered in other labs.  </p>
+
+<hr>
+
+<h2>
+<a id="user-content-prerequisites" class="anchor" href="#prerequisites" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prerequisites</h2>
+
+<p>To successfully complete this lab, you will need: </p>
+
+<ul>
+<li>An active Azure Subscription.  If needed you can create a <a href="http://azure.microsoft.com/en-us/pricing/free-trial" title="Azure Free Trial">free trial here</a>.</li>
+<li>A Windows computer with <a href="https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx" title="VS2013 Community Edition Download">Visual Studio 2013 Community Edition</a> or better</li>
+<li>The Azure SDK 2.6 or later installed for Visual Studio 2013 (<a href="http://go.microsoft.com/fwlink/p/?linkid=323510&amp;clcid=0x409">Download if needed</a>)</li>
+<li>A copy of the ConnectTheDots.io repository.  You can get the latest version <a href="https://github.com/MSOpenTech/connectthedots/archive/master.zip" title="Connect the Dots Zip Download">here</a>. </li>
+<li>In addition you need to have successfully completed the <a href="/HOLs/Azure/AzurePrep">"Azure Prep" HOL</a>.<br>
+</li>
+</ul>
+
+<h2></h2>
+
+<h2>
+<a id="user-content-tasks" class="anchor" href="#tasks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tasks</h2>
+
+<ol>
+<li><a href="#Task1">Task 1 - Recall your "<strong><em>&lt;name&gt;</em></strong>" and "<strong><em>&lt;region&gt;</em></strong>" </a></li>
+<li><a href="#Task2">Task 2 - Edit the Web.config File</a></li>
+<li><a href="#Task3">Task 3 - Publish the Web Site to Azure</a></li>
+<li><a href="#Task4">Task 4 - Enable Web Sockets</a></li>
+</ol>
+
+<hr>
+
+<p><a name="Task1"></a></p>
+
+<h2>
+<a id="user-content-task-1---recall-your-name-and-region" class="anchor" href="#task-1---recall-your-name-and-region" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 1 - Recall your "<strong><em>&lt;name&gt;</em></strong>" and "<strong><em>&lt;region&gt;</em></strong>"</h2>
+
+<p>This lab requires that you have successfully completed the <a href="/HOLs/Azure/AzurePrep">"Azure Prep" HOL</a>.  In Task 1 of that lab <a href="/HOLs/Azure/AzurePrep/#Task1">"<strong>Choose your "<em>&lt;name&gt;</em>" and "<em>&lt;region&gt;</em>"</strong></a> you selected a name prefix to use in place of all "<strong><em>&lt;name&gt;</em></strong>" place holders throughout these labs.  You should use the same prefix here.</p>
+
+<p>Additionally, you selected a target Azure "<strong><em>&lt;region&gt;</em></strong>" in which all resources were to be created.  Again, you should continue to use that same region here.  </p>
+
+<hr>
+
+<p><a name="Task2"></a></p>
+
+<h2>
+<a id="user-content-task-2---edit-the-webconfig-file" class="anchor" href="#task-2---edit-the-webconfig-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 2 - Edit the Web.config File</h2>
+
+<p>In this task we will modify the sample Web Site project's <strong>web.config</strong> file by adding the appropriate connection strings to the Azure Service Bus, Event Hubs, and Storage Account we created in the <a href="/HOLs/Azure/AzurePrep">"Azure Prep" HOL</a>.</p>
+
+<ol>
+<li>Open the <a href="/Azure/WebSite/ConnectTheDotsWebSite.sln">/Azure/WebSite/ConnectTheDotsWebSite.sln</a> Solution in Visual Studio 2013 Community Edition.</li>
+<li>
+<p>From the Visual Studio menu bar, select "<strong>BUILD</strong>" | "<strong>Rebuild Solution</strong>"</p>
+
+<p><a href="./images/01010RebuildSolution.png" target="_blank"><img src="./images/01010RebuildSolution.png" alt="Rebuild Solution" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>You should see a number of NuGet packages being restored</p>
+
+<p><a href="./images/01020RestoringNuGetPackages.png" target="_blank"><img src="./images/01020RestoringNuGetPackages.png" alt="Restoring NuGet Packages" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>When it is done rebuilding, verify that the rebuild all was successful by looking in the lower left corner of the Visual Studio window:</p>
+
+<p><a href="./images/01030RebuildAllSuccessfull.png" target="_blank"><img src="./images/01030RebuildAllSuccessfull.png" alt="Rebuild All Successfull" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>In the Visual Studio "<strong>Solution Explorer</strong>" window, double-click on the "<strong>Web.config</strong>" file to open it in the editor. </p>
+
+<p><a href="./images/01040OpenWebConfig.png" target="_blank"><img src="./images/01040OpenWebConfig.png" alt="Open Web.config" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Locate the section of the Web.config file (should be around line 36) that starts with:</p>
+
+<div class="highlight highlight-XML"><pre><span class="pl-c">&lt;!-- ================================================================================ --&gt;</span>
+<span class="pl-c">&lt;!-- Connect the Dots Connection Strings                                              --&gt;</span>
+<span class="pl-c">&lt;!-- ================================================================================ --&gt;</span></pre></div>
+</li>
+<li>
+<p>Verify that the event hub names, "<strong>ehdevices</strong>" and "<strong>ehalerts</strong>" match what you created in the <a href="/HOLs/Azure/AzurePrep">"Azure Prep" HOL</a>.  If you used different names, update them in the following section:</p>
+
+<div class="highlight highlight-XML"><pre><span class="pl-c">&lt;!-- Event Hub Names --&gt;</span> 
+<span class="pl-c">&lt;!-- Leave these unchanged unless you named your event hubs something different --&gt;</span>
+&lt;<span class="pl-ent">add</span> <span class="pl-e">key</span>=<span class="pl-s"><span class="pl-pds">"</span>Microsoft.ServiceBus.EventHubDevices<span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span>ehdevices<span class="pl-pds">"</span></span> /&gt;
+&lt;<span class="pl-ent">add</span> <span class="pl-e">key</span>=<span class="pl-s"><span class="pl-pds">"</span>Microsoft.ServiceBus.EventHubAlerts<span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span>ehalerts<span class="pl-pds">"</span></span> /&gt;</pre></div>
+</li>
+<li>
+<p>Next, locate the "<strong>Service Bus Namespace Connection String</strong>"</p>
+
+<div class="highlight highlight-XML"><pre><span class="pl-c">&lt;!-- Service Bus Namespace Connection String --&gt;</span>
+&lt;<span class="pl-ent">add</span> <span class="pl-e">key</span>=<span class="pl-s"><span class="pl-pds">"</span>Microsoft.ServiceBus.ConnectionString<span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span>Endpoint=sb://{namespace-name}.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey={key}<span class="pl-pds">"</span></span> /&gt;</pre></div>
+</li>
+<li>
+<p>To find the replacement values for the "<strong>{namespace-name}</strong>" and "<strong>{key}</strong>" place holders in the connection string: </p>
+
+<ul>
+<li>In your web browser, go to the <a href="https://manage.windowsazure.com">Azure Management Portal</a> (<a href="https://manage.windowsazure.com">https://manage.windowsazure.com</a>) and login to your account</li>
+<li>Along the left hand side, click "<strong>SERVICE BUS</strong>" then click on the "<strong><em>&lt;name&gt;</em>-ns</strong>" Service Bus Namespace you created in the <a href="/HOLs/Azure/AzurePrep">"Azure Prep" HOL</a>.<br>
+</li>
+<li>Switch to the "<strong>CONFIGURE</strong>" page</li>
+<li>Under the "<strong>shared access key generator</strong>" heading, in the "<strong>POLICY NAME</strong>" drop-down, select the "<strong>RootManageSharedAccessKey</strong>" (this is key gives the holder full access to the Service Bus Namespace).</li>
+<li>Next to the "<strong>PRIMARY KEY</strong>" field, click the copy button to copy the key to the clipboard.</li>
+</ul>
+
+<p><a href="./images/01050ServiceBusNamespaceValues.png" target="_blank"><img src="./images/01050ServiceBusNamespaceValues.png" alt="Service Bus Namespace Values" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Use the namespace name ("<strong><em>&lt;name&gt;</em>-ns</strong>") and "<strong>PRIMARY KEY</strong>" values from the portal to update the "<strong>Service Bus Namespace Connection String</strong>":</p>
+
+<div class="highlight highlight-XML"><pre><span class="pl-c">&lt;!-- Service Bus Namespace Connection String --&gt;</span>
+&lt;<span class="pl-ent">add</span> <span class="pl-e">key</span>=<span class="pl-s"><span class="pl-pds">"</span>Microsoft.ServiceBus.ConnectionString<span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span>Endpoint=sb://ctdhol-ns.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=HapBPlZf+sR8fdKBJto6wkSbnaF6Ym/o2MQlUy7VJJA=<span class="pl-pds">"</span></span> /&gt;</pre></div>
+</li>
+<li>
+<p>Next, find the "<strong>ehdevices Event Hub Connection String</strong>"</p>
+
+<div class="highlight highlight-XML"><pre><span class="pl-c">&lt;!-- ehdevices Event Hub Connection String --&gt;</span> 
+&lt;<span class="pl-ent">add</span> <span class="pl-e">key</span>=<span class="pl-s"><span class="pl-pds">"</span>Microsoft.ServiceBus.ConnectionStringDevices<span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span>Endpoint=sb://{namespace-name}.servicebus.windows.net/;SharedAccessKeyName=WebSite;SharedAccessKey={key}<span class="pl-pds">"</span></span> /&gt;</pre></div>
+</li>
+<li>
+<p>To find the replacement values for the "<strong>{namespace-name}</strong>" and "<strong>{key}</strong>" place holders in the connection string: </p>
+
+<ul>
+<li>In your web browser, go to the <a href="https://manage.windowsazure.com">Azure Management Portal</a> (<a href="https://manage.windowsazure.com">https://manage.windowsazure.com</a>) and login to your account</li>
+<li>Along the left hand side, click "<strong>SERVICE BUS</strong>" then click on the "<strong><em>&lt;name&gt;</em>-ns</strong>" Service Bus Namespace you created in the <a href="/HOLs/Azure/AzurePrep">"Azure Prep" HOL</a>.<br>
+</li>
+<li>Switch to the "*<em>EVENT HUBS</em>"" page</li>
+<li>Click on the name of the "<strong>ehdevices</strong>" event hub to open it</li>
+<li>Switch to the "<strong>CONFIGURE</strong>" page</li>
+<li>Under the "<strong>shared access key generator</strong>" heading, in the "<strong>POLICY NAME</strong>" drop-down, select the "<strong>WebSite</strong>" (this is they key associated with the Shared Access Policy we created previously)</li>
+<li>Next to the "<strong>PRIMARY KEY</strong>" field, click the copy button to copy the key to the clipboard.</li>
+</ul>
+
+<p><a href="./images/01060EhdevicesKey.png" target="_blank"><img src="./images/01060EhdevicesKey.png" alt="ehdevices Key Value" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Use the same "<strong>{namespace-name}</strong>" place holder as before  ("<strong><em>&lt;name&gt;</em>-ns</strong>"), and the "<strong>PRIMARY KEY</strong>" for the "<strong>ehdevices</strong>" "<strong>WebSite</strong>" policy to update the "<strong>ehdevices Event Hub Connection String</strong>"</p>
+
+<div class="highlight highlight-XML"><pre><span class="pl-c">&lt;!-- ehdevices Event Hub Connection String --&gt;</span> 
+&lt;<span class="pl-ent">add</span> <span class="pl-e">key</span>=<span class="pl-s"><span class="pl-pds">"</span>Microsoft.ServiceBus.ConnectionStringDevices<span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span>Endpoint=sb://ctdhol-ns.servicebus.windows.net/;SharedAccessKeyName=WebSite;SharedAccessKey=eC1pWXeO1v7Fj8oMMX7XliIBMPpbzSG8YDoCyGmF4TI=<span class="pl-pds">"</span></span> /&gt;</pre></div>
+</li>
+<li>
+<p>Next, find the "<strong>ehalerts Event Hub Connection String</strong>"</p>
+
+<div class="highlight highlight-XML"><pre><span class="pl-c">&lt;!-- ehalerts Event Hub Connection String --&gt;</span> 
+&lt;<span class="pl-ent">add</span> <span class="pl-e">key</span>=<span class="pl-s"><span class="pl-pds">"</span>Microsoft.ServiceBus.ConnectionStringAlerts<span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span>Endpoint=sb://{namespace-name}.servicebus.windows.net/;SharedAccessKeyName=WebSite;SharedAccessKey={key}<span class="pl-pds">"</span></span> /&gt;</pre></div>
+</li>
+<li>
+<p>To find the replacement values for the "<strong>{namespace-name}</strong>" and "<strong>{key}</strong>" place holders in the connection string: </p>
+
+<ul>
+<li>In your web browser, go to the <a href="https://manage.windowsazure.com">Azure Management Portal</a> (<a href="https://manage.windowsazure.com">https://manage.windowsazure.com</a>) and login to your account</li>
+<li>Along the left hand side, click "<strong>SERVICE BUS</strong>" then click on the "<strong><em>&lt;name&gt;</em>-ns</strong>" Service Bus Namespace you created in the <a href="/HOLs/Azure/AzurePrep">"Azure Prep" HOL</a>.<br>
+</li>
+<li>Switch to the "*<em>EVENT HUBS</em>"" page</li>
+<li>Click on the name of the "<strong>ehalerts</strong>" event hub to open it</li>
+<li>Switch to the "<strong>CONFIGURE</strong>" page</li>
+<li>Under the "<strong>shared access key generator</strong>" heading, in the "<strong>POLICY NAME</strong>" drop-down, select the "<strong>WebSite</strong>" (this is they key associated with the Shared Access Policy we created previously)</li>
+<li>Next to the "<strong>PRIMARY KEY</strong>" field, click the copy button to copy the key to the clipboard.</li>
+</ul>
+
+<p><a href="./images/01070EhalertsKey.png" target="_blank"><img src="./images/01070EhalertsKey.png" alt="ehdevices Key Value" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Use the same "<strong>{namespace-name}</strong>" place holder as before  ("<strong><em>&lt;name&gt;</em>-ns</strong>"), and the "<strong>PRIMARY KEY</strong>" for the "<strong>ehalerts</strong>" "<strong>WebSite</strong>" policy to update the "<strong>ehalerts Event Hub Connection String</strong>"</p>
+
+<div class="highlight highlight-XML"><pre><span class="pl-c">&lt;!-- ehalerts Event Hub Connection String --&gt;</span> 
+&lt;<span class="pl-ent">add</span> <span class="pl-e">key</span>=<span class="pl-s"><span class="pl-pds">"</span>Microsoft.ServiceBus.ConnectionStringAlerts<span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span>Endpoint=sb://ctdhol-ns.servicebus.windows.net/;SharedAccessKeyName=WebSite;SharedAccessKey=cgbuh8R6lz8SGGWIvc9EZww93jTubYv6VRHLH/elf9A=<span class="pl-pds">"</span></span> /&gt;</pre></div>
+</li>
+<li>
+<p>Finally, locate the "<strong>Regional Monitoring Storage Account Connection String</strong>"</p>
+
+<div class="highlight highlight-XML"><pre><span class="pl-c">&lt;!-- Regional Monitoring Storage Account Connection String --&gt;</span> 
+&lt;<span class="pl-ent">add</span> <span class="pl-e">key</span>=<span class="pl-s"><span class="pl-pds">"</span>Microsoft.Storage.ConnectionString<span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span>DefaultEndpointsProtocol=https;AccountName={storageaccount};AccountKey={key}<span class="pl-pds">"</span></span> /&gt;</pre></div>
+</li>
+<li>
+<p>To locate the replacement values for the "<strong>{stroageaccount}</strong>" and "<strong>{key}</strong>" place holders in the connection string:</p>
+
+<ul>
+<li>In your web browser, go to the <a href="https://manage.windowsazure.com">Azure Management Portal</a> (<a href="https://manage.windowsazure.com">https://manage.windowsazure.com</a>) and login to your account</li>
+<li>Along the left hand side, click "<strong>STORAGE</strong>" then click on the "<strong><em>&lt;name&gt;</em>storage</strong>" Storage Account you created in the <a href="/HOLs/Azure/AzurePrep">"Azure Prep" HOL</a>.<br>
+</li>
+<li>Click on the "<strong>MANAGE ACCESS KEY</strong>" button along the bottom</li>
+<li>In the "<strong>Manage Access Keys</strong>" Window, copy the "<strong>STORAGE ACCOUNT NAME</strong>" and "<strong>PRIMARY ACCESS KEY</strong>" values</li>
+</ul>
+
+<p><a href="./images/01080StorageAccountValues.png" target="_blank"><img src="./images/01080StorageAccountValues.png" alt="Storage Account Values" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Use the "<strong>STORAGE ACCOUNT NAME</strong>" and "<strong>PRIMARY ACCESS KEY</strong>" values copied from above to replace the "<strong>{storageccount}</strong>" and "<strong>{key}</strong>" place holders in the "<strong>Regional Monitoring Storage Account Connection String</strong>":</p>
+
+<div class="highlight highlight-XML"><pre><span class="pl-c">&lt;!-- Regional Monitoring Storage Account Connection String --&gt;</span> 
+&lt;<span class="pl-ent">add</span> <span class="pl-e">key</span>=<span class="pl-s"><span class="pl-pds">"</span>Microsoft.Storage.ConnectionString<span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span>DefaultEndpointsProtocol=https;AccountName=ctdholstorage;AccountKey=xZoxkgDYCJW1A6GcIYBfwAsZVYEphz4/CrURgZb+8idzDCut/Om047d0r8KDsgNU+0W6zWhjA4b/rB3MOxX0yg==<span class="pl-pds">"</span></span> /&gt;</pre></div>
+</li>
+<li><p>From the Visual Studio menu bar, select "<strong>FILE</strong>" | "<strong>Save All</strong>" to save your changes</p></li>
+<li>
+<p>Then, from the Visual Studio menu bar, select "<strong>BUILD</strong>" | "<strong>Build Solution</strong>" and verify that the build succeeds:</p>
+
+<p><a href="./images/01090BuildSucceeded.png" target="_blank"><img src="./images/01090BuildSucceeded.png" alt="Build Succeeded" style="max-width:100%;"></a></p>
+</li>
+</ol>
+
+<hr>
+
+<p><a name="Task3"></a></p>
+
+<h2>
+<a id="user-content-task-3---publish-the-web-site-to-azure" class="anchor" href="#task-3---publish-the-web-site-to-azure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 3 - Publish the Web Site to Azure</h2>
+
+<ol>
+<li>Ensure that the "<strong>ConnectTheDotsWebSite</strong>" solution still open in Visual Studio 2013.</li>
+<li>
+<p>In the Visual Studio "<strong>Solution Explorer</strong>" window, right click on the "<strong>ConnectTheDotsWebSite</strong>" project, and select "<strong>Publish...</strong>" from the pop-up menu:</p>
+
+<p><a href="./images/02010PublishWebsite.png" target="_blank"><img src="./images/02010PublishWebsite.png" alt="Publish Web Site" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>In the "<strong>Publish Web</strong>" window, select "<strong>Microsoft Azure Web Apps</strong>"</p>
+
+<p><a href="./images/02020MicrosoftAzureWebApps.png" target="_blank"><img src="./images/02020MicrosoftAzureWebApps.png" alt="Microsoft Azure Web Apps" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>In the "<strong>Select Exsiting Web App</strong>" window, if you haven't already signed into your azure account, click the "*<em>Sign In...</em>" button, and login with the credentials for your Azure account.</p>
+
+<p><a href="./images/02030SignIn.png" target="_blank"><img src="./images/02030SignIn.png" alt="Sign In" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Once signed in, in the "<strong>Select Existing Web App</strong>" window, click the "<strong>New...</strong>" button to create a new Azure Web App.</p>
+
+<p><a href="./images/02040New.png" target="_blank"><img src="./images/02040New.png" alt="New Web App" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>In the "<strong>Create Web App on Azure</strong>" window, complete the fields as described below, then click the "<strong>Create</strong>" button (a new, empty, Web App will be created in Azure when you click the "<strong>Create</strong>" button):</p>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Web app name</td>
+<td>"<strong><em>&lt;name&gt;</em>web</strong>"</td>
+</tr>
+<tr>
+<td>App Service plan</td>
+<td><strong>Create new App Service plan</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>"<strong><em>&lt;name&gt;</em>plan</strong>"</td>
+</tr>
+<tr>
+<td>Resource Group</td>
+<td><strong>Create new resource group</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>"<strong><em>&lt;name&gt;</em>group</strong>"</td>
+</tr>
+<tr>
+<td>Region</td>
+<td>"<strong><em>&lt;region&gt;</em></strong>"</td>
+</tr>
+<tr>
+<td>Database server</td>
+<td><strong>No database</strong></td>
+</tr>
+</tbody>
+</table>
+
+<p><a href="./images/02050CreateWebApp.png" target="_blank"><img src="./images/02050CreateWebApp.png" alt="Create Web App" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Back in the "<strong>Publish Web</strong>" window, on the "<strong>Connection</strong>" page, click the "<strong>Validate Connection</strong>" to verify that you can connect to the new web app, then click "<strong>Next &gt;</strong>":</p>
+
+<p><a href="./images/02060ValidateConnection.png" target="_blank"><img src="./images/02060ValidateConnection.png" alt="Validate Connection" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>On the "<strong>Settings</strong>" page, accept the defaults, and click "<strong>Next &gt;</strong>"</p>
+
+<p><a href="./images/02070PublishSettings.png" target="_blank"><img src="./images/02070PublishSettings.png" alt="Publish Settings" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>On the "<strong>Preview</strong>" page, click the "<strong>Publish</strong>" button</p>
+
+<p><a href="./images/02080Publish.png" target="_blank"><img src="./images/02080Publish.png" alt="Publish" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>In the Visual Studio "<strong>Azure App Service Activity</strong>" Window (or in the "<strong>Output</strong>" window), you can monitor your publish activity.  When the publish is finished, you should see a link to your new Azure Web App:</p>
+
+<p><a href="./images/02090PublishedWebApp.png" target="_blank"><img src="./images/02090PublishedWebApp.png" alt="Published Web App" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>You can click on the link to open the new site in the browser (if it didn't open automatically when the publish completed).  When you do, you should see an error message displayed at the bottom (yes, we expect this error).  We'll fix this error in the next task.: </p>
+
+<p><a href="./images/02100WebSocketError.png" target="_blank"><img src="./images/02100WebSocketError.png" alt="Web Socket Error" style="max-width:100%;"></a></p>
+</li>
+</ol>
+
+<hr>
+
+<p><a name="Task4"></a></p>
+
+<h2>
+<a id="user-content-task-4--enable-web-sockets" class="anchor" href="#task-4--enable-web-sockets" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 4 -Enable Web Sockets</h2>
+
+<p>As you saw at the end of the previous task, the website is receiving an error related to WebSockets.  The web app receives events from the "<strong>ehdevices</strong>" and "<strong>ehalerts</strong>" event hubs, then published them to the <a href="http://d3js.org">d3js</a> graphics library via web sockets.  In order for that to work, we need to enable Web Socket functionality in the new Web App we just created. </p>
+
+<ol>
+<li>In your web browser, open the <a href="https://manage.windowsazure.com">Azure Management Portal</a> (<a href="https://manage.windowsazure.com">https://manage.windowsazure.com</a>) and login to your account. </li>
+<li>
+<p>In the list of services along the left, click "<strong>WEB APPS</strong>", then click on the name of the web app you just created in Visual Studio to open it:</p>
+
+<p><a href="./images/03010OpenWebAppInPortal.png" target="_blank"><img src="./images/03010OpenWebAppInPortal.png" alt="Open Web App in Portal" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Switch to the "<strong>CONFIGURE</strong>" page, and under the "<strong>general</strong>" heading, scroll down to find the "<strong>WEB SOCKETS</strong>" setting.  Click "<strong>ON</strong>" to enable Web Sockets, then click the "<strong>SAVE</strong>" button along the bottom to save the changes.</p>
+
+<p><a href="./images/03020EnableWebSockets.png" target="_blank"><img src="./images/03020EnableWebSockets.png" alt="Enable Web Sockets" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Finally, return to the website and refresh it, and verify that the error is gone, and that the page has now successfully connected to itself via web sockets:</p>
+
+<p><a href="./images/03030WebAppListening.png" target="_blank"><img src="./images/03030WebAppListening.png" alt="Web App Listening" style="max-width:100%;"></a></p>
+</li>
+</ol>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

@@ -35,7 +35,7 @@ The individual labs will provide more explicit prerequisites.
 The Azure hands-on labs should be implemented regardless of the types of devices that you wish to use.  These walk you through the configuration of the Azure back end for any of the connected device types to publish data to.   
 
 1. **[Azure Prep](Azure/AzurePrep)** - In this HOL you will create the Azure Event Hubs and Azure Stream Analytics jobs that provide the data ingestion and inspection layer in Connect The Dots.
-2. **Connect the Dots Web Site** - In this HOL you will configure and deploy the sample "Connect the Dots" website
+2. **[Connect the Dots Web Site](Azure/WebSite)** - In this HOL you will configure and deploy the sample "Connect the Dots" website
 
 ## "Arduino and Raspberry Pi" Hands-On Labs ##
     

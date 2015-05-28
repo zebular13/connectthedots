@@ -30,7 +30,7 @@ To successfully complete this lab, you will need:
 1. [Task 1 - Recall your "***&lt;name&gt;***" and "***&lt;region&gt;***" ](#Task1)
 1. [Task 2 - Edit the Web.config File](#Task2)
 1. [Task 3 - Publish the Web Site to Azure](#Task3)
-1. [Task 4 - Enable WebSockets](#Task4)
+1. [Task 4 - Enable Web Sockets](#Task4)
 
 ---
 
@@ -246,7 +246,7 @@ In this task we will modify the sample Web Site project's **web.config** file by
 ---
 
 <a name="Task4" />
-## Task 4 -Enable WebSockets  ##
+## Task 4 -Enable Web Sockets  ##
 
 As you saw at the end of the previous task, the website is receiving an error related to WebSockets.  The web app receives events from the "**ehdevices**" and "**ehalerts**" event hubs, then published them to the [d3js](http://d3js.org) graphics library via web sockets.  In order for that to work, we need to enable Web Socket functionality in the new Web App we just created. 
 
