@@ -13,7 +13,8 @@ The labs are broken down into a common set of azure labs that all readers should
 
 ![Lab Flow](./images/LabFlow/LabFlow.png "Lab Flow")
 
-## General Prerequisites ## 
+
+## General Prerequisites ##
 
 In general, to complete these hands on labs you will need
 

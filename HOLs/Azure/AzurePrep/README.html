@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1>
+<a id="user-content-azure-prep-hands-on-lab" class="anchor" href="#azure-prep-hands-on-lab" aria-hidden="true"><span class="octicon octicon-link"></span></a>"Azure Prep" Hands-On Lab</h1>
+
+<hr>
+
+<h2>
+<a id="user-content-overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h2>
+
+<p>In this lab you will prepare your Azure subscription with the Service Bus namespace, Event Hubs, Storage Account and Stream Analytics jobs as required by the <a href="http://connectthedots.io">ConnectTheDots.io</a> architecture:</p>
+
+<p><a href="./images/00010AzurePrepLabArchitecture.png" target="_blank"><img src="./images/00010AzurePrepLabArchitecture.png" alt="Connect the Dots" style="max-width:100%;"></a></p>
+
+<p>In this "Azure Prep" HOL, we'll focus on the Azure Service Bus, Event Hubs, and Stream Analytics components. The sample web site and device specific implementations are covered in other labs.  The components we create here are:</p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"<strong><em>&lt;name&gt;</em>-ns</strong>"</td>
+<td>Service Bus Namespace</td>
+<td>Contains the Event Hubs</td>
+</tr>
+<tr>
+<td>"<strong>ehdevices</strong>"</td>
+<td>Event Hub</td>
+<td>Receives messages from devices as well as the "<strong><em>&lt;name&gt;</em>Aggregates</strong>" Stream Analytics Job.  Messages sent to this event hub are later received by the sample website and displayed graphically in charts</td>
+</tr>
+<tr>
+<td>"<strong>ehalerts</strong>"</td>
+<td>Event Hub</td>
+<td>Receives alert messages generated by the alert Stream Analaytics jobs.  Those messages are then read by the sample website and used to display alerts about various sensor values</td>
+</tr>
+<tr>
+<td>"<strong><em>&lt;name&gt;</em>Aggregates</strong>"</td>
+<td>Stream Analytics Job</td>
+<td>Reads temperature messages from "<strong>ehdevices</strong>", averages them over 10 second windows, and outputs the resulting averages back into "<strong>ehdevices</strong>".  Those messages are later displayed in the sample website along with the detail temperature data.</td>
+</tr>
+<tr>
+<td>"<strong><em>&lt;name&gt;</em> * </strong>"</td>
+<td>Stream Analytics Jobs</td>
+<td>Various jobs to read messages from "<strong>ehdevices</strong>" then generate alerts or other data to be output into the "<strong>ehalerts</strong>" event hub.  Those messages will then be used later by the sample website (or other downstream clients like Power BI) to display alerts data.</td>
+</tr>
+<tr>
+<td>"<strong><em>&lt;name&gt;</em>storage</strong>"</td>
+<td>Storage Account</td>
+<td>Used by the Stream Analytics jobs for monitoring and logging purposes.  This is known as the "Regional Monitoring" storage account</td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+
+<h2>
+<a id="user-content-prerequisites" class="anchor" href="#prerequisites" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prerequisites</h2>
+
+<p>To successfully complete this lab, you will need: </p>
+
+<ul>
+<li>An active Azure Subscription.  If needed you can create a <a href="http://azure.microsoft.com/en-us/pricing/free-trial" title="Azure Free Trial">free trial here</a>.</li>
+<li>A computer with access to the Internet and a web browser</li>
+<li>A copy of the ConnectTheDots.io repository.  You can get the latest version <a href="https://github.com/MSOpenTech/connectthedots/archive/master.zip" title="Connect the Dots Zip Download">here</a>. </li>
+</ul>
+
+<h2></h2>
+
+<h2>
+<a id="user-content-tasks" class="anchor" href="#tasks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tasks</h2>
+
+<ol>
+<li><a href="#Task1">Choose your "<strong><em>&lt;name&gt;</em></strong>" and "<strong><em>&lt;region&gt;</em></strong>"</a></li>
+<li><a href="#Task2">Create the "<strong><em>&lt;name&gt;</em>-ns</strong>" Azure Service Bus Namespace</a></li>
+<li><a href="#Task3">Create the "<strong>ehdevices</strong>" Event Hub</a></li>
+<li><a href="#Task4">Create the "<strong>ehalerts</strong>" Event Hub</a></li>
+<li><a href="#Task5">Create the "<strong><em>&lt;name&gt;</em>storage</strong>" Azure Storage Account</a></li>
+<li><a href="#Task6">Create the "<strong><em>&lt;name&gt;</em>Aggregates</strong>" Stream Analytics Job</a></li>
+<li><a href="#Task7">Create the "<strong><em>&lt;name&gt;</em> * </strong>" Stream Analytics Jobs</a></li>
+</ol>
+
+<hr>
+
+<p><a name="Task1"></a></p>
+
+<h2>
+<a id="user-content-task-1---choose-your-name-and-region" class="anchor" href="#task-1---choose-your-name-and-region" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 1 - Choose your "<strong><em>&lt;name&gt;</em></strong>" and "<strong><em>&lt;region&gt;</em></strong>"</h2>
+
+<p>Throughout this lab, you will be creating a number of resources in Azure.  Many of those resources require unique names.  In addition, when you are done with the lab you will likely want to delete the resources you provisioned during it.  To aid in both the uniqueness and later location of the azure resources you create we will use a standard "<strong><em>&lt;name&gt;</em>___</strong>" naming convention for many of the items you create.  </p>
+
+<p>For example, when creating our Service Bus Namespace in Task 2, we will use a name in the format of "<strong><em>&lt;name&gt;</em>-ns</strong>".  You need to pick an appropriate, short prefix for the "<strong><em>&lt;name&gt;</em></strong>" component.<br>
+The name you choose needs to be:</p>
+
+<ul>
+<li>Less than 17 characters long (but shorter is better)</li>
+<li>Likely to be unique</li>
+</ul>
+
+<p>A convenient solution may be to use a prefix of "<strong>ctd</strong>" (short for "<strong>C</strong>onnect <strong>t</strong>he <strong>D</strong>ots") followed by your first middle and last initial (or others as the case may be).  For example, if your name were "<strong>J</strong>ames <strong>T</strong>iberius <strong>K</strong>irk" you may choose a name prefix of "<strong>ctdjtk</strong>". Make sense?</p>
+
+<p>For the rest of the lab, we will assume a name prefix of "<strong>ctdhol</strong>", short for "<strong>Connect the Dots Hands-On Lab</strong>".  You will need to pick something unique for yourself, and replace all subsequent occurrences of "<strong><em>&lt;name&gt;</em></strong>" with it.  </p>
+
+<ol>
+<li>Pick your name prefix, and make a note of it.<br>
+</li>
+<li>Help yourself out, and be consistent in its use.<br>
+</li>
+</ol>
+
+<p>In addition to a unique name, you need to make sure to provision all of the resources you create in these labs in the same region.  </p>
+
+<ol>
+<li><p>Review the list of <a href="http://azure.microsoft.com/en-us/regions/#Locations"><strong>Azure Regions</strong></a> (<a href="http://azure.microsoft.com/en-us/regions">http://azure.microsoft.com/en-us/regions</a> , scroll down to the <strong>"Locations"</strong> heading) and choose a specific Azure Region to use consistently when ever you are presented with a choice in the labs. </p></li>
+<li><p>Note that at certain times, certain services <a href="http://azure.microsoft.com/en-us/regions/#services" title="Azure Services by Region">may not be available in all regions</a>.  For this lab, we are using "<strong>South Central US</strong>" as the region as we have verified that it currently supports all required services.  </p></li>
+</ol>
+
+<hr>
+
+<p><a name="Task2"></a></p>
+
+<h2>
+<a id="user-content-task-2---create-the-name-ns-azure-service-bus-namespace" class="anchor" href="#task-2---create-the-name-ns-azure-service-bus-namespace" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 2 - Create the "<strong><em>&lt;name&gt;</em>-ns</strong>" Azure Service Bus Namespace</h2>
+
+<p>In this task we'll create the "<strong><em>&lt;name&gt;</em>-ns</strong>" Azure Service Bus Namespace.  This Namespace will contain the "<strong>ehdevices</strong>" and "<strong>ehalerts</strong>" event hubs. </p>
+
+<ol>
+<li>In your web browser, open the <a href="https://manage.windowsazure.com">"<strong>Azure Management Portal</strong>"</a> (<a href="https://manage.windowsazure.com">https://manage.windowsazure.com</a>) and login to your subscription. </li>
+<li>
+<p>Click on the "<strong>Service Bus</strong>" Icon along the left, then click the "<strong>+CREATE</strong>" button along the bottom to create a new Service Bus Namespace</p>
+
+<p><a href="./images/02010ServiceBus.png" target="_blank"><img src="./images/02010ServiceBus.png" alt="Create Service Bus Namespace" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>In the "<strong>CREATE A NAMESPACE</strong>" window, complete the fields as described, then click the "<strong>✓</strong>" button</p>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Namespace Name</td>
+<td>"<strong><em>&lt;name&gt;</em>-ns</strong>"</td>
+</tr>
+<tr>
+<td>Region</td>
+<td>"<strong><em>&lt;region&gt;</em></strong>"</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>"<strong>MESSAGING</strong>"</td>
+</tr>
+<tr>
+<td>Messaging Tier</td>
+<td>"<strong>STANDARD</strong>"</td>
+</tr>
+</tbody>
+</table>
+
+<p><a href="./images/02020CreateNamespace.png" target="_blank"><img src="./images/02020CreateNamespace.png" alt="Create Namespace" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Wait until the new namespace's status shows as "<strong>Active</strong>", then click on the name of the new namespace to open it. </p>
+
+<p><a href="./images/02030ActiveNamespace.png" target="_blank"><img src="./images/02030ActiveNamespace.png" alt="Active Namespace" style="max-width:100%;"></a></p>
+</li>
+</ol>
+
+<hr>
+
+<p><a name="Task3"></a></p>
+
+<h2>
+<a id="user-content-task-3---create-the-ehdevices-event-hub" class="anchor" href="#task-3---create-the-ehdevices-event-hub" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 3 - Create the "<strong>ehdevices</strong>" Event Hub</h2>
+
+<p>In this task, we'll create the "<strong>ehdevices</strong>" event hub. You really should make sure to use the name "<strong>ehdevices</strong>" rather than choosing your own.  The name itself doesn't matter, except that it has been assumed and hard coded into a number of the other projects throughout the <a href="http://connectthedots.io">ConnectTheDots.io</a> repository.  Do yourself a favor and use the name as given, otherwise, you'll have to find all the references to it and fix them. </p>
+
+<p>The "<strong>ehdevices</strong>" event hub is the primary data ingestion point in the architecture.  It is where all the devices (Arduinos, Raspberry Pis, FEZ Spiders, etc) will be sending their sensor readings to. </p>
+
+<p>These devices will be sending JSON formatted messages similar to the following: </p>
+
+<div class="highlight highlight-JSON"><pre>{
+  <span class="pl-s"><span class="pl-pds">"</span>organization<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>Microsoft<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>location<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>Redmond, WA<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>guid<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>61b3eb31-4166-487a-8181-69918092cedf<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>displayname<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>Conference Room SparkFun Temp Sensor<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>unitofmeasure<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>F<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>measurename<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>temperature<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>value<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>78<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>timecreated<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>01/01/2015 12:00:00 PM<span class="pl-pds">"</span></span>
+}</pre></div>
+
+<p>The above message is a sample temperature reading.  There will also be messages for humidity, and light (as identified by the "measurename" property).  If you have other sensors to connect, you can send your own messages using the above format, but providing appropriate meta-data for them (measurename, unitofmeasure, value, etc.).  These messages will the be read by the sample website, and the values displayed in graphical charts.  In addition, the Stream Analytics jobs will read these message and provide various aggregations and alerts based on their values.  </p>
+
+<ol>
+<li>
+<p>In the portal page for your newly created Service Bus Namespace, switch to the "<strong>EVENT HUBS</strong>" page, then click the "<strong>+NEW</strong>" button in the bottom left hand corner. </p>
+
+<p><a href="./images/03010NewEventHub.png" target="_blank"><img src="./images/03010NewEventHub.png" alt="New Event Hub" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>In the "<strong>NEW</strong>" panel, select "<strong>APP SERVICES</strong>" | <strong>"SERVICE BUS</strong>" | "<strong>EVENT HUB</strong>" | "<strong>QUICK CREATE</strong>".  Complete the fields as described below, then click the "<strong>CREATE A NEW EVENT HUB ✓</strong>" button.</p>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Event Hub Name</td>
+<td>"<strong>ehdevices</strong>" - It is strongly recommended that use this name (without the quotes).  It is hard coded into multiple projects and would require significant effort to change</td>
+</tr>
+<tr>
+<td>Region</td>
+<td>"<strong><em>&lt;region&gt;</em></strong>"</td>
+</tr>
+<tr>
+<td>Namespace Name</td>
+<td>"<strong><em>&lt;name&gt;</em>-ns</strong>" - The name you used when creating the namespace previously</td>
+</tr>
+</tbody>
+</table>
+
+<p><a href="./images/03020CreateEhdevices.png" target="_blank"><img src="./images/03020CreateEhdevices.png" alt="Create ehdevices" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Wait until the status of the "<strong>ehdevices</strong>" event hub shows as "<strong>Active</strong>" then click on the name of the event hub to open it.  </p>
+
+<p><a href="./images/03030EhdevicesActive.png" target="_blank"><img src="./images/03030EhdevicesActive.png" alt="ehdevices Active" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Click on the "<strong>CONFIGURE</strong>" page along the top, then, under the "<strong>Shared Access Policies</strong>" header, add a new <a href="https://msdn.microsoft.com/en-us/library/azure/dn789974.aspx" title="Event Hub Authentication and Security Model Overview">Shared Access Policy</a> named "<strong>D1</strong>" with "<strong>Send"</strong> permissions, then click "<strong>SAVE</strong>" to save it:</p>
+
+<p><a href="./images/03040D1SharedAccessPolicy.png" target="_blank"><img src="./images/03040D1SharedAccessPolicy.png" alt="D1 Shared Access Policy" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Repeat the previous steps to create the following Shared Access Policies.  Make sure to click the "<strong>SAVE</strong>"" button when you are done!</p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Permissions</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D1</td>
+<td>Send</td>
+<td>Used by the first devices to send messages into the event hub</td>
+</tr>
+<tr>
+<td>D2</td>
+<td>Send</td>
+<td>Used by a second optional device to send messages into the event hub</td>
+</tr>
+<tr>
+<td>D3</td>
+<td>Send</td>
+<td>Used by a third optional device to send messages into the event hub</td>
+</tr>
+<tr>
+<td>D4</td>
+<td>Send</td>
+<td>Used by a fourth optional device to send messages into the event hub</td>
+</tr>
+<tr>
+<td>WebSite</td>
+<td>Manage,Send,Listen</td>
+<td>Used by the sample web site to read messages from devices chart them</td>
+</tr>
+<tr>
+<td>StreamingAnalytics</td>
+<td>Manage,Send,Listen</td>
+<td>Used by multiple Stream Analytics jobs to read devices messages for further processing</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Again, make sure to click the "<strong>SAVE</strong>" button.  When you are done, your list of "<strong>Shared Access Policies</strong>" for the "<strong>ehdevices</strong>" event hub should match the following:</p>
+
+<p><a href="./images/03050EhdevicesSharedAccessPolicies.png" target="_blank"><img src="./images/03050EhdevicesSharedAccessPolicies.png" alt="ehdevices Shared Access Policies" style="max-width:100%;"></a></p>
+</li>
+</ol>
+
+<hr>
+
+<p><a name="Task4"></a></p>
+
+<h2>
+<a id="user-content-task-4---create-the-ehalerts-event-hub" class="anchor" href="#task-4---create-the-ehalerts-event-hub" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 4 - Create the "<strong>ehalerts</strong>" Event Hub</h2>
+
+<p>In this task, we'll use a similar process to the previous task, but this time we'll create the "<strong>ehalerts</strong>" event hub.  </p>
+
+<p>This event hub is less critical, and is in fact optional if you prefer to not include the alerting features (including the "<strong><em>&lt;name&gt;</em> * </strong>" Stream Analaytics jobs in Task 7).  The devices in the field (at least as designed) do not write to this event hub.    </p>
+
+<p>The event hub is used as the output for the Stream Analytics jobs that generate alerts on the light and temperature readings.  The sample website then reads those messages and uses them to display alert information on the web page.</p>
+
+<ol>
+<li>In the <a href="https://manage.windowsazure.com">Azure Management Portal</a> (<a href="https://manage.windowsazure.com">https://manage.windowsazure.com</a>) return to the "<strong><em>&lt;name&gt;</em>-ns</strong>" Service Bus Namespace,  switch to the "<strong>Event Hubs</strong>" page,  and click the "<strong>+NEW</strong>" button in the lower left corner. </li>
+<li>
+<p>In the "<strong>NEW</strong>" Panel, select "<strong>APP SERVICES</strong>" | <strong>"SERVICE BUS</strong>" | "<strong>EVENT HUB</strong>" | "<strong>QUICK CREATE</strong>".  Complete the fields as described below, then click the "<strong>CREATE A NEW EVENT HUB ✓</strong>" button.</p>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Event Hub Name</td>
+<td>"<strong>ehalerts</strong>" - You must use this name, without the quotes.  It is hard coded into multiple projects and would require significant effort to change</td>
+</tr>
+<tr>
+<td>Region</td>
+<td>"<strong><em>&lt;region&gt;</em></strong>"</td>
+</tr>
+<tr>
+<td>Namespace Name</td>
+<td>"<strong><em>&lt;name&gt;</em>-ns</strong>" - The name you used when creating the namespace previously</td>
+</tr>
+</tbody>
+</table>
+
+<p><a href="./images/04010CreateEhalerts.png" target="_blank"><img src="./images/04010CreateEhalerts.png" alt="Create ehalerts" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Again, wait until the new Event Hub's status is "<strong>Active</strong>", then click on the "<strong>ehalerts</strong>" name to open it. </p>
+
+<p><a href="./images/04020EhalertsActive.png" target="_blank"><img src="./images/04020EhalertsActive.png" alt="ehalerts Active" style="max-width:100%;"></a>    </p>
+</li>
+<li>
+<p>Switch to the "<strong>CONFIGURE</strong>" Page, and under the "<strong>Shared Access Policies</strong>" heading, create the following policies.  Make sure to click the "<strong>SAVE</strong>" button when you are done.</p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Permissions</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WebSite</td>
+<td>Manage,Send,Listen</td>
+<td>Used by the sample web site to read alert mssages and display them</td>
+</tr>
+<tr>
+<td>StreamingAnalytics</td>
+<td>Manage,Send,Listen</td>
+<td>Used by multiple Stream Analytics jobs to output alerts</td>
+</tr>
+</tbody>
+</table>
+
+<p><a href="./images/04030EhalertsSharedAccessPolicies.png" target="_blank"><img src="./images/04030EhalertsSharedAccessPolicies.png" alt="ehalerts Shared Access Policies" style="max-width:100%;"></a> </p>
+</li>
+</ol>
+
+<hr>
+
+<p><a name="Task5"></a></p>
+
+<h2>
+<a id="user-content-task-5---create-the-namestorage-azure-storage-account" class="anchor" href="#task-5---create-the-namestorage-azure-storage-account" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 5 - Create the "<strong><em>&lt;name&gt;</em>storage</strong>" Azure Storage Account</h2>
+
+<p>The Stream Analytics jobs in a region all share a single Azure Storage account for monitoring and logging purposes.  This storage account is referred to as the "<strong>Regional Monitoring Storage Account</strong>". If you already have Stream Analytics jobs running in your target "<strong><em>&lt;region&gt;</em></strong>", you must continue to use that same storage account.   If you don't have stream analytics jobs in the target region though you either need to select an existing storage account in that region, or create one for Stream Analaytics use.</p>
+
+<p>Here, we'll assume that you need to create a storage account to use at the "<strong>Regional Montoring Storage Account</strong>". </p>
+
+<ol>
+<li>
+<p>In the <a href="https://manage.windowsazure.com">Azure Management Portal</a> (<a href="https://manage.windowsazure.com">https://manage.windowsazure.com</a>), click the on the "<strong>STORAGE</strong>" icon along the left to view your existing storage accounts (if any), then click the "<strong>+NEW</strong>" button in the lower left corner.</p>
+
+<p><a href="./images/05010NewStorageAccount.png" target="_blank"><img src="./images/05010NewStorageAccount.png" alt="New Storage Account" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>In the "<strong>NEW</strong>" panel, select "<strong>DATA SERVICES</strong>" | "<strong>STORAGE</strong>" | "<strong>QUICK CREATE</strong>". Complete the fields as described below, then click the "<strong>CREATE STORAGE ACCOUNT ✓</strong>" button.</p>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>URL</td>
+<td>"<strong><em>&lt;name&gt;</em>storage</strong>" (all lower case)</td>
+</tr>
+<tr>
+<td>Location/Affinity Group</td>
+<td>"<strong><em>&lt;region&gt;</em></strong>"</td>
+</tr>
+<tr>
+<td>Replication</td>
+<td>Leave it at the default "<strong>Geo-Redundant</strong>"</td>
+</tr>
+</tbody>
+</table>
+
+<p><a href="./images/05020CreateStorage.png" target="_blank"><img src="./images/05020CreateStorage.png" alt="Create Storage" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Wait for the new storage account's status to show as "<strong>Online</strong>"</p>
+
+<p><a href="./images/05030StorageAccountActive.png" target="_blank"><img src="./images/05030StorageAccountActive.png" alt="Storage Account Active" style="max-width:100%;"></a></p>
+</li>
+</ol>
+
+<hr>
+
+<p><a name="Task6"></a></p>
+
+<h2>
+<a id="user-content-task-6---create-the-nameaggregates-stream-analytics-job" class="anchor" href="#task-6---create-the-nameaggregates-stream-analytics-job" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 6 - Create the "<strong><em>&lt;name&gt;</em>Aggregates</strong>" Stream Analytics Job</h2>
+
+<p>In this task, we'll create the "<strong><em>&lt;name&gt;</em>Aggregates</strong>" Stream Analytics Job.  This job reads messages sent by devices to the "<strong>ehdevices</strong>" Event Hub, and then generates a new message with the average temperature value calculation for all messages received within a 10 second window.  It then "<a href="https://msdn.microsoft.com/en-us/library/azure/dn835055.aspx" title="Tumbling Window">tumbles</a>" that window to the next 10 seconds and repeats the process. It emits it's output every ten seconds as a new message to the same "<strong>ehdevices</strong>" event hub.  </p>
+
+<p>You will receive a warning in the portal about the Stream Analytics job using the same event hub for both it's source and destination.  Normally, that would be an odd case.  Here though it works nicely.  By emitting the temperature average aggregates into the same event hub, the downstream website can read a single event hub for both detail and aggregate data.</p>
+
+<p><a href="./images/06010AggregatesJobArchitecture.png" target="_blank"><img src="./images/06010AggregatesJobArchitecture.png" alt="Aggregates Job Architecture" style="max-width:100%;"></a>  </p>
+
+<ol>
+<li>
+<p>In the <a href="https://manage.windowsazure.com">Azure Management Portal</a> (<a href="https://manage.windowsazure.com">https://manage.windowsazure.com</a>) click the "<strong>STREAM ANALYTICS</strong>" icon along the left, then click the "<strong>+NEW</strong>" button in the bottom left corner.  </p>
+
+<p><a href="./images/06020NewStreamAnalytics.png" target="_blank"><img src="./images/06020NewStreamAnalytics.png" alt="New Stream Analytics Job" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>In the "<strong>NEW</strong>" panel, select "<strong>DATA SERVICES</strong>" | "<strong>STREAM ANALYTICS</strong>" | "<strong>QUICK CREATE</strong>".  Complete the fields as described below, then click the "<strong>CREATE STREAM ANALYTICS JOB ✓</strong>"</p>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Job Name</td>
+<td>"<strong><em>&lt;name&gt;</em>Aggregates</strong>"</td>
+</tr>
+<tr>
+<td>Region</td>
+<td>"<strong><em>&lt;region&gt;</em></strong>"</td>
+</tr>
+<tr>
+<td>Regional Monitoring Storage Account</td>
+<td>Select the "<strong><em>&lt;name&gt;</em>storage</strong>" account you created previously.  Or if you can't change the selection that means that other stream analytics jobs in the region have alredy targeted an account.  That's ok.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a href="./images/06030CreateAggregatesJob.png" target="_blank"><img src="./images/06030CreateAggregatesJob.png" alt="Create Aggregates Job" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Wait for the new job's status to show "<strong>Created</strong>" then click on the "<strong><em>&lt;name&gt;</em>Aggregates</strong>" job name to open it. </p>
+
+<p><a href="./images/06040AggregatesCreated.png" target="_blank"><img src="./images/06040AggregatesCreated.png" alt="Aggregates Created" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Switch to the "<strong>INPUTS</strong>" page, and click the "<strong>+ADD INPUT</strong>" button along the bottom:</p>
+
+<p><a href="./images/06050AddInput.png" target="_blank"><img src="./images/06050AddInput.png" alt="Add Input" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>On the "<strong>Add an input to your job</strong>" Page, select "<strong>Data Stream</strong>", then click the "<strong>➔</strong>" button</p>
+
+<p><a href="./images/06060DataStream.png" target="_blank"><img src="./images/06060DataStream.png" alt="Data Stream" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>On the "<strong>Add a data stream to your job</strong>" Page, select "<strong>EVENT HUB</strong>", then click the "<strong>➔</strong>" button</p>
+
+<p><a href="./images/06070EventHub.png" target="_blank"><img src="./images/06070EventHub.png" alt="Data Stream" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>On the "<strong>Event Hub settings</strong>" Page, complete the fields as described below, then click the "<strong>➔</strong>" button</p>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Input Alias</td>
+<td>"<strong>DevicesInput</strong>" - It's recommended you use this name</td>
+</tr>
+<tr>
+<td>Subscription</td>
+<td>Select "<strong>Use Event Hub from Current Subscription</strong>"</td>
+</tr>
+<tr>
+<td>Choose a Namespace</td>
+<td>Select the "<strong><em>&lt;name&gt;</em>-ns</strong>" namespace you created previously.</td>
+</tr>
+<tr>
+<td>Choose an Event Hub</td>
+<td>Select the "<strong>ehdevices</strong>" event hub you created previously.</td>
+</tr>
+<tr>
+<td>Event Hub Policy Name</td>
+<td>Select the "<strong>StreamingAnalytics</strong>" policy you created previously.</td>
+</tr>
+<tr>
+<td>Choose a Consumer Group</td>
+<td>"<strong>$Default</strong>"</td>
+</tr>
+</tbody>
+</table>
+
+<p><a href="./images/06080EhdevicesSource.png" target="_blank"><img src="./images/06080EhdevicesSource.png" alt="Data Stream" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>On the "<strong>Serialization settings</strong>" Page, complete the fields as described below then click the "<strong>✔</strong>" button.</p>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Event Serialization Format</td>
+<td>Select "<strong>JSON</strong>"</td>
+</tr>
+<tr>
+<td>Encoding</td>
+<td>Select "<strong>UTF8</strong>"</td>
+</tr>
+</tbody>
+</table>
+
+<p><a href="./images/06090Serialization.png" target="_blank"><img src="./images/06090Serialization.png" alt="Data Stream" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Wait for the new "<strong>DevicesInput</strong>" intput's "<strong>DIAGNOSIS</strong>" to show "<strong>OK</strong>". </p>
+
+<p><a href="./images/06100DevicesInputOk.png" target="_blank"><img src="./images/06100DevicesInputOk.png" alt="DevicesInput ok" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Switch to the "<strong>QUERY</strong>" page, and replace the default query syntax with that from the <a href="/Azure/StreamAnalyticsQueries/Aggregates.sql">Aggregates.sql</a> query file, then click "<strong>SAVE</strong>"</p>
+
+<blockquote>
+<p><strong>Note:</strong> The query source is being shown here as a reference.  You may want to get the latest version from the <a href="/Azure/StreamAnalyticsQueries/Aggregates.sql">Aggregates.sql</a> file.</p>
+</blockquote>
+
+<div class="highlight highlight-SQL"><pre><span class="pl-c">/*  ---------------------------------------------------------------------------------</span>
+<span class="pl-c">//  Copyright (c) Microsoft Open Technologies, Inc.  All rights reserved.</span>
+<span class="pl-c">// </span>
+<span class="pl-c">//  The MIT License (MIT)</span>
+<span class="pl-c">// </span>
+<span class="pl-c">//  Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="pl-c">//  of this software and associated documentation files (the "Software"), to deal</span>
+<span class="pl-c">//  in the Software without restriction, including without limitation the rights</span>
+<span class="pl-c">//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="pl-c">//  copies of the Software, and to permit persons to whom the Software is</span>
+<span class="pl-c">//  furnished to do so, subject to the following conditions:</span>
+<span class="pl-c">// </span>
+<span class="pl-c">//  The above copyright notice and this permission notice shall be included in</span>
+<span class="pl-c">//  all copies or substantial portions of the Software.</span>
+<span class="pl-c">// </span>
+<span class="pl-c">//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="pl-c">//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="pl-c">//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="pl-c">//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="pl-c">//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="pl-c">//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN</span>
+<span class="pl-c">//  THE SOFTWARE.</span>
+<span class="pl-c">//  ---------------------------------------------------------------------------------*/</span>
+
+<span class="pl-k">Select</span>
+    measurename,
+    unitofmeasure,
+    <span class="pl-s"><span class="pl-pds">'</span>All Sensors<span class="pl-pds">'</span></span> <span class="pl-k">AS</span> location,
+    <span class="pl-s"><span class="pl-pds">'</span>All Sensors<span class="pl-pds">'</span></span> <span class="pl-k">AS</span> organization,
+    <span class="pl-s"><span class="pl-pds">'</span>ace60e7c-a6aa-4694-ba86-c3b66952558e<span class="pl-pds">'</span></span> <span class="pl-k">AS</span> guid,
+    <span class="pl-s"><span class="pl-pds">'</span>Temp Average<span class="pl-pds">'</span></span> <span class="pl-k">as</span> displayname,
+    <span class="pl-c1">Max</span>(timecreated) <span class="pl-k">as</span> timecreated,
+    <span class="pl-c1">Avg</span>(value) <span class="pl-k">AS</span> value
+<span class="pl-k">From</span>
+    DevicesInput <span class="pl-k">TIMESTAMP</span> BY timecreated
+<span class="pl-k">where</span>
+    measurename <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>temperature<span class="pl-pds">'</span></span> <span class="pl-k">OR</span> measurename<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>Temperature<span class="pl-pds">'</span></span>
+<span class="pl-k">Group by</span>
+    measurename, unitofmeasure,
+    TumblingWindow(Second, <span class="pl-c1">10</span>)</pre></div>
+
+<p><a href="./images/06110AggregatesQuery.png" target="_blank"><img src="./images/06110AggregatesQuery.png" alt="Aggregates Query" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>When prompted, click "<strong>YES</strong>" to confirm the changes to the query.</p>
+
+<p><a href="./images/06120ConfirmSave.png" target="_blank"><img src="./images/06120ConfirmSave.png" alt="Confirm Save" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Next, switch to the "<strong>OUTPUTS</strong>" page, and click the "<strong>+ADD OUTPUT</strong>" button along the bottom:</p>
+
+<p><a href="./images/06130AddOutput.png" target="_blank"><img src="./images/06130AddOutput.png" alt="Add Output" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>On the "<strong>Add an output to your job</strong>" page, select "<strong>Event Hub"</strong> and click "<strong>➔</strong>"</p>
+
+<p><a href="./images/06140EventHub.png" target="_blank"><img src="./images/06140EventHub.png" alt="Event Hub" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>On the "<strong>Event Hub settings</strong>" page, complete the fields as described below, then click "<strong>➔</strong>"</p>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Output Alias</td>
+<td>"<strong>output</strong>"</td>
+</tr>
+<tr>
+<td>Subscription</td>
+<td>Select "<strong>Use Event Hub from Current Subscription</strong>"</td>
+</tr>
+<tr>
+<td>Choose a Namespace</td>
+<td>Select the "<strong><em>&lt;name&gt;</em>-ns</strong>" namespace you created previously.</td>
+</tr>
+<tr>
+<td>Choose an Event Hub</td>
+<td>Select the "<strong>ehdevices</strong>" event hub you created previously.</td>
+</tr>
+<tr>
+<td>Event Hub Policy Name</td>
+<td>Select the "<strong>StreamingAnalytics</strong>" policy you created previously.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a href="./images/06150Ehdevices.png" target="_blank"><img src="./images/06150Ehdevices.png" alt="ehdevices" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>On the "<strong>Serialization settings</strong>" page, complete the fields as described below, then click "<strong>✓</strong>"</p>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Event Serialization Format</td>
+<td>Select "<strong>JSON</strong>"</td>
+</tr>
+<tr>
+<td>Encoding</td>
+<td>Select "<strong>UTF8</strong>"</td>
+</tr>
+<tr>
+<td>Format</td>
+<td>Select "<strong>Array</strong>"</td>
+</tr>
+</tbody>
+</table>
+
+<p><a href="./images/06160Serialization.png" target="_blank"><img src="./images/06160Serialization.png" alt="Serialization" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>You should see a warning about the same container being used for both input and output. As was mentioned earlier, this is on purpose, by design, and expected.  The "<strong><em>&lt;name&gt;</em>Aggregates</strong>" job reads messages from and writes its output to the same "<strong>ehdevices</strong>" event hub.  You can click "<strong>OK"</strong> to ignore the warning.   </p>
+
+<p><a href="./images/06170Warning.png" target="_blank"><img src="./images/06170Warning.png" alt="Warning" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Wait for the "<strong>output</strong>" "<strong>DIAGNOSIS</strong>" to show "<strong>OK</strong>", then click the left arrow "<strong>←</strong>" button on the top left of the page to return to the list of Stream Analytics jobs:</p>
+
+<p><a href="./images/06180ConfirmOutput.png" target="_blank"><img src="./images/06180ConfirmOutput.png" alt="Confirm Output" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Back on the Stream Analytics page, click the row to the <strong><em>right</em></strong> of the new "<strong>&lt;name&gt;*Aggregates</strong>" job to select it.  Then click the "<strong>▶ START</strong>" button along the bottom:</p>
+
+<p><a href="./images/06190StartJob.png" target="_blank"><img src="./images/06190StartJob.png" alt="Start Job" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>On the "<strong>START OUTPUT</strong>" Page, select "<strong>JOB START TIME"</strong> and click "<strong>✓</strong>"</p>
+
+<p><a href="./images/06200JobStartTime.png" target="_blank"><img src="./images/06200JobStartTime.png" alt="Job Start Time" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>It may take a few minutes for the job to start, watch it until it's status is "<strong><a href="http://azure.microsoft.com/en-us/documentation/articles/stream-analytics-developer-guide/#manage-jobs" title="Manage jobs">Idle</a></strong>"</p>
+
+<p><a href="./images/06210AggregatesIdle.png" target="_blank"><img src="./images/06210AggregatesIdle.png" alt="Aggregates Job Idle" style="max-width:100%;"></a></p>
+</li>
+</ol>
+
+<hr>
+
+<p><a name="Task7"></a></p>
+
+<h2>
+<a id="user-content-task-7---create-the-name-stream-analytics-jobs" class="anchor" href="#task-7---create-the-name-stream-analytics-jobs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 7 - Create the "<strong><em>&lt;name&gt;</em> * </strong>" Stream Analytics Jobs</h2>
+
+<p>In this last task of the "<strong>Azure Prep</strong>" lab, you will create the remaining Stream Analytics jobs.  The steps here mimic those taken in Task 6, so the instructions won't be as detailed.  Use what you learned from the previous task to complete these.  </p>
+
+<ol>
+<li>
+<p>Repeat the steps from Task 6 to create and start the following Stream Analytics Jobs:</p>
+
+<ul>
+<li>
+<p>Create the following jobs in the target "<strong><em>&lt;region&gt;</em></strong>", using the "<strong><em>&lt;name&gt;</em>storage</strong>" storage account</p>
+
+<table>
+<thead>
+<tr>
+<th>Job Name</th>
+<th>Query Source</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ctdholAlert</td>
+<td><a href="/Azure/StreamAnalyticsQueries/Alert.sql">Alert.sql</a></td>
+<td>Creates a "Temperature over 80F" alert if the temp spikes over 80°F in during a five second tumbling window</td>
+</tr>
+<tr>
+<td>ctdholcg4pbi</td>
+<td><a href="/Azure/StreamAnalyticsQueries/cg4pbi.sql">cg4pbi.sql</a></td>
+<td>Creates a simplified data set for use by the <a href="/Azure/PowerBI/PBI_setup.md">PowerBI Walktrhough</a>
+</td>
+</tr>
+<tr>
+<td>ctdholLightSensor</td>
+<td><a href="/Azure/StreamAnalyticsQueries/LightSensor.sql">LightSensor.sql</a></td>
+<td>Creates a "The Light is turned off" alert if the average "light" sensor readings for three or more readings within a five second tumbling window is less that 0.02</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>The jobs all have the same input configuration</p>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Source</td>
+<td>"<strong>Data Stream</strong>"</td>
+</tr>
+<tr>
+<td>Source Type</td>
+<td>"<strong>Event Hub</strong>"</td>
+</tr>
+<tr>
+<td>Input Alias</td>
+<td>"<strong>DevicesInput</strong>" - It's recommended you use this name</td>
+</tr>
+<tr>
+<td>Subscription</td>
+<td>Select "<strong>Use Event Hub from Current Subscription</strong>"</td>
+</tr>
+<tr>
+<td>Choose a Namespace</td>
+<td>Select the "<strong><em>&lt;name&gt;</em>-ns</strong>" namespace you created previously.</td>
+</tr>
+<tr>
+<td>Choose an Event Hub</td>
+<td>Select the "<strong>ehdevices</strong>" event hub you created previously.</td>
+</tr>
+<tr>
+<td>Event Hub Policy Name</td>
+<td>Select the "<strong>StreamingAnalytics</strong>" policy you created previously.</td>
+</tr>
+<tr>
+<td>Choose a Consumer Group</td>
+<td>"<strong>$Default</strong>"</td>
+</tr>
+<tr>
+<td>Event Serialization Format</td>
+<td>Select "<strong>JSON</strong>"</td>
+</tr>
+<tr>
+<td>Encoding</td>
+<td>Select "<strong>UTF8</strong>"</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>The jobs all have the same output configuration (Note, that these jobs output to "<strong>ehalerts</strong>" <strong>NOT</strong> "<strong>ehdevices</strong>"</p>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Destination</td>
+<td>"<strong>Event Hub</strong>"</td>
+</tr>
+<tr>
+<td>Output Alias</td>
+<td>"<strong>output</strong>"</td>
+</tr>
+<tr>
+<td>Subscription</td>
+<td>Select "<strong>Use Event Hub from Current Subscription</strong>"</td>
+</tr>
+<tr>
+<td>Choose a Namespace</td>
+<td>Select the "<strong><em>&lt;name&gt;</em>-ns</strong>" namespace you created previously.</td>
+</tr>
+<tr>
+<td>Choose an Event Hub</td>
+<td>Select the "<strong>ehalerts</strong>" event hub you created previously.</td>
+</tr>
+<tr>
+<td>Event Hub Policy Name</td>
+<td>Select the "<strong>StreamingAnalytics</strong>" policy you created previously.</td>
+</tr>
+<tr>
+<td>Event Serialization Format</td>
+<td>Select "<strong>JSON</strong>"</td>
+</tr>
+<tr>
+<td>Encoding</td>
+<td>Select "<strong>UTF8</strong>"</td>
+</tr>
+<tr>
+<td>Format</td>
+<td>Select "<strong>Array</strong>"</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<p>Once you have successfully created and started all the jobs, your list of Stream Analytics should resemble the following:</p>
+
+<p><a href="./images/07010JobsCreated.png" target="_blank"><img src="./images/07010JobsCreated.png" alt="Stream Analytics Jobs Created" style="max-width:100%;"></a></p>
+</li>
+</ol>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
