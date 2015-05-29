@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1>
+<a id="user-content-arduino-uno-with-sparkfun-weather-shield-hands-on-lab" class="anchor" href="#arduino-uno-with-sparkfun-weather-shield-hands-on-lab" aria-hidden="true"><span class="octicon octicon-link"></span></a>"Arduino Uno With SparkFun Weather Shield" Hands-On Lab</h1>
+
+<hr>
+
+<h2>
+<a id="user-content-overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h2>
+
+<p>In this lab, we'll deploy code to an Arduino Uno that reads sensor data (Temperature, Humidity, and Light) from a SparkFun Weather Shield.  </p>
+
+<p><a href="./images/00010ArduinoArchitecture.png" target="_blank"><img src="./images/00010ArduinoArchitecture.png" alt="Arduino Architecture" style="max-width:100%;"></a></p>
+
+<p>The Arduino Uno is an extremely popular micro-controller platform. It has a fantastic community around it, and a staggering array of 3rd party components, actuators, sensors, and "shields" that work with it.  </p>
+
+<p>However, when it comes to the "Internet of Things", the Arduino has some limitations</p>
+
+<ul>
+<li>It has relatively low processing power and memory.<br>
+</li>
+<li>It has no built-in communication capabilities other that Serial (No Ethernet, WiFi, Bluetooth, etc).<br>
+</li>
+</ul>
+
+<p>The limitied processing power makes it difficult for it to participate in the secure protocols (AMQPS, HTTPS, SSL, etc) that enterprise grade IoT solutions require.</p>
+
+<p>The limited communications means that we need to either add communication capabilities to it (like Ethernet, WiFi, Bluetooth, etc) , or better yet we could  connect it via a USB-to-Serial connection to a more powerful "gateway" device which handles the secure protocols and Internet communications. </p>
+
+<p>In this lab, we'll implement the code that allows the Arduino to read and package Sensor data, the publish it over a serial connection.  We'll then connected it to a Raspberry Pi "Gateway" via a USB-to-Serial connection and allow the Raspberry Pi to encrypt and transmit the messages to Azure.  We'll implement the Raspberry Pi Gateway Service in another lab.  </p>
+
+<hr>
+
+<h2>
+<a id="user-content-prerequisites" class="anchor" href="#prerequisites" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prerequisites</h2>
+
+<p>To successfully complete this lab, you will need: </p>
+
+<ul>
+<li><p>An active Azure Subscription.  If needed you can create a <a href="http://azure.microsoft.com/en-us/pricing/free-trial" title="Azure Free Trial">free trial here</a>.</p></li>
+<li><p>A copy of the ConnectTheDots.io repository.  You can get the latest version <a href="https://github.com/MSOpenTech/connectthedots/archive/master.zip" title="Connect the Dots Zip Download">here</a>. </p></li>
+<li><p>An Arduino Uno (<a href="http://www.arduino.cc/en/Main/ArduinoBoardUno" title="Arduino Uno">link</a>) and a USB Cable</p></li>
+<li><p>As SparkFun Weather Shield (<a href="https://www.sparkfun.com/products/12081" title="SparkFun Weather Shield">link</a>)</p></li>
+<li><p>The Arduino IDE (You can download and install for free from <a href="http://www.arduino.cc/en/Main/Software">http://www.arduino.cc/en/Main/Software</a>)</p></li>
+<li><p><strong>OPTIONAL</strong>: Read SparkFun's "<a href="https://learn.sparkfun.com/tutorials/weather-shield-hookup-guide"><strong>Weather Shield Hookup Guide</strong></a>"</p></li>
+</ul>
+
+<hr>
+
+<h2>
+<a id="user-content-tasks" class="anchor" href="#tasks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tasks</h2>
+
+<ol>
+<li><a href="#Task1">Connect the Arduino Uno and SparkFun Weather Shield to your computer</a></li>
+<li><a href="#Task2">Install the SparkFun Weather Shield Libraries</a></li>
+<li><a href="#Task3">Deploy and Test the WeatherShieldJson.ino Sketch</a></li>
+<li><a href="#Task4">Connect the Aduino UNO and SparkFun Weather Shield to the Raspberry Pi</a></li>
+</ol>
+
+<hr>
+
+<p><a name="Task1"></a></p>
+
+<h2>
+<a id="user-content-task-1---connect-the-arduino-uno-and-sparkfun-weather-shield-to-your-computer" class="anchor" href="#task-1---connect-the-arduino-uno-and-sparkfun-weather-shield-to-your-computer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 1 - Connect the Arduino Uno and SparkFun Weather Shield to your computer</h2>
+
+<p>In this task, we'll connect the SparkFun Weather Shield to the Arduino Uno, then connect the Arduino Uno via USB to your computer.  </p>
+
+<ol>
+<li>
+<p>From your kit, identify the following components:</p>
+
+<ul>
+<li>Arduino Uno</li>
+<li>USB Cable</li>
+<li>SparkFun Weather Shield (may already be plugged into the Arduino Uno)</li>
+</ul>
+
+<p><a href="./images/01010Components.png" target="_blank"><img src="./images/01010Components.png" alt="Components" style="max-width:100%;"></a></p>
+</li>
+<li><p><strong>ENSURE THAT THE Arduino Uno IS NOT PLUGGED IN TO THE COMPUTER, OR A POWER SUPPLY</strong>.  We don't want to connect or remove the shield from the Arduino Uno while it has power connected.  </p></li>
+<li><p>If the SparkFun Weather Shield isn't already plugged into the Arduino Uno, do so.  Be careful to line the pins up on the SparkFun Weather Shield with the headers on the Arduino Uno.  Notice that the pins only match when the SparkFun Weather Shield is properly oriented. </p></li>
+<li>
+<p>Once the SparkFun Weather Shield is connected to the Arduino Uno, you can connect the USB Cable to the Arduino Uno and your computer.</p>
+
+<p><a href="./images/01020ConnectedComponents.png" target="_blank"><img src="./images/01020ConnectedComponents.png" alt="Connected Components" style="max-width:100%;"></a></p>
+</li>
+<li><p>The Arduino creates a USB-to-Serial connected over the USB cable to your computer.  You should have already installed the Arduino IDE (as stated in the Prerequisties).  When you did so, if you are on a Windows computer, the USB driver should have already been installed.  </p></li>
+<li>
+<p>You should be able to identify the COM port your Arduino Uno is connected on by opening your "<strong>Device Manager</strong>", expanding "<strong>Ports (COM &amp; LPT)</strong>", and reviewing  the "<strong>Arduino Uno</strong>" entry.  In the screen shot below, you can see that on my computer, the Arduino Uno was connected on "<strong>COM4</strong>".  You need to identify the COM port your Arduino is connected on so you can select it later when you deploy code to it.</p>
+
+<p><a href="./images/01030ArduinoComPort.png" target="_blank"><img src="./images/01030ArduinoComPort.png" alt="Arduino COM Port" style="max-width:100%;"></a></p>
+</li>
+</ol>
+
+<hr>
+
+<p><a name="Task2"></a></p>
+
+<h2>
+<a id="user-content-task-2---install-the-sparkfun-weather-shield-libraries" class="anchor" href="#task-2---install-the-sparkfun-weather-shield-libraries" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 2 - Install the SparkFun Weather Shield Libraries</h2>
+
+<p>The SparkFun Weather Shield has a specific code library that the Arduino Sketch relies on.  In this task, we'll make sure that the library is installed on your computer so you can successfully compile and deploy the code to your Arduino. </p>
+
+<ol>
+<li><p>Download the SparkFun Weather Shield Libraries from <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/b/5/9/7/f/52cd8187ce395fa7158b456c.zip">here</a></p></li>
+<li>
+<p>If you are on a Windows computer, <strong>BEFORE YOU EXTRACT THE .ZIP FILE</strong>, unblock it by right clicking on the downloads zip file, selecting "<strong>Properties</strong>" from the pop-up menu, and then clicking the "<strong>UNBLOCK</strong>" button (in Windows 10 it is currently an "<strong>Unblock</strong>" checkbox):</p>
+
+<p><a href="./images/02010UnblockZipFile.png" target="_blank"><img src="./images/02010UnblockZipFile.png" alt="Unblock Downloaded Zip File" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Next, you need to extract the libraries to your "<strong>\My Documents\Arduino\Libraries</strong>" folder.  Right-click on the downloaded .zip file, and select "<strong>Extract All...</strong>" from the pop-up menu. </p>
+
+<p><a href="./images/02020ExtractZipFile.png" target="_blank"><img src="./images/02020ExtractZipFile.png" alt="Extract All" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>In the "<strong>Extract Compressed (Zipped) Folders</strong>" window, Click the "<strong>Browse...</strong>" button to locate your "<strong>c:\Users\<em>&lt;YOUR USER NAME&gt;</em>\Documents\Arduino\libraries</strong>" folder, then click the "<strong>Extract</strong>" button.</p>
+
+<p><a href="./images/02030ExtractLibraries.png" target="_blank"><img src="./images/02030ExtractLibraries.png" alt="Extract Libraries" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>When the extraction is complete, verify that the "<strong>HTU21D_Humidity</strong>" and "<strong>MPL3115A2_Pressure</strong>" Library folders have been extracted:</p>
+
+<p><a href="./images/02040ExtractedLibraries.png" target="_blank"><img src="./images/02040ExtractedLibraries.png" alt="Extracted Libraries" style="max-width:100%;"></a></p>
+</li>
+</ol>
+
+<hr>
+
+<p><a name="Task3"></a></p>
+
+<h2>
+<a id="user-content-task-3---deploy-and-test-the-weathershieldjsonino-sketch" class="anchor" href="#task-3---deploy-and-test-the-weathershieldjsonino-sketch" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 3 - Deploy and Test the WeatherShieldJson.ino Sketch</h2>
+
+<ol>
+<li>On your computer, open the Arduino IDE</li>
+<li>In the Arduino IDE, Open the <a href="DevicesGatewayConnectedDevicesArduino%20UNOWeatherWeatherShieldJsonWeatherShieldJson.ino">\Devices\GatewayConnectedDevices\Arduino UNO\Weather\WeatherShieldJson\WeatherShieldJson.ino</a> Arduino "Sketch".</li>
+<li>
+<p>Locate the <code>// Constants used for the ConnectTheDots project</code> section in the code (should be around line 60). </p>
+
+<div class="highlight highlight-c"><pre><span class="pl-c">// Constants used for the ConnectTheDots project</span>
+<span class="pl-c">// Disp value will be the label for the curve on the chart</span>
+<span class="pl-c">// GUID ensures all the data from this sensor appears on the same chart</span>
+<span class="pl-c">// You can use Visual Studio to create DeviceGUID and copy it here. In VS, On the Tools menu, click Create GUID. The Create GUID</span>
+<span class="pl-c">// tool appears with a GUID in the Result box. Click Copy, and paste below.</span>
+<span class="pl-c">//</span>
+<span class="pl-k">char</span> GUID1[] = <span class="pl-s"><span class="pl-pds">"</span>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx<span class="pl-pds">"</span></span>;
+<span class="pl-k">char</span> GUID2[] = <span class="pl-s"><span class="pl-pds">"</span>yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy<span class="pl-pds">"</span></span>;
+<span class="pl-k">char</span> GUID3[] = <span class="pl-s"><span class="pl-pds">"</span>zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz<span class="pl-pds">"</span></span>;
+<span class="pl-k">char</span> Org[] = <span class="pl-s"><span class="pl-pds">"</span>My organization<span class="pl-pds">"</span></span>;
+<span class="pl-k">char</span> Disp[] = <span class="pl-s"><span class="pl-pds">"</span>Arduino + WS dev 01<span class="pl-pds">"</span></span>;
+<span class="pl-k">char</span> Locn[] = <span class="pl-s"><span class="pl-pds">"</span>here<span class="pl-pds">"</span></span>;
+<span class="pl-k">char</span> Measure1[] = <span class="pl-s"><span class="pl-pds">"</span>temperature<span class="pl-pds">"</span></span>;
+<span class="pl-k">char</span> Units1[] = <span class="pl-s"><span class="pl-pds">"</span>F<span class="pl-pds">"</span></span>;
+<span class="pl-k">char</span> Measure2[] = <span class="pl-s"><span class="pl-pds">"</span>humidity<span class="pl-pds">"</span></span>;
+<span class="pl-k">char</span> Units2[] = <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ii">%</span><span class="pl-pds">"</span></span>;
+<span class="pl-k">char</span> Measure3[] = <span class="pl-s"><span class="pl-pds">"</span>light<span class="pl-pds">"</span></span>;
+<span class="pl-k">char</span> Units3[] = <span class="pl-s"><span class="pl-pds">"</span>lumen<span class="pl-pds">"</span></span>;</pre></div>
+</li>
+<li><p>Modify the values for the variables to reflect your organization, display name, location name, and GUIDs.  In this lab, we are retrieveing three sensor values (temperature, humidity, and light).  That is the reason for the three GUIDs values.  Each sensor is identified by a unique GUID.  </p></li>
+<li>
+<p>You can use Visual Studio to create GUIDs if you like (just remove the curly braces after you paste them in.</p>
+
+<p><a href="./images/03010VisualStudioCreateGUID.png" target="_blank"><img src="./images/03010VisualStudioCreateGUID.png" alt="Visual Studio's Create GUID Tool" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Or you could also use an online GUID generator like <a href="http://www.guidgenerator.com">http://www.guidgenerator.com</a>:</p>
+
+<p><a href="./images/03020GuidGenerator.png" target="_blank"><img src="./images/03020GuidGenerator.png" alt="GUID Generator" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Here is a sample of some modified values in the source code, again, make sure to use your own values.  You do NOT however need to change the measure names and units unless you really want to! </p>
+
+<div class="highlight highlight-c"><pre><span class="pl-k">char</span> GUID1[] = <span class="pl-s"><span class="pl-pds">"</span>891B3EF2-A728-46CA-8B99-3A29BCA9156D<span class="pl-pds">"</span></span>;
+<span class="pl-k">char</span> GUID2[] = <span class="pl-s"><span class="pl-pds">"</span>29E7CA4F-A363-4382-90A2-0C4882D0CD99<span class="pl-pds">"</span></span>;
+<span class="pl-k">char</span> GUID3[] = <span class="pl-s"><span class="pl-pds">"</span>F98CF909-018C-4140-B0A9-4F632FB2D1F3<span class="pl-pds">"</span></span>;
+<span class="pl-k">char</span> Org[] = <span class="pl-s"><span class="pl-pds">"</span>Microsoft<span class="pl-pds">"</span></span>;
+<span class="pl-k">char</span> Disp[] = <span class="pl-s"><span class="pl-pds">"</span>Adruino Weather Shield 1<span class="pl-pds">"</span></span>;
+<span class="pl-k">char</span> Locn[] = <span class="pl-s"><span class="pl-pds">"</span>Mountain View, CA<span class="pl-pds">"</span></span>;
+<span class="pl-k">char</span> Measure1[] = <span class="pl-s"><span class="pl-pds">"</span>temperature<span class="pl-pds">"</span></span>;
+<span class="pl-k">char</span> Units1[] = <span class="pl-s"><span class="pl-pds">"</span>F<span class="pl-pds">"</span></span>;
+<span class="pl-k">char</span> Measure2[] = <span class="pl-s"><span class="pl-pds">"</span>humidity<span class="pl-pds">"</span></span>;
+<span class="pl-k">char</span> Units2[] = <span class="pl-s"><span class="pl-pds">"</span><span class="pl-ii">%</span><span class="pl-pds">"</span></span>;
+<span class="pl-k">char</span> Measure3[] = <span class="pl-s"><span class="pl-pds">"</span>light<span class="pl-pds">"</span></span>;
+<span class="pl-k">char</span> Units3[] = <span class="pl-s"><span class="pl-pds">"</span>lumen<span class="pl-pds">"</span></span>;</pre></div>
+</li>
+<li>
+<p>You should take a few moments to review the remainder of the WeatherShieldJson.ino sketch file.  Specifically, you may want to review :</p>
+
+<ul>
+<li>the <strong>setup()</strong> method (around line 180) initializes the serial communications as well as the various sensors.<br>
+</li>
+<li>the <strong>loop()</strong> method (around line 217) keeps track of time so it can show messages once every second (1000 milliseconds), blinks the on board LED on and off to show that the sketch is running, calculates some running averages, and calls the <strong>printWeather()</strong> method (see below).</li>
+<li>The <strong>calcWeather()</strong> method (around line 272) is primarily where the various sensor values are read (or at least calls are made to other methods to read each specific sensor). Note that the weather shield supports other sensors, like wind, rain, * pressure that we are not using here. </li>
+<li>The <strong>printWeather()</strong> calls the "<strong>calcWeather()</strong> method to get current values, then it generates the JSON strings for each of the sensor readings writes them to the Serial port.<br>
+</li>
+</ul>
+</li>
+<li>
+<p>Once you have completed reviwing and modifying your code, In the Arduino IDE, "<strong>Verify</strong>" your code by clicking on the "<strong>✓</strong>" button (Verify) on the left side of the top toolbar.  Review the status at the bottom and correct any errors:</p>
+
+<blockquote>
+<p><strong>Note:</strong> The screen show below shows a "<strong>Low memory available</strong>" error.  The newer versions of the Arduino IDE give more complete status information that previous versions.  While this isn't ideal, it is expected, and you can ignore the warning. </p>
+</blockquote>
+
+<p><a href="./images/03030VerifyCode.png" target="_blank"><img src="./images/03030VerifyCode.png" alt="Verify Code" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Before you can deploy the code to your Arduino, you need to make sure that the IDE knows what kind of board you have, and what COM port it is on. From the Arduino IDE menu, select "<strong>Tools</strong>" | "<strong>Board</strong>" and select the "<strong>Arduino Uno</strong>":</p>
+
+<p><a href="./images/03040SelectBoard.png" target="_blank"><img src="./images/03040SelectBoard.png" alt="Select Board" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Then, again from the menu bar, select "<strong>Tools</strong>" | "<strong>Port</strong>" then select the serial port you identified previously when you connected your Arduino to your computer.  On the lab computer, it was on "<strong>COM4</strong>". </p>
+
+<p><a href="./images/03050SelectPort.png" target="_blank"><img src="./images/03050SelectPort.png" alt="Select Port" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Finally, you are ready to upload your code to the Arduino.  From the Arduino IDE tool bar, click the "<strong>➔</strong>" (Upload) button to deploy your code to your Arduino.  Review the status at the bottom to verify the deployment was correct.</p>
+
+<p><a href="./images/03060UploadCode.png" target="_blank"><img src="./images/03060UploadCode.png" alt="Upload Code" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>You can watch the serial output (those JSON strings generated and sent in the printWeather() method) using the Arduino IDE's "<strong>Serial Monitor</strong>".  To open it, from the menu bar, select "<strong>Tools</strong>" | "<strong>Serial Monitor</strong>"</p>
+
+<p><a href="./images/03070OpenSerialMonitor.png" target="_blank"><img src="./images/03070OpenSerialMonitor.png" alt="Open Serial Monitor" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>When the Serial Monitor opens, you should see messages being sent (three messages, one for each sensor) about once a second (1000ms).  If you are seeing garbage, not clear text, verify that your baud rate is set to 9600 in the lower right corner of the Serial Monitor window:</p>
+
+<p><a href="./images/03080SerialMonitor.png" target="_blank"><img src="./images/03080SerialMonitor.png" alt="Serial Monitor" style="max-width:100%;"></a></p>
+</li>
+<li><p>You can close the "<strong>Serial Monitor</strong>" window when you are done viewing messages. </p></li>
+</ol>
+
+<hr>
+
+<p><a name="Task4"></a></p>
+
+<h2>
+<a id="user-content-task-4---connect-the-aduino-uno-and-sparkfun-weather-shield-to-the-raspberry-pi" class="anchor" href="#task-4---connect-the-aduino-uno-and-sparkfun-weather-shield-to-the-raspberry-pi" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 4 - Connect the Aduino UNO and SparkFun Weather Shield to the Raspberry Pi</h2>
+
+<p>At this point your Arduino Uno is ready to go.  We saw in the "<strong>printWeather()</strong>" method that it creates a JSON string for each of the sensor readings, the prints them out to the serial port.  </p>
+
+<p>Our problem is that we need those messages to get to Azure, not just some serial port.  To solve that problem, we'll connect the Arduino up to a Raspberry Pi (effectively a small computer) and have the Raspberry Pi forward the messages off to our Azure Event hubs.  We'll configure the Raspbery Pi in a separate lab, but at this point you are ready to connect the Arduino up to 1. </p>
+
+<ol>
+<li>
+<p>Unplug the USB cable from the Arduino and your computer, and re-connect the USB cable to your Arduino and a Raspberry Pi.</p>
+
+<p><a href="./images/04010RaspberryPiConnected.png" target="_blank"><img src="./images/04010RaspberryPiConnected.png" alt="Raspberry Pi Connected" style="max-width:100%;"></a></p>
+</li>
+</ol>
+
+<hr>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

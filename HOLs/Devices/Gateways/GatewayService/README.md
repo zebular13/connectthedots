@@ -19,10 +19,6 @@ In our scenario, we have the Arduino Uno with the SparkFun Weather Shield that w
 
 Our solution here then is to connect the Arduino to our Raspberry Pi using a USB-to-Serial connection.  The Raspberry Pi can then receive the sensor data messages from the Arduino Uno over the serial connection, and then forward them on securely using HTTPS, or AMQPS over Ethernet or WiFi. 
 
-- Previous completion of the ["Azure Prep" HOL](/HOLs/Azure/AzurePrep/readme.md)
-
-- Previous completion of the 
-
 ---
 
 ## Alternative, More Hands-On Walkthrough ##
@@ -82,23 +78,89 @@ To successfully complete this lab, you will need:
 <a name="Task1" />
 ## Task 1 - Boot your Raspberry Pi off the Pre-Configured Image ##
 
----
+1. Ensure that the SD Card with the pre-configured image is installed in the Raspberry Pi 
+2. Ensure that the USB WiFi Adapter is connected to a USB port (or if you are using a direct wired ethernet cable, that the ethernet cable is plugged in) 
+3. Connect your Arduino Uno with the SparkFun Weather Shield attached to a USB port on the Raspberry Pi.
+4. Finally connect the power supply to the Raspberry Pi
+5. The following should image should show you your approximate configuration
 
-<a name="Task2" />
-## Task 2 -  ##
+	> **Note:** If you don't have the Arduino ready yet, that's ok.  You can plug it in later.  
 
----
+	![Connections](./images/01010Connections.png)
 
-<a name="Task3" />
-## Task 3 -  ##
+6. Work with your event staff to determine the Raspberry Pi's IP Address
+7. Use an ssh client (You can use [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html "PuTTY Downloads") on Windows) or a Remote Desktop Client (mstsc.exe on Windows) to connect to the IP Address of your Raspberry Pi and login with the credentials:
 
----
+	- Login:	**pi**
+	- Password:	**raspberry**
 
-<a name="Task4" />
-## Task 4 -  ##
+	![Putty Configuration](./images/01020PuttyConfiguration.png)
 
----
+	![Putty Connection](./images/01030PuttyConnection.png)  
 
-<a name="Task5" />
-## Task 5 -  ##
+8.  The SD Card is configured with the "Raspbian" linux distribution, so the commands that you enter will be linux commands.  Start by getting a listing of your home folder by typing `ls` and pressing enter.  Notice the "**ctdgtwy**" folder name:
+
+	`ls`
+
+	![Home Listing](./images/01040HomeListing.png)
+
+9.  The "**ctdgtwy** is the folder that contains the "**GatewayService**" deployment.  The "**GatewayService**" is actually a .NET application that is being run on the Raspberry Pi using the [Mono](http://www.mono-project.com/) open source .NET implementation.  If you are interesting in seeing that source code, and how it was deployed, refer to the [Original Raspberry Pi Gateway Setup Docs](/Devices/Gateways/GatewayService/RaspberryPi-Gateway-setup.md).  Here, well just assume it is deployed correctly.  
+
+9.  Change into the ctdgtwy/staging folder (ctdgtwy is short for "**C**onnect **t**he **D**ots **G**a**t**e**w**a**y**"), do another `ls` command and notice the (very long named) "**Microsoft.ConnectTheDots.GatewayService.exe.config**" (whew!) file.  
+
+	`cd ctdgtwy/staging`
+
+	![Staging Folder](./images/01050StagingListing.png)
+
+10.  We need to edit the contents of that file.  There are numerous text editors available on linux, and if you have on you prefer, feel free to use it.  We will use a simple one called "**Nano**".  Enter the command:
+
+	`nano Microsoft.ConnectTheDots.GatewayService.exe.config` 
+
+	![Nano Command](./images/01060NanoCommand.png)
+
+11. Use the arrow keys on your keyboard to move down through the file and locate the section that reads:
+
+	```xml
+	<AMQPServiceConfig
+	AMQPSAddress="amqps://[key-name]:[key]@[namespace].servicebus.windows.net"
+	EventHubName="ehdevices"
+	EventHubMessageSubject="gtsv"
+	EventHubDeviceId="a94cd58f-4698-4d6a-b9b5-4e3e0f794618"
+	EventHubDeviceDisplayName="SensorGatewayService"/>
+	```
+
+12. Notice the missing [key-name], [key], and [namespace] placeholders.  We need to enter those so that the Raspberry Pi can successfully connect to the "ehdevices" event hub we created previously.  
+13. Leave your ssh window open, and back on your computer open the browser, login to the [Azure Management Portal](https://manage.windowsazure.com) (https://manage.windowsazure.com).  
+14. Navigate the portal to find your "**ehdevices**" event hub, and on the "**CONFIGURE**" page,  and get the "**PRIMARY ACCESS KEY** for your "**D1**" "**Shared Access Policy**".  
+
+	![D1 Key](./images/01070D1KeyGen.png)
+
+15. Before you can use the key though, we need to URL encode it.  Go to http://meyerweb.com/eric/tools/dencoder/ to use their URL Encoder / Decoder tool.  Paste they key you just copied in, then hit the "**Encode**" button, then copy the encoded to the clipboard.  
+
+	![Url Encode key](./images/01080EncodeUrl.png)
+
+	![Copy the Encoded Key](./images/01090Encoded.png)
+
+15.  Back in your ssh, and nano, use the arrow keys and your key and keyboard to edit the string.  Replace the place holders with the values from your Service Bus Namespace & Event Hub:
+
+	| Place Holder | Value                                                | 
+    | ---          | ---                                                  |
+    | [key-name]   |  "**D1**" (no quotes)                                |
+    | [key]        |  The URL encoded version of the key you just copied.  Note that many ssh clients (like PuTTY) will paste whatever is in your clipboard if you right click.  So you can delete the place-holder with the keyboard, get the cursor in the right place, then right click to paste the encoded version of the key you copied to the clipboard previously  |
+    | [namespace]  |  The service bus namespace you created earlier, "**ctdhol-ns**" in this case |
+
+	![Modified Key](./images/01100Modified.png) 
+
+16.  Finally, to save your changes in Nano, press "**Ctrl-X**" (Exit), the "**Y**" to save the changes, and then "**ENTER** to confirm the original file name.  And as long as you didn't make any typos, you should be good to go. 
+
+17.  To reboot your Raspberry PI, "**DON'T JUST UNPLUG IT!.  SHUT IT DOWN NICELY!!!**".  in your ssh window, run the following command to shut reboot it.  If you are using PuTTY you'll see an error about being disconnected, of course that is to be expected:
+
+	`sudo reboot`
+
+	![Reboot](./images/01110Reboot.png)
+
+18. When the Raspberry Pi starts back up, you should now be able to go to your website and see sensor values coming in! 
+
+	![Sensors Readings](./images/01120WebPage.png)
+
 
