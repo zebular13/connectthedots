@@ -42,8 +42,8 @@ To successfully complete this lab, you will need:
 1. [Install Dependencies](#Task1)
 1. [Connect the Components to the FEZ Spider Mainboard](#Task2)
 1. [Modify and Deploy the ConnectTheDotsGadgeteer Project](#Task3)
-1. [Verify Your Results](#Task4)
-
+1. [Update the SSL Seed on the Gadgeteer](#Task4)
+1. [Verify Your Results](#Task5)
 
 ---
 
@@ -107,8 +107,109 @@ One of the benefits of the Gadgeteer platform is the ease with which you can con
 <a name="Task3"></a>
 ## Task 3 - Modify and Deploy the ConnectTheDotsGadgeteer Project ##
 
+In this task, you will modify the "**ConnectTheDotsGadgeteer**" solution in Visual Studio to point it towards your. "**ehdevices**" Event Hub.  
+
+1. In Visual Studio 2013, open the [\Devices\DirectlyConnectedDevices\NETMF\ConnectTheDotsGadgeteer.sln](/Devices/DirectlyConnectedDevices/NETMF/ConnectTheDotsGadgeteer.sln) Solution.  
+
+1. To download the required NuGet packages, and ensure that the project base is functional, go ahead and do build.  From the menu bar select "**BUILD**" | "**Build Solution**", and once the build is done, ensure that it reads "**Build succeeded**" in the lower left hand corner. 
+
+	![Build Solution](./images/02010BuuildProject.png)
+
+2. In the "**Solution Explorer**" Window, double click on the "**Program.cs**" file top open it.
+
+	![Open Program.cs](./images/02020OpenProgramCs.png)
+
+3. In the "**Program.cs**" file, locate the lines that configure the client connect to the "**ehdevices**" event hub (should be somewhere around line 54):
+
+	```C#
+	// Azure Event Hub connection information
+	private const string AMQPAddress = "amqps://{key-name}:{key}@{namespace-name}.servicebus.windows.net"; // Azure event hub connection string
+	
+	private const string EventHub = "ehdevices"; // Azure event hub name
+	private const string SensorName = "Gadgeteer"; // Name of the device you want to display
+	private const string SensorGUID = "{GUID}"; // unique GUID per device. Use GUIDGEN to generate new one
+	
+	private const string Organization = "MSOpenTech"; // Your organization name
+	private const string Location = "My Room"; // Location of the device
+	
+	// Define the frequency at which we want the device to send its sensor data (in milliseconds)
+	const int SendFrequency = 60000;
+	private readonly GT.Timer _timer = new GT.Timer(SendFrequency);
+	```
+
+4. Leave your Visual Studio window open, open the browser, and login to the [Azure Management Portal](https://manage.windowsazure.com) (https://manage.windowsazure.com).  
+14. Navigate the portal to find your "**ehdevices**" event hub, and on the "**CONFIGURE**" page,  and get the "**PRIMARY ACCESS KEY** for your "**D1**" "**Shared Access Policy**".  
+
+	![D1 Key](./images/02030D1KeyGen.png)
+
+5. Before you can use the key though, we need to URL encode it.  Go to [http://meyerweb.com/eric/tools/dencoder/](http://meyerweb.com/eric/tools/dencoder/) to use their URL Encoder / Decoder tool.  Paste they key you just copied in, then hit the "**Encode**" button, then copy the encoded to the clipboard.  
+
+	![Url Encode key](./images/02040EncodeUrl.png)
+
+	![Copy the Encoded Key](./images/02050Encoded.png)
+
+6.  Back in Visual Studio, in the "**Program.cs**" file, edit the `AMQPaddress`  the string variable.  Replace the place holders with the values from your Service Bus Namespace & Event Hub:
+
+	| Place Holder      | Value                                                | 
+    | ---               | ---                                                  |
+    | {key-name}        |  "**D1**" (no quotes)                                |
+    | {key}             |  The URL encoded version of the key you just copied. |
+    | {namespace-name}  |  The service bus namespace you created earlier, "**ctdhol-ns**" in this case |
+
+7. For example:
+
+	```C#
+	// Azure Event Hub connection information
+	private const string AMQPAddress = "amqps://D1:L2wFYmNQ05PqD3n6d1%2FScRPJB%2FdbzCHYh1RQwWVuBJc%3D@ctdhol-ns.servicebus.windows.net"; // Azure event hub connection string
+	```
+
+8. For the `SensorGUID` string, you can generate a new GUID value in Visual Studio by , from the menu bar, going to "**TOOLS**" | "**Create GUID**".  Then use the tool to generate a new GUID, copy it to the clipboard (Try using the "Registry Format"), then paste it into your code and remove the curly braces.  
+
+	![Create GUID](./images/02060CreateGUID.png)
+
+9. For example
+	
+	```C#
+	private const string SensorGUID = "C62F1539-84CF-4F1C-AAF3-286E63A1099C"; // unique GUID per device. Use GUIDGEN to generate new one
+	```
+
+10. For the SendFrequency varible, you may want to try a lower frequency, like 1000 (milliseconds).  The default 60000 only publishes sensor data once a minute.  For example:  
+
+	````C#
+	// Define the frequency at which we want the device to send its sensor data (in milliseconds)
+	const int SendFrequency = 1000;
+	```
+
 ---
 
 <a name="Task4"></a>
-## Task 4 - Verify Your Results ##
+## Task 4 - Update the SSL Seed on the Gadgeteer ##
 
+Your Gadgeteer device needs a current, valid set of keys to participate in the SSL communications required by AMQP.  
+
+1. From the Start Menu's Search function, find the MFDeploy.exe tool and run it:
+
+	![MFDeploy.exe Search](./images/04010MFDeploySearch.png)
+
+2. In the "**Device**" dropdown, select USB, then select your Gadgeteer:
+
+	![USB Gadgeteer](./images/04020Target.png)
+
+3. From the "**MFDeploy**" menu bar, select "**Target**" | "**Manage Device Keys**" | "**Update SSL Seed**", then verify that it completes. 
+
+	![SSL Update Complete](./images/04030Complete.png)
+
+4. 
+
+---
+
+<a name="Task5"></a>
+## Task 5 - Verify Your Results ##
+
+You should be ready to go.  Let's deploy the code to the Gadgeteer and watch data flow in on the Connect the Dots Sample Website you created earlier.  
+
+1. In Visual Studio, hit the "**Start**" button on the toolbar to start a debug session:
+
+
+
+2. 
