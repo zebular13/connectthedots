@@ -391,13 +391,13 @@ You will receive a warning in the portal about the Stream Analytics job using th
 
 	![Job Start Time](./images/06200JobStartTime.png)
  
-19. It may take a few minutes for the job to start, watch it until it's status is "**[Idle](http://azure.microsoft.com/en-us/documentation/articles/stream-analytics-developer-guide/#manage-jobs "Manage jobs")**"
+19. It may take a few minutes for the job to start, watch it until it's status is "**[Running](http://azure.microsoft.com/en-us/documentation/articles/stream-analytics-developer-guide/#manage-jobs "Manage jobs")**"
 
 	![Aggregates Job Idle](./images/06210AggregatesIdle.png)
 
 ---
 
-<a name="Task7" />
+<a name="Task7"></a>
 ## Task 7 - Create the "***&lt;name&gt;*&nbsp;&#42;&nbsp;**" Stream Analytics Jobs ##
 
 In this last task of the "**Azure Prep**" lab, you will create the remaining Stream Analytics jobs.  The steps here mimic those taken in Task 6, so the instructions won't be as detailed.  Use what you learned from the previous task to complete these.  
