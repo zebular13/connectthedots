@@ -37,6 +37,17 @@ To successfully complete this lab, you will need:
 
 ---
 
+## Troubleshooting Tips ##
+
+If you have problems with the Gadgeteer, you can refer to the [NETMF and Gadgeteer Troubleshooting Guide](https://www.ghielectronics.com/docs/165/netmf-and-gadgeteer-troubleshooting)
+
+1. If you have problems deploying to the Gadgeteer, for example after it crashes, or you stop a running debug session, you can try resetting the Gadgeteer using either the Reset button, or by cycling the power:
+
+	![Reset](./images/00030Reset.png)
+
+
+---
+
 ## Tasks ##
 
 1. [Install Dependencies](#Task1)
@@ -97,7 +108,7 @@ One of the benefits of the Gadgeteer platform is the ease with which you can con
 
 1. Connect the [Gadgeteer LightSense Module](https://www.ghielectronics.com/catalog/product/336) to **Slot 10** on the FEZ Spider Mainboard.
 2. Connect the [Gadgeteer TempHumid S170 Module](https://www.ghielectronics.com/catalog/product/528) to **Slot 11** on the FEZ Spider Mainboard
-3. Connect the [Gadgeteer Ethernet J11D Module](https://www.ghielectronics.com/catalog/product/284) to** Slot 7** on the FEZ Spider Mainboard
+3. Connect the [Gadgeteer Ethernet J11D Module](https://www.ghielectronics.com/catalog/product/284) to **Slot 7** on the FEZ Spider Mainboard
 4. Connect the [Gadgeteer USB DP Module](https://www.ghielectronics.com/catalog/product/280) to **Slot 1** on the FEZ Spider Mainboard
 
 ![Gadgeteer Configuration](./images/00020GadgeteerConfiguration.png)
@@ -135,6 +146,11 @@ In this task, you will modify the "**ConnectTheDotsGadgeteer**" solution in Visu
 	// Define the frequency at which we want the device to send its sensor data (in milliseconds)
 	const int SendFrequency = 60000;
 	private readonly GT.Timer _timer = new GT.Timer(SendFrequency);
+	```
+4. Verify that the `EventHub` variable value matches the name of the Event Hub you created for "**ehdevices**".  If you called it something other than "**ehdevices** make sure to update the variable value to match: 
+
+	```C#
+	private const string EventHub = "ehdevices"; // Azure event hub name
 	```
 
 4. Leave your Visual Studio window open, open the browser, and login to the [Azure Management Portal](https://manage.windowsazure.com) (https://manage.windowsazure.com).  
@@ -179,6 +195,7 @@ In this task, you will modify the "**ConnectTheDotsGadgeteer**" solution in Visu
 	// Define the frequency at which we want the device to send its sensor data (in milliseconds)
 	const int SendFrequency = 1000;
 	```
+11. Lastly, update the `SensorName`, `Organization`, and `Location` variable values to whatever you like.  
 
 ---
 
@@ -199,8 +216,6 @@ Your Gadgeteer device needs a current, valid set of keys to participate in the S
 
 	![SSL Update Complete](./images/04030Complete.png)
 
-4. 
-
 ---
 
 <a name="Task5"></a>
@@ -210,6 +225,14 @@ You should be ready to go.  Let's deploy the code to the Gadgeteer and watch dat
 
 1. In Visual Studio, hit the "**Start**" button on the toolbar to start a debug session:
 
+	![Start Debug](./images/05010StartDebug.png)
 
+2. In the Visual Studio "**Output**" Window, you should being to see messages about the Gadgeteer's IP Address, as well as periodic messages (the rate of which depends on your `SendFrequency` variable value) appear.  
 
-2. 
+	![IP Address](./images/05020IpAddress.png)
+
+	![Sensor Readings](./images/05030SensorMessages.png)
+
+3. If you open the "**Connect the Dots Sample Web Site**" you deployed in the  **[Connect the Dots Web Site](Azure/WebSite)** Hands-On Lab you should start to see sensor readings coming in.  
+
+	![Web Site](./images/05040WebSite.png)
