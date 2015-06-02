@@ -44,6 +44,6 @@ The Azure hands-on labs should be implemented regardless of the types of devices
 
 ## "NETMF Gadgeteer" Hands-On Labs ##
 
-1. **[NETMF Gadgeteer Configuration](/HOLs/DevicesDirectlyConnectedDevicesNETMFConnectTheDotsGadgeteer)** - This hands-on lab walks you through configuring a [FEZ Spider Main Board](https://www.ghielectronics.com/catalog/product/269 "Fez Spider") with [TempHumid S170](https://www.ghielectronics.com/catalog/product/528), [LightSense](https://www.ghielectronics.com/catalog/product/336), [USB](https://www.ghielectronics.com/catalog/product/280), and [Ethernet J11D](https://www.ghielectronics.com/catalog/product/284) or [WiFi RS21](https://www.ghielectronics.com/catalog/product/282) modules. You'll then publish the data from the various sensors up to the Azure Event Hub you created previously. 
+1. **[NETMF Gadgeteer Configuration](/HOLs/Devices/DirectlyConnectedDevices/NETMF/ConnectTheDotsGadgeteer)** - This hands-on lab walks you through configuring a [FEZ Spider Main Board](https://www.ghielectronics.com/catalog/product/269 "Fez Spider") with [TempHumid S170](https://www.ghielectronics.com/catalog/product/528), [LightSense](https://www.ghielectronics.com/catalog/product/336), [USB](https://www.ghielectronics.com/catalog/product/280), and [Ethernet J11D](https://www.ghielectronics.com/catalog/product/284) or [WiFi RS21](https://www.ghielectronics.com/catalog/product/282) modules. You'll then publish the data from the various sensors up to the Azure Event Hub you created previously. 
 
 
