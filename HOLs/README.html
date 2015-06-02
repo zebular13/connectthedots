@@ -468,11 +468,13 @@ vertical-align:1px;
 </style>
 </head>
 <body>
-<h1>"Connect the Dots" Hands-On Labs (HOLs)</h1>
+<h1>
+<a id="user-content-connect-the-dots-hands-on-labs-hols" class="anchor" href="#connect-the-dots-hands-on-labs-hols" aria-hidden="true"><span class="octicon octicon-link"></span></a>"Connect the Dots" Hands-On Labs (HOLs)</h1>
 
 <hr>
 
-<h2>Overview</h2>
+<h2>
+<a id="user-content-overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h2>
 
 <p>These Hands-On Labs (HOLs) are intended to provide a set of step-by-step walk-throughs to help the reader successfully configure their Microsoft Azure environment and one or more devices based on the <a href="http://connectthedots.io">ConnectTheDots.io</a> architecture.</p>
 
@@ -482,7 +484,8 @@ vertical-align:1px;
 
 <p><a href="./images/LabFlow/LabFlow.png" target="_blank"><img src="./images/LabFlow/LabFlow.png" alt="Lab Flow" title="Lab Flow" style="max-width:100%;"></a></p>
 
-<h2>General Prerequisites</h2>
+<h2>
+<a id="user-content-general-prerequisites" class="anchor" href="#general-prerequisites" aria-hidden="true"><span class="octicon octicon-link"></span></a>General Prerequisites</h2>
 
 <p>In general, to complete these hands on labs you will need</p>
 
@@ -502,28 +505,32 @@ vertical-align:1px;
 
 <p>The individual labs will provide more explicit prerequisites.   </p>
 
-<h2>Azure Hands-On Labs</h2>
+<h2>
+<a id="user-content-azure-hands-on-labs" class="anchor" href="#azure-hands-on-labs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Azure Hands-On Labs</h2>
 
 <p>The Azure hands-on labs should be implemented regardless of the types of devices that you wish to use.  These walk you through the configuration of the Azure back end for any of the connected device types to publish data to.   </p>
 
 <ol>
-<li><p><strong><a href="Azure/AzurePrep">Azure Prep</a></strong> - In this HOL you will create the Azure Event Hubs and Azure Stream Analytics jobs that provide the data ingestion and inspection layer in Connect The Dots.</p></li>
-<li><p><strong><a href="Azure/WebSite">Connect the Dots Web Site</a></strong> - In this HOL you will configure and deploy the sample "Connect the Dots" website</p></li>
+<li><p><strong><a href="./Azure/AzurePrep/README.html">Azure Prep</a></strong> - In this HOL you will create the Azure Event Hubs and Azure Stream Analytics jobs that provide the data ingestion and inspection layer in Connect The Dots.</p></li>
+<li><p><strong><a href="./Azure/WebSite/README.html">Connect the Dots Web Site</a></strong> - In this HOL you will configure and deploy the sample "Connect the Dots" website</p></li>
 </ol>
 
-<h2>"Arduino and Raspberry Pi" Hands-On Labs</h2>
+<h2>
+<a id="user-content-arduino-and-raspberry-pi-hands-on-labs" class="anchor" href="#arduino-and-raspberry-pi-hands-on-labs" aria-hidden="true"><span class="octicon octicon-link"></span></a>"Arduino and Raspberry Pi" Hands-On Labs</h2>
 
 <ol>
-<li><p><strong><a href="/HOLs/Devices/GatewayConnectedDevices/Arduino%20UNO/Weather/WeatherSheildJson">Arduino &amp; SparkFun Weather Shield Configuration</a></strong> - This hands-on lab guides you through configuring an <a href="http://www.arduino.cc/en/Main/ArduinoBoardUno%20%22Arduino%20Uno%22%60%60">Arduino UNO</a> with a <a href="https://www.sparkfun.com/products/12081">SparkFun Weather Shield</a> using code from <a href="http://connectthedots.io" title="Connect the Dots">ConnectTheDots.io</a> solution.  You'll then connect your Arduino to the previously configured Raspberry Pi and get it ready to start publishing data! </p></li>
-<li><p><strong><a href="/HOLs/Devices/Gateways/GatewayService">Raspberry Pi Gateway Setup</a></strong> **** - This hands-on lab assumes that you have been provided with a pre-configured image for the Raspberry-Pi on an SD Card.  You'll configure the GatewayService application deployed to the Raspberry PI to point it to your "<strong>ehdevices</strong>" Event Hub. </p></li>
+<li><p><strong><a href="./Devices/GatewayConnectedDevices/Arduino%20UNO/Weather/WeatherSheildJson/README.html">Arduino &amp; SparkFun Weather Shield Configuration</a></strong> - This hands-on lab guides you through configuring an <a href="http://www.arduino.cc/en/Main/ArduinoBoardUno%20%22Arduino%20Uno%22%60%60">Arduino UNO</a> with a <a href="https://www.sparkfun.com/products/12081">SparkFun Weather Shield</a> using code from <a href="http://connectthedots.io" title="Connect the Dots">ConnectTheDots.io</a> solution.  You'll then connect your Arduino to the previously configured Raspberry Pi and get it ready to start publishing data! </p></li>
+<li><p><strong><a href="./Devices/Gateways/GatewayService/README.html">Raspberry Pi Gateway Setup</a></strong> **** - This hands-on lab assumes that you have been provided with a pre-configured image for the Raspberry-Pi on an SD Card.  You'll configure the GatewayService application deployed to the Raspberry PI to point it to your "<strong>ehdevices</strong>" Event Hub. </p></li>
 </ol>
 
-<h2>"NETMF Gadgeteer" Hands-On Labs</h2>
+<h2>
+<a id="user-content-netmf-gadgeteer-hands-on-labs" class="anchor" href="#netmf-gadgeteer-hands-on-labs" aria-hidden="true"><span class="octicon octicon-link"></span></a>"NETMF Gadgeteer" Hands-On Labs</h2>
 
 <ol>
 <li>
-<strong><a href="/HOLs/Devices/DirectlyConnectedDevices/NETMF/ConnectTheDotsGadgeteer">NETMF Gadgeteer Configuration</a></strong> - This hands-on lab walks you through configuring a <a href="https://www.ghielectronics.com/catalog/product/269" title="Fez Spider">FEZ Spider Main Board</a> with <a href="https://www.ghielectronics.com/catalog/product/528">TempHumid S170</a>, <a href="https://www.ghielectronics.com/catalog/product/336">LightSense</a>, <a href="https://www.ghielectronics.com/catalog/product/280">USB</a>, and <a href="https://www.ghielectronics.com/catalog/product/284">Ethernet J11D</a> or <a href="https://www.ghielectronics.com/catalog/product/282">WiFi RS21</a> modules. You'll then publish the data from the various sensors up to the "<strong>ehdevices</strong>" Azure Event Hub you created previously. </li>
+<strong><a href="./Devices/DirectlyConnectedDevices/NETMF/ConnectTheDotsGadgeteer/README.html">NETMF Gadgeteer Configuration</a></strong> - This hands-on lab walks you through configuring a <a href="https://www.ghielectronics.com/catalog/product/269" title="Fez Spider">FEZ Spider Main Board</a> with <a href="https://www.ghielectronics.com/catalog/product/528">TempHumid S170</a>, <a href="https://www.ghielectronics.com/catalog/product/336">LightSense</a>, <a href="https://www.ghielectronics.com/catalog/product/280">USB</a>, and <a href="https://www.ghielectronics.com/catalog/product/284">Ethernet J11D</a> or <a href="https://www.ghielectronics.com/catalog/product/282">WiFi RS21</a> modules. You'll then publish the data from the various sensors up to the "<strong>ehdevices</strong>" Azure Event Hub you created previously. </li>
 </ol>
+
 </body>
 </html>
 <!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

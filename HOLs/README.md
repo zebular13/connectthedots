@@ -34,19 +34,19 @@ The individual labs will provide more explicit prerequisites.
 
 The Azure hands-on labs should be implemented regardless of the types of devices that you wish to use.  These walk you through the configuration of the Azure back end for any of the connected device types to publish data to.   
 
-1. **[Azure Prep](Azure/AzurePrep)** - In this HOL you will create the Azure Event Hubs and Azure Stream Analytics jobs that provide the data ingestion and inspection layer in Connect The Dots.
+1. **[Azure Prep](./Azure/AzurePrep/README.md)** - In this HOL you will create the Azure Event Hubs and Azure Stream Analytics jobs that provide the data ingestion and inspection layer in Connect The Dots.
 
-2. **[Connect the Dots Web Site](Azure/WebSite)** - In this HOL you will configure and deploy the sample "Connect the Dots" website
+2. **[Connect the Dots Web Site](./Azure/WebSite/README.md)** - In this HOL you will configure and deploy the sample "Connect the Dots" website
 
 ## "Arduino and Raspberry Pi" Hands-On Labs ##
     
-2. **[Arduino & SparkFun Weather Shield Configuration](/HOLs/Devices/GatewayConnectedDevices/Arduino UNO/Weather/WeatherSheildJson)** - This hands-on lab guides you through configuring an [Arduino UNO](http://www.arduino.cc/en/Main/ArduinoBoardUno "Arduino Uno"``) with a [SparkFun Weather Shield](https://www.sparkfun.com/products/12081) using code from [ConnectTheDots.io](http://connectthedots.io "Connect the Dots") solution.  You'll then connect your Arduino to the previously configured Raspberry Pi and get it ready to start publishing data! 
+2. **[Arduino & SparkFun Weather Shield Configuration](./Devices/GatewayConnectedDevices/Arduino UNO/Weather/WeatherSheildJson/README.md)** - This hands-on lab guides you through configuring an [Arduino UNO](http://www.arduino.cc/en/Main/ArduinoBoardUno "Arduino Uno"``) with a [SparkFun Weather Shield](https://www.sparkfun.com/products/12081) using code from [ConnectTheDots.io](http://connectthedots.io "Connect the Dots") solution.  You'll then connect your Arduino to the previously configured Raspberry Pi and get it ready to start publishing data! 
 
-3. **[Raspberry Pi Gateway Setup](/HOLs/Devices/Gateways/GatewayService)** **** - This hands-on lab assumes that you have been provided with a pre-configured image for the Raspberry-Pi on an SD Card.  You'll configure the GatewayService application deployed to the Raspberry PI to point it to your "**ehdevices**" Event Hub. 
+3. **[Raspberry Pi Gateway Setup](./Devices/Gateways/GatewayService/README.md)** **** - This hands-on lab assumes that you have been provided with a pre-configured image for the Raspberry-Pi on an SD Card.  You'll configure the GatewayService application deployed to the Raspberry PI to point it to your "**ehdevices**" Event Hub. 
 
 
 ## "NETMF Gadgeteer" Hands-On Labs ##
 
-1. **[NETMF Gadgeteer Configuration](/HOLs/Devices/DirectlyConnectedDevices/NETMF/ConnectTheDotsGadgeteer)** - This hands-on lab walks you through configuring a [FEZ Spider Main Board](https://www.ghielectronics.com/catalog/product/269 "Fez Spider") with [TempHumid S170](https://www.ghielectronics.com/catalog/product/528), [LightSense](https://www.ghielectronics.com/catalog/product/336), [USB](https://www.ghielectronics.com/catalog/product/280), and [Ethernet J11D](https://www.ghielectronics.com/catalog/product/284) or [WiFi RS21](https://www.ghielectronics.com/catalog/product/282) modules. You'll then publish the data from the various sensors up to the "**ehdevices**" Azure Event Hub you created previously. 
+1. **[NETMF Gadgeteer Configuration](./Devices/DirectlyConnectedDevices/NETMF/ConnectTheDotsGadgeteer/README.md)** - This hands-on lab walks you through configuring a [FEZ Spider Main Board](https://www.ghielectronics.com/catalog/product/269 "Fez Spider") with [TempHumid S170](https://www.ghielectronics.com/catalog/product/528), [LightSense](https://www.ghielectronics.com/catalog/product/336), [USB](https://www.ghielectronics.com/catalog/product/280), and [Ethernet J11D](https://www.ghielectronics.com/catalog/product/284) or [WiFi RS21](https://www.ghielectronics.com/catalog/product/282) modules. You'll then publish the data from the various sensors up to the "**ehdevices**" Azure Event Hub you created previously. 
 
 

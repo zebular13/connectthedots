@@ -468,11 +468,13 @@ vertical-align:1px;
 </style>
 </head>
 <body>
-<h1>"Azure Prep" Hands-On Lab</h1>
+<h1>
+<a id="user-content-azure-prep-hands-on-lab" class="anchor" href="#azure-prep-hands-on-lab" aria-hidden="true"><span class="octicon octicon-link"></span></a>"Azure Prep" Hands-On Lab</h1>
 
 <hr>
 
-<h2>Overview</h2>
+<h2>
+<a id="user-content-overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h2>
 
 <p>In this lab you will prepare your Azure subscription with the Service Bus namespace, Event Hubs, Storage Account and Stream Analytics jobs as required by the <a href="http://connectthedots.io">ConnectTheDots.io</a> architecture:</p>
 
@@ -524,7 +526,8 @@ vertical-align:1px;
 
 <hr>
 
-<h2>Prerequisites</h2>
+<h2>
+<a id="user-content-prerequisites" class="anchor" href="#prerequisites" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prerequisites</h2>
 
 <p>To successfully complete this lab, you will need: </p>
 
@@ -536,7 +539,8 @@ vertical-align:1px;
 
 <h2></h2>
 
-<h2>Tasks</h2>
+<h2>
+<a id="user-content-tasks" class="anchor" href="#tasks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tasks</h2>
 
 <ol>
 <li><a href="#Task1">Choose your "<strong><em>&lt;name&gt;</em></strong>" and "<strong><em>&lt;region&gt;</em></strong>"</a></li>
@@ -550,13 +554,14 @@ vertical-align:1px;
 
 <hr>
 
-<p><a name="Task1"></a></p><a name="Task1">
+<p><a name="Task1"></a></p>
 
-<h2>Task 1 - Choose your "<strong><em>&lt;name&gt;</em></strong>" and "<strong><em>&lt;region&gt;</em></strong>"</h2>
+<h2>
+<a id="user-content-task-1---choose-your-name-and-region" class="anchor" href="#task-1---choose-your-name-and-region" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 1 - Choose your "<strong><em>&lt;name&gt;</em></strong>" and "<strong><em>&lt;region&gt;</em></strong>"</h2>
 
 <p>Throughout this lab, you will be creating a number of resources in Azure.  Many of those resources require unique names.  In addition, when you are done with the lab you will likely want to delete the resources you provisioned during it.  To aid in both the uniqueness and later location of the azure resources you create we will use a standard "<strong><em>&lt;name&gt;</em>___</strong>" naming convention for many of the items you create.  </p>
 
-<p>For example, when creating our Service Bus Namespace in Task 2, we will use a name in the format of "<strong><em>&lt;name&gt;</em>-ns</strong>".  You need to pick an appropriate, short prefix for the "<strong><em>&lt;name&gt;</em></strong>" component.<br><br>
+<p>For example, when creating our Service Bus Namespace in Task 2, we will use a name in the format of "<strong><em>&lt;name&gt;</em>-ns</strong>".  You need to pick an appropriate, short prefix for the "<strong><em>&lt;name&gt;</em></strong>" component.<br>
 The name you choose needs to be:</p>
 
 <ul>
@@ -577,26 +582,22 @@ The name you choose needs to be:</p>
 
 <p>In addition to a unique name, you need to make sure to provision all of the resources you create in these labs in the same region.  </p>
 
-</a><ol>
-<a name="Task1">
-</a><li>
-<a name="Task1"></a><p><a name="Task1">Review the list of </a><a href="http://azure.microsoft.com/en-us/regions/#Locations"><strong>Azure Regions</strong></a> (<a href="http://azure.microsoft.com/en-us/regions">http://azure.microsoft.com/en-us/regions</a> , scroll down to the <strong>"Locations"</strong> heading) and choose a specific Azure Region to use consistently when ever you are presented with a choice in the labs. </p>
-</li>
+<ol>
+<li><p>Review the list of <a href="http://azure.microsoft.com/en-us/regions/#Locations"><strong>Azure Regions</strong></a> (<a href="http://azure.microsoft.com/en-us/regions">http://azure.microsoft.com/en-us/regions</a> , scroll down to the <strong>"Locations"</strong> heading) and choose a specific Azure Region to use consistently when ever you are presented with a choice in the labs. </p></li>
 <li><p>Note that at certain times, certain services <a href="http://azure.microsoft.com/en-us/regions/#services" title="Azure Services by Region">may not be available in all regions</a>.  For this lab, we are using "<strong>South Central US</strong>" as the region as we have verified that it currently supports all required services.  </p></li>
 </ol>
 
 <hr>
 
-<p><a name="Task2"></a></p><a name="Task2">
+<p><a name="Task2"></a></p>
 
-<h2>Task 2 - Create the "<strong><em>&lt;name&gt;</em>-ns</strong>" Azure Service Bus Namespace</h2>
+<h2>
+<a id="user-content-task-2---create-the-name-ns-azure-service-bus-namespace" class="anchor" href="#task-2---create-the-name-ns-azure-service-bus-namespace" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 2 - Create the "<strong><em>&lt;name&gt;</em>-ns</strong>" Azure Service Bus Namespace</h2>
 
 <p>In this task we'll create the "<strong><em>&lt;name&gt;</em>-ns</strong>" Azure Service Bus Namespace.  This Namespace will contain the "<strong>ehdevices</strong>" and "<strong>ehalerts</strong>" event hubs. </p>
 
-</a><ol>
-<a name="Task2">
-</a><li>
-<a name="Task2">In your web browser, open the </a><a href="https://manage.windowsazure.com">"<strong>Azure Management Portal</strong>"</a> (<a href="https://manage.windowsazure.com">https://manage.windowsazure.com</a>) and login to your subscription. </li>
+<ol>
+<li>In your web browser, open the <a href="https://manage.windowsazure.com">"<strong>Azure Management Portal</strong>"</a> (<a href="https://manage.windowsazure.com">https://manage.windowsazure.com</a>) and login to your subscription. </li>
 <li>
 <p>Click on the "<strong>Service Bus</strong>" Icon along the left, then click the "<strong>+CREATE</strong>" button along the bottom to create a new Service Bus Namespace</p>
 
@@ -643,11 +644,12 @@ The name you choose needs to be:</p>
 
 <hr>
 
-<p><a name="Task3"></a></p><a name="Task3">
+<p><a name="Task3"></a></p>
 
-<h2>Task 3 - Create the "<strong>ehdevices</strong>" Event Hub</h2>
+<h2>
+<a id="user-content-task-3---create-the-ehdevices-event-hub" class="anchor" href="#task-3---create-the-ehdevices-event-hub" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 3 - Create the "<strong>ehdevices</strong>" Event Hub</h2>
 
-</a><p><a name="Task3">In this task, we'll create the "<strong>ehdevices</strong>" event hub. You really should make sure to use the name "<strong>ehdevices</strong>" rather than choosing your own.  The name itself doesn't matter, except that it has been assumed and hard coded into a number of the other projects throughout the </a><a href="http://connectthedots.io">ConnectTheDots.io</a> repository.  Do yourself a favor and use the name as given, otherwise, you'll have to find all the references to it and fix them. </p>
+<p>In this task, we'll create the "<strong>ehdevices</strong>" event hub. You really should make sure to use the name "<strong>ehdevices</strong>" rather than choosing your own.  The name itself doesn't matter, except that it has been assumed and hard coded into a number of the other projects throughout the <a href="http://connectthedots.io">ConnectTheDots.io</a> repository.  Do yourself a favor and use the name as given, otherwise, you'll have to find all the references to it and fix them. </p>
 
 <p>The "<strong>ehdevices</strong>" event hub is the primary data ingestion point in the architecture.  It is where all the devices (Arduinos, Raspberry Pis, FEZ Spiders, etc) will be sending their sensor readings to. </p>
 
@@ -764,9 +766,10 @@ The name you choose needs to be:</p>
 
 <hr>
 
-<p><a name="Task4"></a></p><a name="Task4">
+<p><a name="Task4"></a></p>
 
-<h2>Task 4 - Create the "<strong>ehalerts</strong>" Event Hub</h2>
+<h2>
+<a id="user-content-task-4---create-the-ehalerts-event-hub" class="anchor" href="#task-4---create-the-ehalerts-event-hub" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 4 - Create the "<strong>ehalerts</strong>" Event Hub</h2>
 
 <p>In this task, we'll use a similar process to the previous task, but this time we'll create the "<strong>ehalerts</strong>" event hub.  </p>
 
@@ -774,10 +777,8 @@ The name you choose needs to be:</p>
 
 <p>The event hub is used as the output for the Stream Analytics jobs that generate alerts on the light and temperature readings.  The sample website then reads those messages and uses them to display alert information on the web page.</p>
 
-</a><ol>
-<a name="Task4">
-</a><li>
-<a name="Task4">In the </a><a href="https://manage.windowsazure.com">Azure Management Portal</a> (<a href="https://manage.windowsazure.com">https://manage.windowsazure.com</a>) return to the "<strong><em>&lt;name&gt;</em>-ns</strong>" Service Bus Namespace,  switch to the "<strong>Event Hubs</strong>" page,  and click the "<strong>+NEW</strong>" button in the lower left corner. </li>
+<ol>
+<li>In the <a href="https://manage.windowsazure.com">Azure Management Portal</a> (<a href="https://manage.windowsazure.com">https://manage.windowsazure.com</a>) return to the "<strong><em>&lt;name&gt;</em>-ns</strong>" Service Bus Namespace,  switch to the "<strong>Event Hubs</strong>" page,  and click the "<strong>+NEW</strong>" button in the lower left corner. </li>
 <li>
 <p>In the "<strong>NEW</strong>" Panel, select "<strong>APP SERVICES</strong>" | <strong>"SERVICE BUS</strong>" | "<strong>EVENT HUB</strong>" | "<strong>QUICK CREATE</strong>".  Complete the fields as described below, then click the "<strong>CREATE A NEW EVENT HUB ✓</strong>" button.</p>
 
@@ -842,18 +843,18 @@ The name you choose needs to be:</p>
 
 <hr>
 
-<p><a name="Task5"></a></p><a name="Task5">
+<p><a name="Task5"></a></p>
 
-<h2>Task 5 - Create the "<strong><em>&lt;name&gt;</em>storage</strong>" Azure Storage Account</h2>
+<h2>
+<a id="user-content-task-5---create-the-namestorage-azure-storage-account" class="anchor" href="#task-5---create-the-namestorage-azure-storage-account" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 5 - Create the "<strong><em>&lt;name&gt;</em>storage</strong>" Azure Storage Account</h2>
 
 <p>The Stream Analytics jobs in a region all share a single Azure Storage account for monitoring and logging purposes.  This storage account is referred to as the "<strong>Regional Monitoring Storage Account</strong>". If you already have Stream Analytics jobs running in your target "<strong><em>&lt;region&gt;</em></strong>", you must continue to use that same storage account.   If you don't have stream analytics jobs in the target region though you either need to select an existing storage account in that region, or create one for Stream Analaytics use.</p>
 
 <p>Here, we'll assume that you need to create a storage account to use at the "<strong>Regional Montoring Storage Account</strong>". </p>
 
-</a><ol>
-<a name="Task5">
-</a><li>
-<a name="Task5"></a><p><a name="Task5">In the </a><a href="https://manage.windowsazure.com">Azure Management Portal</a> (<a href="https://manage.windowsazure.com">https://manage.windowsazure.com</a>), click the on the "<strong>STORAGE</strong>" icon along the left to view your existing storage accounts (if any), then click the "<strong>+NEW</strong>" button in the lower left corner.</p>
+<ol>
+<li>
+<p>In the <a href="https://manage.windowsazure.com">Azure Management Portal</a> (<a href="https://manage.windowsazure.com">https://manage.windowsazure.com</a>), click the on the "<strong>STORAGE</strong>" icon along the left to view your existing storage accounts (if any), then click the "<strong>+NEW</strong>" button in the lower left corner.</p>
 
 <p><a href="./images/05010NewStorageAccount.png" target="_blank"><img src="./images/05010NewStorageAccount.png" alt="New Storage Account" style="max-width:100%;"></a></p>
 </li>
@@ -894,11 +895,12 @@ The name you choose needs to be:</p>
 
 <hr>
 
-<p><a name="Task6"></a></p><a name="Task6">
+<p><a name="Task6"></a></p>
 
-<h2>Task 6 - Create the "<strong><em>&lt;name&gt;</em>Aggregates</strong>" Stream Analytics Job</h2>
+<h2>
+<a id="user-content-task-6---create-the-nameaggregates-stream-analytics-job" class="anchor" href="#task-6---create-the-nameaggregates-stream-analytics-job" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 6 - Create the "<strong><em>&lt;name&gt;</em>Aggregates</strong>" Stream Analytics Job</h2>
 
-</a><p><a name="Task6">In this task, we'll create the "<strong><em>&lt;name&gt;</em>Aggregates</strong>" Stream Analytics Job.  This job reads messages sent by devices to the "<strong>ehdevices</strong>" Event Hub, and then generates a new message with the average temperature value calculation for all messages received within a 10 second window.  It then "</a><a href="https://msdn.microsoft.com/en-us/library/azure/dn835055.aspx" title="Tumbling Window">tumbles</a>" that window to the next 10 seconds and repeats the process. It emits it's output every ten seconds as a new message to the same "<strong>ehdevices</strong>" event hub.  </p>
+<p>In this task, we'll create the "<strong><em>&lt;name&gt;</em>Aggregates</strong>" Stream Analytics Job.  This job reads messages sent by devices to the "<strong>ehdevices</strong>" Event Hub, and then generates a new message with the average temperature value calculation for all messages received within a 10 second window.  It then "<a href="https://msdn.microsoft.com/en-us/library/azure/dn835055.aspx" title="Tumbling Window">tumbles</a>" that window to the next 10 seconds and repeats the process. It emits it's output every ten seconds as a new message to the same "<strong>ehdevices</strong>" event hub.  </p>
 
 <p>You will receive a warning in the portal about the Stream Analytics job using the same event hub for both it's source and destination.  Normally, that would be an odd case.  Here though it works nicely.  By emitting the temperature average aggregates into the same event hub, the downstream website can read a single event hub for both detail and aggregate data.</p>
 
@@ -1187,7 +1189,8 @@ The name you choose needs to be:</p>
 
 <p><a name="Task7"></a></p>
 
-<h2>Task 7 - Create the "<strong><em>&lt;name&gt;</em> * </strong>" Stream Analytics Jobs</h2>
+<h2>
+<a id="user-content-task-7---create-the-name-stream-analytics-jobs" class="anchor" href="#task-7---create-the-name-stream-analytics-jobs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 7 - Create the "<strong><em>&lt;name&gt;</em> * </strong>" Stream Analytics Jobs</h2>
 
 <p>In this last task of the "<strong>Azure Prep</strong>" lab, you will create the remaining Stream Analytics jobs.  The steps here mimic those taken in Task 6, so the instructions won't be as detailed.  Use what you learned from the previous task to complete these.  </p>
 
@@ -1216,7 +1219,7 @@ The name you choose needs to be:</p>
 <tr>
 <td>ctdholcg4pbi</td>
 <td><a href="/Azure/StreamAnalyticsQueries/cg4pbi.sql">cg4pbi.sql</a></td>
-<td>Creates a simplified data set for use by the <a href="/Azure/PowerBI/PBI_setup.md">PowerBI Walktrhough</a>
+<td>Creates a simplified data set for use by the <a href="/Azure/PowerBI/PBI_setup.html">PowerBI Walktrhough</a>
 </td>
 </tr>
 <tr>
@@ -1339,6 +1342,7 @@ The name you choose needs to be:</p>
 <p><a href="./images/07010JobsCreated.png" target="_blank"><img src="./images/07010JobsCreated.png" alt="Stream Analytics Jobs Created" style="max-width:100%;"></a></p>
 </li>
 </ol>
+
 </body>
 </html>
 <!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

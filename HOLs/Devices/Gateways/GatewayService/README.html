@@ -468,11 +468,13 @@ vertical-align:1px;
 </style>
 </head>
 <body>
-<h1>"Raspberry Pi Field Gateway" Hands-On Lab</h1>
+<h1>
+<a id="user-content-raspberry-pi-field-gateway-hands-on-lab" class="anchor" href="#raspberry-pi-field-gateway-hands-on-lab" aria-hidden="true"><span class="octicon octicon-link"></span></a>"Raspberry Pi Field Gateway" Hands-On Lab</h1>
 
 <hr>
 
-<h2>Overview</h2>
+<h2>
+<a id="user-content-overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h2>
 
 <p>In this lab, you will configure your Raspberry Pi 2 as a "Field Gateway".</p>
 
@@ -495,7 +497,8 @@ vertical-align:1px;
 
 <hr>
 
-<h2>Alternative, More Hands-On Walkthrough</h2>
+<h2>
+<a id="user-content-alternative-more-hands-on-walkthrough" class="anchor" href="#alternative-more-hands-on-walkthrough" aria-hidden="true"><span class="octicon octicon-link"></span></a>Alternative, More Hands-On Walkthrough</h2>
 
 <p>This Hands-On Lab is a simplified, and more streamlined version of the original Raspberry Pi gateway setup documentation.  In this lab, we assume you are at an event where a pre-configured Raspberry Pi image has already been applied to the SD Card in your Raspberry Pi.  </p>
 
@@ -517,11 +520,12 @@ vertical-align:1px;
 <li>Sit back and watch the data flow! </li>
 </ul>
 
-<p>If you are at an event where the pre-configured image is available you may want to start with this lab, then if you have time and want to get more hands on with the Pi setup, you can wipe out the SD card and start over, following the documentation in the <a href="/Devices/Gateways/GatewayService/RaspberryPi-Gateway-setup.md">Original Raspberry Pi Gateway Setup Docs</a></p>
+<p>If you are at an event where the pre-configured image is available you may want to start with this lab, then if you have time and want to get more hands on with the Pi setup, you can wipe out the SD card and start over, following the documentation in the <a href="../../../../Devices/Gateways/GatewayService/RaspberryPi-Gateway-setup.html">Original Raspberry Pi Gateway Setup Docs</a></p>
 
 <hr>
 
-<h2>Prerequisites</h2>
+<h2>
+<a id="user-content-prerequisites" class="anchor" href="#prerequisites" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prerequisites</h2>
 
 <p>To successfully complete this lab, you will need: </p>
 
@@ -530,15 +534,16 @@ vertical-align:1px;
 <li><p>A copy of the ConnectTheDots.io repository.  You can get the latest version <a href="https://github.com/MSOpenTech/connectthedots/archive/master.zip" title="Connect the Dots Zip Download">here</a>. </p></li>
 <li><p>An ssh client (like <a href="http://www.chiark.greenend.org.uk/%7Esgtatham/putty/download.html" title="PuTTY Downloads">PuTTY</a> on Windows)</p></li>
 <li><p>A Raspberry Pi 2 with a USB WiFi adapter</p></li>
-<li><p>A copy of the Raspberry Pi image on an SD Card with the Gateway Service code pre-deployed.  If you prefer to configure and deploy the GatewayService yourself, you can refer to the <a href="/Devices/Gateways/GatewayService/RaspberryPi-Gateway-setup.md">Original Raspberry Pi Gateway Setup Documentation</a></p></li>
-<li><p>Previous completion of the <a href="/HOLs/Azure/AzurePrep/README.md">"Azure Prep" Hands-On Lab</a> </p></li>
-<li><p>Previous Completion of the <a href="/HOLs/Devices/GatewayConnectedDevices/Arduino%20UNO/Weather/WeatherSheildJson/README.md">"Arduino Uno With SparkFun Weather Shield" Hands-On Lab</a></p></li>
+<li><p>A copy of the Raspberry Pi image on an SD Card with the Gateway Service code pre-deployed.  If you prefer to configure and deploy the GatewayService yourself, you can refer to the <a href="../../../../Devices/Gateways/GatewayService/RaspberryPi-Gateway-setup.html">Original Raspberry Pi Gateway Setup Documentation</a></p></li>
+<li><p>Previous completion of the <a href="../../../../HOLs/Azure/AzurePrep/README.html">"Azure Prep" Hands-On Lab</a> </p></li>
+<li><p>Previous Completion of the <a href="../../../../HOLs/Devices/GatewayConnectedDevices/Arduino%20UNO/Weather/WeatherSheildJson/README.html">"Arduino Uno With SparkFun Weather Shield" Hands-On Lab</a></p></li>
 <li><p>Knowledge of your Raspberry Pi's IP address.</p></li>
 </ul>
 
 <h2></h2>
 
-<h2>Tasks</h2>
+<h2>
+<a id="user-content-tasks" class="anchor" href="#tasks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tasks</h2>
 
 <ol>
 <li><a href="#Task1">Boot your Raspberry Pi off the Pre-Configured Image</a></li>
@@ -550,12 +555,12 @@ vertical-align:1px;
 
 <hr>
 
-<p><a name="Task1"></a></p><a name="Task1">
+<p><a name="Task1"></a></p>
 
-<h2>Task 1 - Boot your Raspberry Pi off the Pre-Configured Image</h2>
+<h2>
+<a id="user-content-task-1---boot-your-raspberry-pi-off-the-pre-configured-image" class="anchor" href="#task-1---boot-your-raspberry-pi-off-the-pre-configured-image" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 1 - Boot your Raspberry Pi off the Pre-Configured Image</h2>
 
-</a><ol>
-<a name="Task1">
+<ol>
 <li>Ensure that the SD Card with the pre-configured image is installed in the Raspberry Pi </li>
 <li>Ensure that the USB WiFi Adapter is connected to a USB port (or if you are using a direct wired ethernet cable, that the ethernet cable is plugged in) </li>
 <li>Connect your Arduino Uno with the SparkFun Weather Shield attached to a USB port on the Raspberry Pi.</li>
@@ -567,11 +572,11 @@ vertical-align:1px;
 <p><strong>Note:</strong> If you don't have the Arduino ready yet, that's ok.  You can plug it in later.  </p>
 </blockquote>
 
-<p><img src="./images/01010Connections.png" alt="Connections" style="max-width:100%;"></p>
+<p><a href="./images/01010Connections.png" target="_blank"><img src="./images/01010Connections.png" alt="Connections" style="max-width:100%;"></a></p>
 </li>
 <li><p>Work with your event staff to determine the Raspberry Pi's IP Address</p></li>
-</a><li>
-<a name="Task1"></a><p><a name="Task1">Use an ssh client (You can use </a><a href="http://www.chiark.greenend.org.uk/%7Esgtatham/putty/download.html" title="PuTTY Downloads">PuTTY</a> on Windows) or a Remote Desktop Client (mstsc.exe on Windows) to connect to the IP Address of your Raspberry Pi and login with the credentials:</p>
+<li>
+<p>Use an ssh client (You can use <a href="http://www.chiark.greenend.org.uk/%7Esgtatham/putty/download.html" title="PuTTY Downloads">PuTTY</a> on Windows) or a Remote Desktop Client (mstsc.exe on Windows) to connect to the IP Address of your Raspberry Pi and login with the credentials:</p>
 
 <ul>
 <li>Login:    <strong>pi</strong>
@@ -591,7 +596,7 @@ vertical-align:1px;
 
 <p><a href="./images/01040HomeListing.png" target="_blank"><img src="./images/01040HomeListing.png" alt="Home Listing" style="max-width:100%;"></a></p>
 </li>
-<li><p>The "<strong>ctdgtwy</strong> is the folder that contains the "<strong>GatewayService</strong>" deployment.  The "<strong>GatewayService</strong>" is actually a .NET application that is being run on the Raspberry Pi using the <a href="http://www.mono-project.com/">Mono</a> open source .NET implementation.  If you are interesting in seeing that source code, and how it was deployed, refer to the <a href="/Devices/Gateways/GatewayService/RaspberryPi-Gateway-setup.md">Original Raspberry Pi Gateway Setup Docs</a>.  Here, well just assume it is deployed correctly.  </p></li>
+<li><p>The "<strong>ctdgtwy</strong> is the folder that contains the "<strong>GatewayService</strong>" deployment.  The "<strong>GatewayService</strong>" is actually a .NET application that is being run on the Raspberry Pi using the <a href="http://www.mono-project.com/">Mono</a> open source .NET implementation.  If you are interesting in seeing that source code, and how it was deployed, refer to the <a href="../../../../Devices/Gateways/GatewayService/RaspberryPi-Gateway-setup.html">Original Raspberry Pi Gateway Setup Docs</a>.  Here, well just assume it is deployed correctly.  </p></li>
 <li>
 <p>Change into the ctdgtwy/staging folder (ctdgtwy is short for "<strong>C</strong>onnect <strong>t</strong>he <strong>D</strong>ots <strong>G</strong>a<strong>t</strong>e<strong>w</strong>a<strong>y</strong>"), do another <code>ls</code> command and notice the (very long named) "<strong>Microsoft.ConnectTheDots.GatewayService.exe.config</strong>" (whew!) file.  </p>
 
@@ -673,6 +678,7 @@ EventHubDeviceDisplayName=<span class="pl-s"><span class="pl-pds">"</span>Sensor
 <p><a href="./images/01120WebPage.png" target="_blank"><img src="./images/01120WebPage.png" alt="Sensors Readings" style="max-width:100%;"></a></p>
 </li>
 </ol>
+
 </body>
 </html>
 <!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

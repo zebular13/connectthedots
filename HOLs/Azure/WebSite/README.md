@@ -20,7 +20,7 @@ To successfully complete this lab, you will need:
 - A Windows computer with [Visual Studio 2013 Community Edition](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx "VS2013 Community Edition Download") or better
 - The Azure SDK 2.6 or later installed for Visual Studio 2013 ([Download if needed](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409))
 - A copy of the ConnectTheDots.io repository.  You can get the latest version [here](https://github.com/MSOpenTech/connectthedots/archive/master.zip "Connect the Dots Zip Download"). 
-- In addition you need to have successfully completed the ["Azure Prep" HOL](/HOLs/Azure/AzurePrep).  
+- In addition you need to have successfully completed the ["Azure Prep" HOL](../AzurePrep/README.md).  
 
 
 --
@@ -37,7 +37,7 @@ To successfully complete this lab, you will need:
 <a name="Task1" />
 ## Task 1 - Recall your "***&lt;name&gt;***" and "***&lt;region&gt;***" ##
 
-This lab requires that you have successfully completed the ["Azure Prep" HOL](/HOLs/Azure/AzurePrep).  In Task 1 of that lab ["**Choose your "*&lt;name&gt;*" and "*&lt;region&gt;*"**](/HOLs/Azure/AzurePrep/#Task1) you selected a name prefix to use in place of all "***&lt;name&gt;***" place holders throughout these labs.  You should use the same prefix here.
+This lab requires that you have successfully completed the ["Azure Prep" HOL](../AzurePrep/README.md).  In Task 1 of that lab ["**Choose your "*&lt;name&gt;*" and "*&lt;region&gt;*"**](/HOLs/Azure/AzurePrep/#Task1) you selected a name prefix to use in place of all "***&lt;name&gt;***" place holders throughout these labs.  You should use the same prefix here.
 
 Additionally, you selected a target Azure "***&lt;region&gt;***" in which all resources were to be created.  Again, you should continue to use that same region here.  
 
@@ -46,9 +46,9 @@ Additionally, you selected a target Azure "***&lt;region&gt;***" in which all re
 <a name="Task2" />
 ## Task 2 - Edit the Web.config File ##
 
-In this task we will modify the sample Web Site project's **web.config** file by adding the appropriate connection strings to the Azure Service Bus, Event Hubs, and Storage Account we created in the ["Azure Prep" HOL](/HOLs/Azure/AzurePrep).
+In this task we will modify the sample Web Site project's **web.config** file by adding the appropriate connection strings to the Azure Service Bus, Event Hubs, and Storage Account we created in the ["Azure Prep" HOL](../AzurePrep/README.md).
 
-1. Open the [/Azure/WebSite/ConnectTheDotsWebSite.sln](/Azure/WebSite/ConnectTheDotsWebSite.sln) Solution in Visual Studio 2013 Community Edition.
+1. Open the [/Azure/WebSite/ConnectTheDotsWebSite.sln](../../Azure/WebSite/ConnectTheDotsWebSite.sln) Solution in Visual Studio 2013 Community Edition.
 2. From the Visual Studio menu bar, select "**BUILD**" | "**Rebuild Solution**"
 
 	![Rebuild Solution](./images/01010RebuildSolution.png)
@@ -73,7 +73,7 @@ In this task we will modify the sample Web Site project's **web.config** file by
 	<!-- ================================================================================ -->
 	```
 
-7. Verify that the event hub names, "**ehdevices**" and "**ehalerts**" match what you created in the ["Azure Prep" HOL](/HOLs/Azure/AzurePrep).  If you used different names, update them in the following section:
+7. Verify that the event hub names, "**ehdevices**" and "**ehalerts**" match what you created in the ["Azure Prep" HOL](../AzurePrep/README.md).  If you used different names, update them in the following section:
 
 	```XML
 	<!-- Event Hub Names --> 
@@ -91,7 +91,7 @@ In this task we will modify the sample Web Site project's **web.config** file by
 
 9. To find the replacement values for the "**{namespace-name}**" and "**{key}**" place holders in the connection string: 
 	- In your web browser, go to the [Azure Management Portal](https://manage.windowsazure.com) (https://manage.windowsazure.com) and login to your account
-	- Along the left hand side, click "**SERVICE BUS**" then click on the "***&lt;name&gt;*-ns**" Service Bus Namespace you created in the ["Azure Prep" HOL](/HOLs/Azure/AzurePrep).  
+	- Along the left hand side, click "**SERVICE BUS**" then click on the "***&lt;name&gt;*-ns**" Service Bus Namespace you created in the ["Azure Prep" HOL](../AzurePrep/README.md).  
 	- Switch to the "**CONFIGURE**" page
 	- Under the "**shared access key generator**" heading, in the "**POLICY NAME**" drop-down, select the "**RootManageSharedAccessKey**" (this is key gives the holder full access to the Service Bus Namespace).
 	- Next to the "**PRIMARY KEY**" field, click the copy button to copy the key to the clipboard.
@@ -116,7 +116,7 @@ In this task we will modify the sample Web Site project's **web.config** file by
 
 12. To find the replacement values for the "**{namespace-name}**" and "**{key}**" place holders in the connection string: 
 	- In your web browser, go to the [Azure Management Portal](https://manage.windowsazure.com) (https://manage.windowsazure.com) and login to your account
-	- Along the left hand side, click "**SERVICE BUS**" then click on the "***&lt;name&gt;*-ns**" Service Bus Namespace you created in the ["Azure Prep" HOL](/HOLs/Azure/AzurePrep).  
+	- Along the left hand side, click "**SERVICE BUS**" then click on the "***&lt;name&gt;*-ns**" Service Bus Namespace you created in the ["Azure Prep" HOL](../AzurePrep/README.md).  
 	- Switch to the "**EVENT HUBS*"" page
 	- Click on the name of the "**ehdevices**" event hub to open it
 	- Switch to the "**CONFIGURE**" page
@@ -142,7 +142,7 @@ In this task we will modify the sample Web Site project's **web.config** file by
 
 12. To find the replacement values for the "**{namespace-name}**" and "**{key}**" place holders in the connection string: 
 	- In your web browser, go to the [Azure Management Portal](https://manage.windowsazure.com) (https://manage.windowsazure.com) and login to your account
-	- Along the left hand side, click "**SERVICE BUS**" then click on the "***&lt;name&gt;*-ns**" Service Bus Namespace you created in the ["Azure Prep" HOL](/HOLs/Azure/AzurePrep).  
+	- Along the left hand side, click "**SERVICE BUS**" then click on the "***&lt;name&gt;*-ns**" Service Bus Namespace you created in the ["Azure Prep" HOL](../AzurePrep/README.md).  
 	- Switch to the "**EVENT HUBS*"" page
 	- Click on the name of the "**ehalerts**" event hub to open it
 	- Switch to the "**CONFIGURE**" page
@@ -169,7 +169,7 @@ In this task we will modify the sample Web Site project's **web.config** file by
 15. To locate the replacement values for the "**{stroageaccount}**" and "**{key}**" place holders in the connection string:
 
 	- In your web browser, go to the [Azure Management Portal](https://manage.windowsazure.com) (https://manage.windowsazure.com) and login to your account
-	- Along the left hand side, click "**STORAGE**" then click on the "***&lt;name&gt;*storage**" Storage Account you created in the ["Azure Prep" HOL](/HOLs/Azure/AzurePrep).  
+	- Along the left hand side, click "**STORAGE**" then click on the "***&lt;name&gt;*storage**" Storage Account you created in the ["Azure Prep" HOL](../AzurePrep/README.md).  
 	- Click on the "**MANAGE ACCESS KEY**" button along the bottom
 	- In the "**Manage Access Keys**" Window, copy the "**STORAGE ACCOUNT NAME**" and "**PRIMARY ACCESS KEY**" values
 
