@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1>"Raspberry Pi Field Gateway" Hands-On Lab</h1>
+
+<hr>
+
+<h2>Overview</h2>
+
+<p>In this lab, you will configure your Raspberry Pi 2 as a "Field Gateway".</p>
+
+<p><a href="./images/00010LabArchitecture.png" target="_blank"><img src="./images/00010LabArchitecture.png" alt="Lab Architecture" style="max-width:100%;"></a></p>
+
+<p>A "Field Gateway" is a common solution for securing and transmitting data from lower powered microcontrollers, or those without direct network connectivity.   </p>
+
+<p><a href="./images/00020RaspberryPiFieldGateway.png" target="_blank"><img src="./images/00020RaspberryPiFieldGateway.png" alt="Raspberry Pi Field Gateway" style="max-width:100%;"></a></p>
+
+<p>In our scenario, we have the Arduino Uno with the SparkFun Weather Shield that we implemented in a previous lab.  The Arduino Uno is an awesome platform, but it does have a few real limitations:  </p>
+
+<ul>
+<li>Limited processing power and memory.  This makes it hard to communicate using secure protocols like HTTPS, or AMQPS where more intensive processing is required.<br>
+</li>
+<li>No built in remote communication capabilties.  You need to extend the Arduino with additional components for Ethernet, WiFi, Bluetooth, etc.<br>
+</li>
+</ul>
+
+<p>Our solution here then is to connect the Arduino to our Raspberry Pi using a USB-to-Serial connection.  The Raspberry Pi can then receive the sensor data messages from the Arduino Uno over the serial connection, and then forward them on securely using HTTPS, or AMQPS over Ethernet or WiFi. </p>
+
+<hr>
+
+<h2>Alternative, More Hands-On Walkthrough</h2>
+
+<p>This Hands-On Lab is a simplified, and more streamlined version of the original Raspberry Pi gateway setup documentation.  In this lab, we assume you are at an event where a pre-configured Raspberry Pi image has already been applied to the SD Card in your Raspberry Pi.  </p>
+
+<p>This pre-configured image already has</p>
+
+<ul>
+<li>Raspian operating system installed (via NOOBS)</li>
+<li>Mono</li>
+<li>WiFi Configuration</li>
+<li>The GatewayService .NET project already deployed</li>
+</ul>
+
+<p>All you really need to do in this lab is:</p>
+
+<ul>
+<li>Remote into your Raspberry Pi via ssh or remote desktop</li>
+<li>Modify the GatewayService application configuration file with the path and keys to your "ehdevices" event hub</li>
+<li>Plug in your Arduino with SparkFun Weather Shield</li>
+<li>Sit back and watch the data flow! </li>
+</ul>
+
+<p>If you are at an event where the pre-configured image is available you may want to start with this lab, then if you have time and want to get more hands on with the Pi setup, you can wipe out the SD card and start over, following the documentation in the <a href="/Devices/Gateways/GatewayService/RaspberryPi-Gateway-setup.md">Original Raspberry Pi Gateway Setup Docs</a></p>
+
+<hr>
+
+<h2>Prerequisites</h2>
+
+<p>To successfully complete this lab, you will need: </p>
+
+<ul>
+<li><p>An active Azure Subscription.  If needed you can create a <a href="http://azure.microsoft.com/en-us/pricing/free-trial" title="Azure Free Trial">free trial here</a>.</p></li>
+<li><p>A copy of the ConnectTheDots.io repository.  You can get the latest version <a href="https://github.com/MSOpenTech/connectthedots/archive/master.zip" title="Connect the Dots Zip Download">here</a>. </p></li>
+<li><p>An ssh client (like <a href="http://www.chiark.greenend.org.uk/%7Esgtatham/putty/download.html" title="PuTTY Downloads">PuTTY</a> on Windows)</p></li>
+<li><p>A Raspberry Pi 2 with a USB WiFi adapter</p></li>
+<li><p>A copy of the Raspberry Pi image on an SD Card with the Gateway Service code pre-deployed.  If you prefer to configure and deploy the GatewayService yourself, you can refer to the <a href="/Devices/Gateways/GatewayService/RaspberryPi-Gateway-setup.md">Original Raspberry Pi Gateway Setup Documentation</a></p></li>
+<li><p>Previous completion of the <a href="/HOLs/Azure/AzurePrep/README.md">"Azure Prep" Hands-On Lab</a> </p></li>
+<li><p>Previous Completion of the <a href="/HOLs/Devices/GatewayConnectedDevices/Arduino%20UNO/Weather/WeatherSheildJson/README.md">"Arduino Uno With SparkFun Weather Shield" Hands-On Lab</a></p></li>
+<li><p>Knowledge of your Raspberry Pi's IP address.</p></li>
+</ul>
+
+<h2></h2>
+
+<h2>Tasks</h2>
+
+<ol>
+<li><a href="#Task1">Boot your Raspberry Pi off the Pre-Configured Image</a></li>
+<li><a href="#Task2">Modify the Gateway Config</a></li>
+<li><a href="#Task3">Connect the Arduino Uno</a></li>
+<li><a href="#Task4">Task 4</a></li>
+<li><a href="#Task5">Task 5</a></li>
+</ol>
+
+<hr>
+
+<p><a name="Task1"></a></p><a name="Task1">
+
+<h2>Task 1 - Boot your Raspberry Pi off the Pre-Configured Image</h2>
+
+</a><ol>
+<a name="Task1">
+<li>Ensure that the SD Card with the pre-configured image is installed in the Raspberry Pi </li>
+<li>Ensure that the USB WiFi Adapter is connected to a USB port (or if you are using a direct wired ethernet cable, that the ethernet cable is plugged in) </li>
+<li>Connect your Arduino Uno with the SparkFun Weather Shield attached to a USB port on the Raspberry Pi.</li>
+<li>Finally connect the power supply to the Raspberry Pi</li>
+<li>
+<p>The following should image should show you your approximate configuration</p>
+
+<blockquote>
+<p><strong>Note:</strong> If you don't have the Arduino ready yet, that's ok.  You can plug it in later.  </p>
+</blockquote>
+
+<p><img src="./images/01010Connections.png" alt="Connections" style="max-width:100%;"></p>
+</li>
+<li><p>Work with your event staff to determine the Raspberry Pi's IP Address</p></li>
+</a><li>
+<a name="Task1"></a><p><a name="Task1">Use an ssh client (You can use </a><a href="http://www.chiark.greenend.org.uk/%7Esgtatham/putty/download.html" title="PuTTY Downloads">PuTTY</a> on Windows) or a Remote Desktop Client (mstsc.exe on Windows) to connect to the IP Address of your Raspberry Pi and login with the credentials:</p>
+
+<ul>
+<li>Login:    <strong>pi</strong>
+</li>
+<li>Password: <strong>raspberry</strong>
+</li>
+</ul>
+
+<p><a href="./images/01020PuttyConfiguration.png" target="_blank"><img src="./images/01020PuttyConfiguration.png" alt="Putty Configuration" style="max-width:100%;"></a></p>
+
+<p><a href="./images/01030PuttyConnection.png" target="_blank"><img src="./images/01030PuttyConnection.png" alt="Putty Connection" style="max-width:100%;"></a>  </p>
+</li>
+<li>
+<p>The SD Card is configured with the "Raspbian" linux distribution, so the commands that you enter will be linux commands.  Start by getting a listing of your home folder by typing <code>ls</code> and pressing enter.  Notice the "<strong>ctdgtwy</strong>" folder name:</p>
+
+<p><code>ls</code></p>
+
+<p><a href="./images/01040HomeListing.png" target="_blank"><img src="./images/01040HomeListing.png" alt="Home Listing" style="max-width:100%;"></a></p>
+</li>
+<li><p>The "<strong>ctdgtwy</strong> is the folder that contains the "<strong>GatewayService</strong>" deployment.  The "<strong>GatewayService</strong>" is actually a .NET application that is being run on the Raspberry Pi using the <a href="http://www.mono-project.com/">Mono</a> open source .NET implementation.  If you are interesting in seeing that source code, and how it was deployed, refer to the <a href="/Devices/Gateways/GatewayService/RaspberryPi-Gateway-setup.md">Original Raspberry Pi Gateway Setup Docs</a>.  Here, well just assume it is deployed correctly.  </p></li>
+<li>
+<p>Change into the ctdgtwy/staging folder (ctdgtwy is short for "<strong>C</strong>onnect <strong>t</strong>he <strong>D</strong>ots <strong>G</strong>a<strong>t</strong>e<strong>w</strong>a<strong>y</strong>"), do another <code>ls</code> command and notice the (very long named) "<strong>Microsoft.ConnectTheDots.GatewayService.exe.config</strong>" (whew!) file.  </p>
+
+<p><code>cd ctdgtwy/staging</code></p>
+
+<p><a href="./images/01050StagingListing.png" target="_blank"><img src="./images/01050StagingListing.png" alt="Staging Folder" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>We need to edit the contents of that file.  There are numerous text editors available on linux, and if you have on you prefer, feel free to use it.  We will use a simple one called "<strong>Nano</strong>".  Enter the command:</p>
+
+<p><code>nano Microsoft.ConnectTheDots.GatewayService.exe.config</code> </p>
+
+<p><a href="./images/01060NanoCommand.png" target="_blank"><img src="./images/01060NanoCommand.png" alt="Nano Command" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Use the arrow keys on your keyboard to move down through the file and locate the section that reads:</p>
+
+<div class="highlight highlight-xml"><pre>&lt;<span class="pl-ent">AMQPServiceConfig</span>
+AMQPSAddress=<span class="pl-s"><span class="pl-pds">"</span>amqps://[key-name]:[key]@[namespace].servicebus.windows.net<span class="pl-pds">"</span></span>
+EventHubName=<span class="pl-s"><span class="pl-pds">"</span>ehdevices<span class="pl-pds">"</span></span>
+EventHubMessageSubject=<span class="pl-s"><span class="pl-pds">"</span>gtsv<span class="pl-pds">"</span></span>
+EventHubDeviceId=<span class="pl-s"><span class="pl-pds">"</span>a94cd58f-4698-4d6a-b9b5-4e3e0f794618<span class="pl-pds">"</span></span>
+EventHubDeviceDisplayName=<span class="pl-s"><span class="pl-pds">"</span>SensorGatewayService<span class="pl-pds">"</span></span>/&gt;</pre></div>
+</li>
+<li><p>Notice the missing [key-name], [key], and [namespace] placeholders.  We need to enter those so that the Raspberry Pi can successfully connect to the "ehdevices" event hub we created previously.  </p></li>
+<li>Leave your ssh window open, and back on your computer open the browser, login to the <a href="https://manage.windowsazure.com">Azure Management Portal</a> (<a href="https://manage.windowsazure.com">https://manage.windowsazure.com</a>).<br>
+</li>
+<li>
+<p>Navigate the portal to find your "<strong>ehdevices</strong>" event hub, and on the "<strong>CONFIGURE</strong>" page,  and get the "<strong>PRIMARY ACCESS KEY</strong> for your "<strong>D1</strong>" "<strong>Shared Access Policy</strong>".  </p>
+
+<p><a href="./images/01070D1KeyGen.png" target="_blank"><img src="./images/01070D1KeyGen.png" alt="D1 Key" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Before you can use the key though, we need to URL encode it.  Go to <a href="http://meyerweb.com/eric/tools/dencoder/">http://meyerweb.com/eric/tools/dencoder/</a> to use their URL Encoder / Decoder tool.  Paste they key you just copied in, then hit the "<strong>Encode</strong>" button, then copy the encoded to the clipboard.  </p>
+
+<p><a href="./images/01080EncodeUrl.png" target="_blank"><img src="./images/01080EncodeUrl.png" alt="Url Encode key" style="max-width:100%;"></a></p>
+
+<p><a href="./images/01090Encoded.png" target="_blank"><img src="./images/01090Encoded.png" alt="Copy the Encoded Key" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Back in your ssh, and nano, use the arrow keys and your key and keyboard to edit the string.  Replace the place holders with the values from your Service Bus Namespace &amp; Event Hub:</p>
+
+<table>
+<thead>
+<tr>
+<th>Place Holder</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[key-name]</td>
+<td>"<strong>D1</strong>" (no quotes)</td>
+</tr>
+<tr>
+<td>[key]</td>
+<td>The URL encoded version of the key you just copied.  Note that many ssh clients (like PuTTY) will paste whatever is in your clipboard if you right click.  So you can delete the place-holder with the keyboard, get the cursor in the right place, then right click to paste the encoded version of the key you copied to the clipboard previously</td>
+</tr>
+<tr>
+<td>[namespace]</td>
+<td>The service bus namespace you created earlier, "<strong>ctdhol-ns</strong>" in this case</td>
+</tr>
+</tbody>
+</table>
+
+<p><a href="./images/01100Modified.png" target="_blank"><img src="./images/01100Modified.png" alt="Modified Key" style="max-width:100%;"></a> </p>
+</li>
+<li><p>Finally, to save your changes in Nano, press "<strong>Ctrl-X</strong>" (Exit), the "<strong>Y</strong>" to save the changes, and then "<strong>ENTER</strong> to confirm the original file name.  And as long as you didn't make any typos, you should be good to go. </p></li>
+<li>
+<p>To reboot your Raspberry PI, "<strong>DON'T JUST UNPLUG IT!.  SHUT IT DOWN NICELY!!!</strong>".  in your ssh window, run the following command to shut reboot it.  If you are using PuTTY you'll see an error about being disconnected, of course that is to be expected:</p>
+
+<p><code>sudo reboot</code></p>
+
+<p><a href="./images/01110Reboot.png" target="_blank"><img src="./images/01110Reboot.png" alt="Reboot" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>When the Raspberry Pi starts back up, you should now be able to go to your website and see sensor values coming in! </p>
+
+<p><a href="./images/01120WebPage.png" target="_blank"><img src="./images/01120WebPage.png" alt="Sensors Readings" style="max-width:100%;"></a></p>
+</li>
+</ol>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

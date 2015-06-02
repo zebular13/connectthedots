@@ -468,13 +468,11 @@ vertical-align:1px;
 </style>
 </head>
 <body>
-<h1>
-<a id="user-content-arduino-uno-with-sparkfun-weather-shield-hands-on-lab" class="anchor" href="#arduino-uno-with-sparkfun-weather-shield-hands-on-lab" aria-hidden="true"><span class="octicon octicon-link"></span></a>"Arduino Uno With SparkFun Weather Shield" Hands-On Lab</h1>
+<h1>"Arduino Uno With SparkFun Weather Shield" Hands-On Lab</h1>
 
 <hr>
 
-<h2>
-<a id="user-content-overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h2>
+<h2>Overview</h2>
 
 <p>In this lab, we'll deploy code to an Arduino Uno that reads sensor data (Temperature, Humidity, and Light) from a SparkFun Weather Shield.  </p>
 
@@ -499,8 +497,7 @@ vertical-align:1px;
 
 <hr>
 
-<h2>
-<a id="user-content-prerequisites" class="anchor" href="#prerequisites" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prerequisites</h2>
+<h2>Prerequisites</h2>
 
 <p>To successfully complete this lab, you will need: </p>
 
@@ -515,8 +512,7 @@ vertical-align:1px;
 
 <hr>
 
-<h2>
-<a id="user-content-tasks" class="anchor" href="#tasks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tasks</h2>
+<h2>Tasks</h2>
 
 <ol>
 <li><a href="#Task1">Connect the Arduino Uno and SparkFun Weather Shield to your computer</a></li>
@@ -527,10 +523,9 @@ vertical-align:1px;
 
 <hr>
 
-<p><a name="Task1"></a></p>
+<p><a name="Task1"></a></p><a name="Task1">
 
-<h2>
-<a id="user-content-task-1---connect-the-arduino-uno-and-sparkfun-weather-shield-to-your-computer" class="anchor" href="#task-1---connect-the-arduino-uno-and-sparkfun-weather-shield-to-your-computer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 1 - Connect the Arduino Uno and SparkFun Weather Shield to your computer</h2>
+<h2>Task 1 - Connect the Arduino Uno and SparkFun Weather Shield to your computer</h2>
 
 <p>In this task, we'll connect the SparkFun Weather Shield to the Arduino Uno, then connect the Arduino Uno via USB to your computer.  </p>
 
@@ -544,34 +539,36 @@ vertical-align:1px;
 <li>SparkFun Weather Shield (may already be plugged into the Arduino Uno)</li>
 </ul>
 
-<p><a href="./images/01010Components.png" target="_blank"><img src="./images/01010Components.png" alt="Components" style="max-width:100%;"></a></p>
+<p><img src="./images/01010Components.png" alt="Components" style="max-width:100%;"></p>
 </li>
 <li><p><strong>ENSURE THAT THE Arduino Uno IS NOT PLUGGED IN TO THE COMPUTER, OR A POWER SUPPLY</strong>.  We don't want to connect or remove the shield from the Arduino Uno while it has power connected.  </p></li>
 <li><p>If the SparkFun Weather Shield isn't already plugged into the Arduino Uno, do so.  Be careful to line the pins up on the SparkFun Weather Shield with the headers on the Arduino Uno.  Notice that the pins only match when the SparkFun Weather Shield is properly oriented. </p></li>
 <li>
 <p>Once the SparkFun Weather Shield is connected to the Arduino Uno, you can connect the USB Cable to the Arduino Uno and your computer.</p>
 
-<p><a href="./images/01020ConnectedComponents.png" target="_blank"><img src="./images/01020ConnectedComponents.png" alt="Connected Components" style="max-width:100%;"></a></p>
+<p><img src="./images/01020ConnectedComponents.png" alt="Connected Components" style="max-width:100%;"></p>
 </li>
 <li><p>The Arduino creates a USB-to-Serial connected over the USB cable to your computer.  You should have already installed the Arduino IDE (as stated in the Prerequisties).  When you did so, if you are on a Windows computer, the USB driver should have already been installed.  </p></li>
 <li>
 <p>You should be able to identify the COM port your Arduino Uno is connected on by opening your "<strong>Device Manager</strong>", expanding "<strong>Ports (COM &amp; LPT)</strong>", and reviewing  the "<strong>Arduino Uno</strong>" entry.  In the screen shot below, you can see that on my computer, the Arduino Uno was connected on "<strong>COM4</strong>".  You need to identify the COM port your Arduino is connected on so you can select it later when you deploy code to it.</p>
 
-<p><a href="./images/01030ArduinoComPort.png" target="_blank"><img src="./images/01030ArduinoComPort.png" alt="Arduino COM Port" style="max-width:100%;"></a></p>
+<p><img src="./images/01030ArduinoComPort.png" alt="Arduino COM Port" style="max-width:100%;"></p>
 </li>
 </ol>
 
 <hr>
 
-<p><a name="Task2"></a></p>
+</a><p><a name="Task1"></a><a name="Task2"></a></p><a name="Task2">
 
-<h2>
-<a id="user-content-task-2---install-the-sparkfun-weather-shield-libraries" class="anchor" href="#task-2---install-the-sparkfun-weather-shield-libraries" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 2 - Install the SparkFun Weather Shield Libraries</h2>
+<h2>Task 2 - Install the SparkFun Weather Shield Libraries</h2>
 
 <p>The SparkFun Weather Shield has a specific code library that the Arduino Sketch relies on.  In this task, we'll make sure that the library is installed on your computer so you can successfully compile and deploy the code to your Arduino. </p>
 
-<ol>
-<li><p>Download the SparkFun Weather Shield Libraries from <a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/b/5/9/7/f/52cd8187ce395fa7158b456c.zip">here</a></p></li>
+</a><ol>
+<a name="Task2">
+</a><li>
+<a name="Task2"></a><p><a name="Task2">Download the SparkFun Weather Shield Libraries from </a><a href="https://dlnmh9ip6v2uc.cloudfront.net/assets/b/5/9/7/f/52cd8187ce395fa7158b456c.zip">here</a></p>
+</li>
 <li>
 <p>If you are on a Windows computer, <strong>BEFORE YOU EXTRACT THE .ZIP FILE</strong>, unblock it by right clicking on the downloads zip file, selecting "<strong>Properties</strong>" from the pop-up menu, and then clicking the "<strong>UNBLOCK</strong>" button (in Windows 10 it is currently an "<strong>Unblock</strong>" checkbox):</p>
 
@@ -596,14 +593,15 @@ vertical-align:1px;
 
 <hr>
 
-<p><a name="Task3"></a></p>
+<p><a name="Task3"></a></p><a name="Task3">
 
-<h2>
-<a id="user-content-task-3---deploy-and-test-the-weathershieldjsonino-sketch" class="anchor" href="#task-3---deploy-and-test-the-weathershieldjsonino-sketch" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 3 - Deploy and Test the WeatherShieldJson.ino Sketch</h2>
+<h2>Task 3 - Deploy and Test the WeatherShieldJson.ino Sketch</h2>
 
-<ol>
+</a><ol>
+<a name="Task3">
 <li>On your computer, open the Arduino IDE</li>
-<li>In the Arduino IDE, Open the <a href="DevicesGatewayConnectedDevicesArduino%20UNOWeatherWeatherShieldJsonWeatherShieldJson.ino">\Devices\GatewayConnectedDevices\Arduino UNO\Weather\WeatherShieldJson\WeatherShieldJson.ino</a> Arduino "Sketch".</li>
+</a><li>
+<a name="Task3">In the Arduino IDE, Open the </a><a href="DevicesGatewayConnectedDevicesArduino%20UNOWeatherWeatherShieldJsonWeatherShieldJson.ino">\Devices\GatewayConnectedDevices\Arduino UNO\Weather\WeatherShieldJson\WeatherShieldJson.ino</a> Arduino "Sketch".</li>
 <li>
 <p>Locate the <code>// Constants used for the ConnectTheDots project</code> section in the code (should be around line 60). </p>
 
@@ -704,10 +702,9 @@ vertical-align:1px;
 
 <hr>
 
-<p><a name="Task4"></a></p>
+<p><a name="Task4"></a></p><a name="Task4">
 
-<h2>
-<a id="user-content-task-4---connect-the-aduino-uno-and-sparkfun-weather-shield-to-the-raspberry-pi" class="anchor" href="#task-4---connect-the-aduino-uno-and-sparkfun-weather-shield-to-the-raspberry-pi" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 4 - Connect the Aduino UNO and SparkFun Weather Shield to the Raspberry Pi</h2>
+<h2>Task 4 - Connect the Aduino UNO and SparkFun Weather Shield to the Raspberry Pi</h2>
 
 <p>At this point your Arduino Uno is ready to go.  We saw in the "<strong>printWeather()</strong>" method that it creates a JSON string for each of the sensor readings, the prints them out to the serial port.  </p>
 
@@ -717,12 +714,11 @@ vertical-align:1px;
 <li>
 <p>Unplug the USB cable from the Arduino and your computer, and re-connect the USB cable to your Arduino and a Raspberry Pi.</p>
 
-<p><a href="./images/04010RaspberryPiConnected.png" target="_blank"><img src="./images/04010RaspberryPiConnected.png" alt="Raspberry Pi Connected" style="max-width:100%;"></a></p>
+<p><img src="./images/04010RaspberryPiConnected.png" alt="Raspberry Pi Connected" style="max-width:100%;"></p>
 </li>
 </ol>
 
-<hr>
-
+<hr></a>
 </body>
 </html>
 <!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

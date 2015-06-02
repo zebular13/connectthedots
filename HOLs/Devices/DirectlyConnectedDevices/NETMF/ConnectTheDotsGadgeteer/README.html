@@ -468,44 +468,311 @@ vertical-align:1px;
 </style>
 </head>
 <body>
-<h1 id="-netmf-gadgeteer-configuration-hands-on-lab">&quot;NETMF Gadgeteer Configuration&quot; Hands-On Lab</h1>
-<hr>
-<h2 id="overview">Overview</h2>
-<p>In this lab you will use A Gadgeteer FEZ Spider and the <a href="http://netmf.codeplex.com/">.NET Micro Framework</a> to publish sensor data into the &quot;<strong>ehdevices</strong>&quot; Azure Event Hub you created previously in the &quot;<strong>Azure Prep</strong>&quot; Hands-On Lab.  </p>
-<p><img src="./images/00010LabArchitecture.png" alt="Lab Architecture"></p>
-<hr>
-<h2 id="prerequisites">Prerequisites</h2>
-<p>To successfully complete this lab, you will need: </p>
-<ul>
-<li>An active Azure Subscription.  If needed you can create a <a href="http://azure.microsoft.com/en-us/pricing/free-trial" title="Azure Free Trial">free trial here</a>.</li><li>A Windows computer with Visual Studio 2013 Community Edition or better <a href="http://go.microsoft.com/?linkid=9863608">download</a>.  <strong>NOTE: YOU CAN&#39;T USE VISUAL STUDIO 2015 FOR THIS LAB.  IT MUST BE VISUAL STUDIO 2013.</strong>  </li><li>A copy of the ConnectTheDots.io repository.  You can get the latest version <a href="https://github.com/MSOpenTech/connectthedots/archive/master.zip" title="Connect the Dots Zip Download">here</a>. </li><li><p>You will need to download and install the software components covered in the &quot;<strong>Install Dependencies</strong>&quot; task</p>
-<ul>
-<li><a href="http://netmf.codeplex.com/downloads/get/911182">.Net Micro Framework Core SDK</a></li><li><a href="http://netmf.codeplex.com/downloads/get/911183">.Net MF Visual Studio 2013 integration</a></li><li><a href="http://gadgeteer.codeplex.com/downloads/get/918081">.Net Gadgeteer Core</a></li><li><a href="https://www.ghielectronics.com/support/netmf/sdk/24/netmf-and-gadgeteer-package-2014-r5">GHI NETMF and Gadgeteer package</a></li></ul>
-</li></ul>
-<ul>
-<li><p>You will need a FEZ Spider and the additional hardware components covered in the &quot;<strong>Connect the Components to the FEZ Spider Mainboard</strong>&quot; task. </p>
-<ul>
-<li><a href="https://www.ghielectronics.com/catalog/product/269">Gadgeteer FEZ Spider Mainboard</a></li><li><a href="https://www.ghielectronics.com/catalog/product/280">Gadgeteer USB DP Module</a></li><li><a href="https://www.ghielectronics.com/catalog/product/284">Gadgeteer Ethernet J11D Module</a></li><li><a href="https://www.ghielectronics.com/catalog/product/528">Gadgeteer TempHumid S170 Module</a></li><li><a href="https://www.ghielectronics.com/catalog/product/336">Gadgeteer LightSense Module</a></li></ul>
-</li></ul>
-<hr>
-<h2 id="tasks">Tasks</h2>
-<ol>
-<li><a href="#Task1">Install Dependencies</a></li><li><a href="#Task2">Connect the Components to the FEZ Spider Mainboard</a></li><li><a href="#Task3">Modify and Deploy the ConnectTheDotsGadgeteer Project</a></li><li><a href="#Task4">Verify Your Results</a></li></ol>
-<hr>
-<p><a name="Task1"></a></p>
-<h2 id="task-1">Task 1</h2>
-<p>To complete this lab.  </p>
-<ol>
-<li></li></ol>
-<hr>
-<p><a name="Task2" /></p>
-<h2 id="task-2-connect-the-components-to-the-fez-spider-mainboard">Task 2 - Connect the Components to the FEZ Spider Mainboard</h2>
-<hr>
-<p><a name="Task3" /></p>
-<h2 id="task-3-modify-and-deploy-the-connectthedotsgadgeteer-project">Task 3 - Modify and Deploy the ConnectTheDotsGadgeteer Project</h2>
-<hr>
-<p><a name="Task4" /></p>
-<h2 id="task-4-verify-your-results">Task 4 - Verify Your Results</h2>
+<h1>"NETMF Gadgeteer Configuration" Hands-On Lab</h1>
 
+<hr>
+
+<h2>Overview</h2>
+
+<p>In this lab you will use A Gadgeteer FEZ Spider and the <a href="http://netmf.codeplex.com/">.NET Micro Framework</a> to publish sensor data into the "<strong>ehdevices</strong>" Azure Event Hub you created previously in the "<strong>Azure Prep</strong>" Hands-On Lab.  </p>
+
+<p><a href="./images/00010LabArchitecture.png" target="_blank"><img src="./images/00010LabArchitecture.png" alt="Lab Architecture" style="max-width:100%;"></a></p>
+
+<hr>
+
+<h2>Prerequisites</h2>
+
+<p>To successfully complete this lab, you will need: </p>
+
+<ul>
+<li>An active Azure Subscription.  If needed you can create a <a href="http://azure.microsoft.com/en-us/pricing/free-trial" title="Azure Free Trial">free trial here</a>.</li>
+<li>A Windows computer with Visual Studio 2013 Community Edition or better <a href="http://go.microsoft.com/?linkid=9863608">download</a>.  <strong>NOTE: YOU CAN'T USE VISUAL STUDIO 2015 FOR THIS LAB.  IT MUST BE VISUAL STUDIO 2013.</strong><br>
+</li>
+<li>A copy of the ConnectTheDots.io repository.  You can get the latest version <a href="https://github.com/MSOpenTech/connectthedots/archive/master.zip" title="Connect the Dots Zip Download">here</a>. </li>
+<li>
+<p>You will need to download and install the software components covered in the "<strong>Install Dependencies</strong>" task</p>
+
+<ul>
+<li>.NET Framework 3.5.  This is included as a Windows Feature, but you need to verify that it is "On"</li>
+<li><a href="http://netmf.codeplex.com/downloads/get/911182">.Net Micro Framework Core SDK</a></li>
+<li><a href="http://netmf.codeplex.com/downloads/get/911183">.Net MF Visual Studio 2013 integration</a></li>
+<li><a href="http://gadgeteer.codeplex.com/downloads/get/918081">.Net Gadgeteer Core</a></li>
+<li><a href="https://www.ghielectronics.com/support/netmf/sdk/24/netmf-and-gadgeteer-package-2014-r5">GHI NETMF and Gadgeteer package</a></li>
+</ul>
+</li>
+<li>
+<p>You will need a FEZ Spider and the additional hardware components covered in the "<strong>Connect the Components to the FEZ Spider Mainboard</strong>" task. </p>
+
+<ul>
+<li><a href="https://www.ghielectronics.com/catalog/product/269">Gadgeteer FEZ Spider Mainboard</a></li>
+<li><a href="https://www.ghielectronics.com/catalog/product/280">Gadgeteer USB DP Module</a></li>
+<li><a href="https://www.ghielectronics.com/catalog/product/284">Gadgeteer Ethernet J11D Module</a></li>
+<li><a href="https://www.ghielectronics.com/catalog/product/528">Gadgeteer TempHumid S170 Module</a></li>
+<li><a href="https://www.ghielectronics.com/catalog/product/336">Gadgeteer LightSense Module</a></li>
+</ul>
+</li>
+</ul>
+
+<hr>
+
+<h2>Troubleshooting Tips</h2>
+
+<p>If you have problems with the Gadgeteer, you can refer to the <a href="https://www.ghielectronics.com/docs/165/netmf-and-gadgeteer-troubleshooting">NETMF and Gadgeteer Troubleshooting Guide</a></p>
+
+<ol>
+<li>
+<p>If you have problems deploying to the Gadgeteer, for example after it crashes, or you stop a running debug session, you can try resetting the Gadgeteer using either the Reset button, or by cycling the power:</p>
+
+<p><a href="./images/00030Reset.png" target="_blank"><img src="./images/00030Reset.png" alt="Reset" style="max-width:100%;"></a></p>
+</li>
+</ol>
+
+<hr>
+
+<h2>Tasks</h2>
+
+<ol>
+<li><a href="#Task1">Install Dependencies</a></li>
+<li><a href="#Task2">Connect the Components to the FEZ Spider Mainboard</a></li>
+<li><a href="#Task3">Modify and Deploy the ConnectTheDotsGadgeteer Project</a></li>
+<li><a href="#Task4">Update the SSL Seed on the Gadgeteer</a></li>
+<li><a href="#Task5">Verify Your Results</a></li>
+</ol>
+
+<hr>
+
+<p><a name="Task1"></a></p>
+
+<h2>Task 1</h2>
+
+<p>To complete this lab you will need Visual Studio 2013 Community Edition or better.  At the time this is being written, Visual Studio 2015 is NOT supported so you will need VS 2013.  The free Community Edition works fine, but if you already have a VS 2013 Professional or VS 2013 Ultimate, those work just fine as well. </p>
+
+<p>You need to install the .NET Micro Framework SDK, and a few additional tools to help Visual Studio work with NETMF and the Gadgeteer boards.    </p>
+
+<ol>
+<li>
+<p>Verify that the .NET Framework 3.5 is enabled on your system.   To do so, go to your "<strong>Control Panel</strong>" | "<strong>Programs</strong>" | "<strong>Turn Windows features on or off</strong>" and ensure that the .NET Framework 3.5 is enabled.  You do not need the Windows Communication Foundation Activation features enabled.  </p>
+
+<p><a href="./images/01005Net35Enabled.png" target="_blank"><img src="./images/01005Net35Enabled.png" alt=".NET Framework 3.5 Enabled" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Download and install the <a href="http://netmf.codeplex.com/downloads/get/911182">.Net Micro Framework Core SDK 4.3 (SDK-R2-Beta)</a></p>
+
+<p><a href="./images/01010NETMFSdkInstaller.png" target="_blank"><img src="./images/01010NETMFSdkInstaller.png" alt=".NET Micro Framework SDK Installer" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Download and install the <a href="http://netmf.codeplex.com/downloads/get/911183">.Net MF Visual Studio 2013 integration</a></p>
+
+<p><a href="./images/01020VS2013Integration.png" target="_blank"><img src="./images/01020VS2013Integration.png" alt="Visual Studio 2013 Integration" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Download and install the <a href="http://gadgeteer.codeplex.com/downloads/get/918081">.Net Gadgeteer Core</a></p>
+
+<p><a href="./images/01030GadgeteerCoreSetup.png" target="_blank"><img src="./images/01030GadgeteerCoreSetup.png" alt="Gadgeteer Core Setup" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Finally, download and install the <a href="https://www.ghielectronics.com/support/netmf/sdk/24/netmf-and-gadgeteer-package-2014-r5">GHI NETMF and Gadgeteer package</a>  This installer actually calls other installers.  You need to pay attention as you run through this because you will need to answer the prompts for:</p>
+
+<p><a href="./images/01040GHINETMF.png" target="_blank"><img src="./images/01040GHINETMF.png" alt="GHI NETMF And Gadgeteer Package" style="max-width:100%;"></a></p>
+
+<ul>
+<li>
+<p>The nested "<strong>Atmel SAM Boot Assistant</strong>" ("<strong>SAM-BA</strong>") installer:</p>
+
+<p><a href="./images/01050SamBa.png" target="_blank"><img src="./images/01050SamBa.png" alt="Atmel Sam-Ba Installer" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>The ST Microelectronics "<strong>Device Firmware Upgrade ST Microelectronics Extension</strong>" ("<strong>DfuSe</strong>") isntaller:</p>
+
+<p><a href="./images/01060DfuSe.png" target="_blank"><img src="./images/01060DfuSe.png" alt="DfuSe" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>GHI USB Driver:</p>
+
+<p><a href="./images/01070GHIUSBSerial.png" target="_blank"><img src="./images/01070GHIUSBSerial.png" alt="USB Driver" style="max-width:100%;"></a></p>
+</li>
+</ul>
+</li>
+<li><p>Make sure that you complete all of the required installs.  If you miss one, you will not be able to complete the lab. </p></li>
+</ol>
+
+<hr>
+
+<p><a name="Task2"></a></p>
+
+<h2>Task 2 - Connect the Components to the FEZ Spider Mainboard</h2>
+
+<p>One of the benefits of the Gadgeteer platform is the ease with which you can connect components.  In this task, you need to simply connect the components as described below:</p>
+
+<ol>
+<li>Connect the <a href="https://www.ghielectronics.com/catalog/product/336">Gadgeteer LightSense Module</a> to <strong>Slot 10</strong> on the FEZ Spider Mainboard.</li>
+<li>Connect the <a href="https://www.ghielectronics.com/catalog/product/528">Gadgeteer TempHumid S170 Module</a> to <strong>Slot 11</strong> on the FEZ Spider Mainboard</li>
+<li>Connect the <a href="https://www.ghielectronics.com/catalog/product/284">Gadgeteer Ethernet J11D Module</a> to <strong>Slot 7</strong> on the FEZ Spider Mainboard</li>
+<li>Connect the <a href="https://www.ghielectronics.com/catalog/product/280">Gadgeteer USB DP Module</a> to <strong>Slot 1</strong> on the FEZ Spider Mainboard</li>
+</ol>
+
+<p><a href="./images/00020GadgeteerConfiguration.png" target="_blank"><img src="./images/00020GadgeteerConfiguration.png" alt="Gadgeteer Configuration" style="max-width:100%;"></a></p>
+
+<hr>
+
+<p><a name="Task3"></a></p>
+
+<h2>Task 3 - Modify and Deploy the ConnectTheDotsGadgeteer Project</h2>
+
+<p>In this task, you will modify the "<strong>ConnectTheDotsGadgeteer</strong>" solution in Visual Studio to point it towards your. "<strong>ehdevices</strong>" Event Hub.  </p>
+
+<ol>
+<li><p>In Visual Studio 2013, open the <a href="/Devices/DirectlyConnectedDevices/NETMF/ConnectTheDotsGadgeteer.sln">\Devices\DirectlyConnectedDevices\NETMF\ConnectTheDotsGadgeteer.sln</a> Solution.  </p></li>
+<li>
+<p>To download the required NuGet packages, and ensure that the project base is functional, go ahead and do build.  From the menu bar select "<strong>BUILD</strong>" | "<strong>Build Solution</strong>", and once the build is done, ensure that it reads "<strong>Build succeeded</strong>" in the lower left hand corner. </p>
+
+<p><a href="./images/02010BuuildProject.png" target="_blank"><img src="./images/02010BuuildProject.png" alt="Build Solution" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>In the "<strong>Solution Explorer</strong>" Window, double click on the "<strong>Program.cs</strong>" file top open it.</p>
+
+<p><a href="./images/02020OpenProgramCs.png" target="_blank"><img src="./images/02020OpenProgramCs.png" alt="Open Program.cs" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>In the "<strong>Program.cs</strong>" file, locate the lines that configure the client connect to the "<strong>ehdevices</strong>" event hub (should be somewhere around line 54):</p>
+
+<div class="highlight highlight-C#"><pre><span class="pl-c">// Azure Event Hub connection information</span>
+<span class="pl-k">private</span> <span class="pl-k">const</span> <span class="pl-k">string</span> AMQPAddress = <span class="pl-s"><span class="pl-pds">"</span>amqps://{key-name}:{key}@{namespace-name}.servicebus.windows.net<span class="pl-pds">"</span></span>; <span class="pl-c">// Azure event hub connection string</span>
+
+<span class="pl-k">private</span> <span class="pl-k">const</span> <span class="pl-k">string</span> EventHub = <span class="pl-s"><span class="pl-pds">"</span>ehdevices<span class="pl-pds">"</span></span>; <span class="pl-c">// Azure event hub name</span>
+<span class="pl-k">private</span> <span class="pl-k">const</span> <span class="pl-k">string</span> SensorName = <span class="pl-s"><span class="pl-pds">"</span>Gadgeteer<span class="pl-pds">"</span></span>; <span class="pl-c">// Name of the device you want to display</span>
+<span class="pl-k">private</span> <span class="pl-k">const</span> <span class="pl-k">string</span> SensorGUID = <span class="pl-s"><span class="pl-pds">"</span>{GUID}<span class="pl-pds">"</span></span>; <span class="pl-c">// unique GUID per device. Use GUIDGEN to generate new one</span>
+
+<span class="pl-k">private</span> <span class="pl-k">const</span> <span class="pl-k">string</span> Organization = <span class="pl-s"><span class="pl-pds">"</span>MSOpenTech<span class="pl-pds">"</span></span>; <span class="pl-c">// Your organization name</span>
+<span class="pl-k">private</span> <span class="pl-k">const</span> <span class="pl-k">string</span> Location = <span class="pl-s"><span class="pl-pds">"</span>My Room<span class="pl-pds">"</span></span>; <span class="pl-c">// Location of the device</span>
+
+<span class="pl-c">// Define the frequency at which we want the device to send its sensor data (in milliseconds)</span>
+<span class="pl-k">const</span> <span class="pl-k">int</span> SendFrequency = <span class="pl-c1">60000</span>;
+<span class="pl-k">private</span> <span class="pl-k">readonly</span> GT.Timer _timer = <span class="pl-k">new</span> GT.Timer(SendFrequency);</pre></div>
+</li>
+<li>
+<p>Verify that the <code>EventHub</code> variable value matches the name of the Event Hub you created for "<strong>ehdevices</strong>".  If you called it something other than "<strong>ehdevices</strong> make sure to update the variable value to match: </p>
+
+<div class="highlight highlight-C#"><pre><span class="pl-k">private</span> <span class="pl-k">const</span> <span class="pl-k">string</span> EventHub = <span class="pl-s"><span class="pl-pds">"</span>ehdevices<span class="pl-pds">"</span></span>; <span class="pl-c">// Azure event hub name</span></pre></div>
+</li>
+<li><p>Leave your Visual Studio window open, open the browser, and login to the <a href="https://manage.windowsazure.com">Azure Management Portal</a> (<a href="https://manage.windowsazure.com">https://manage.windowsazure.com</a>).  </p></li>
+<li>
+<p>Navigate the portal to find your "<strong>ehdevices</strong>" event hub, and on the "<strong>CONFIGURE</strong>" page,  and get the "<strong>PRIMARY ACCESS KEY</strong> for your "<strong>D1</strong>" "<strong>Shared Access Policy</strong>".  </p>
+
+<p><a href="./images/02030D1KeyGen.png" target="_blank"><img src="./images/02030D1KeyGen.png" alt="D1 Key" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Before you can use the key though, we need to URL encode it.  Go to <a href="http://meyerweb.com/eric/tools/dencoder/">http://meyerweb.com/eric/tools/dencoder/</a> to use their URL Encoder / Decoder tool.  Paste they key you just copied in, then hit the "<strong>Encode</strong>" button, then copy the encoded to the clipboard.  </p>
+
+<p><a href="./images/02040EncodeUrl.png" target="_blank"><img src="./images/02040EncodeUrl.png" alt="Url Encode key" style="max-width:100%;"></a></p>
+
+<p><a href="./images/02050Encoded.png" target="_blank"><img src="./images/02050Encoded.png" alt="Copy the Encoded Key" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Back in Visual Studio, in the "<strong>Program.cs</strong>" file, edit the <code>AMQPaddress</code>  the string variable.  Replace the place holders with the values from your Service Bus Namespace &amp; Event Hub:</p>
+
+<table>
+<thead>
+<tr>
+<th>Place Holder</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{key-name}</td>
+<td>"<strong>D1</strong>" (no quotes)</td>
+</tr>
+<tr>
+<td>{key}</td>
+<td>The URL encoded version of the key you just copied.</td>
+</tr>
+<tr>
+<td>{namespace-name}</td>
+<td>The service bus namespace you created earlier, "<strong>ctdhol-ns</strong>" in this case</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>For example:</p>
+
+<div class="highlight highlight-C#"><pre><span class="pl-c">// Azure Event Hub connection information</span>
+<span class="pl-k">private</span> <span class="pl-k">const</span> <span class="pl-k">string</span> AMQPAddress = <span class="pl-s"><span class="pl-pds">"</span>amqps://D1:L2wFYmNQ05PqD3n6d1%2FScRPJB%2FdbzCHYh1RQwWVuBJc%3D@ctdhol-ns.servicebus.windows.net<span class="pl-pds">"</span></span>; <span class="pl-c">// Azure event hub connection string</span></pre></div>
+</li>
+<li>
+<p>For the <code>SensorGUID</code> string, you can generate a new GUID value in Visual Studio by , from the menu bar, going to "<strong>TOOLS</strong>" | "<strong>Create GUID</strong>".  Then use the tool to generate a new GUID, copy it to the clipboard (Try using the "Registry Format"), then paste it into your code and remove the curly braces.  </p>
+
+<p><a href="./images/02060CreateGUID.png" target="_blank"><img src="./images/02060CreateGUID.png" alt="Create GUID" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>For example</p>
+
+<div class="highlight highlight-C#"><pre><span class="pl-k">private</span> <span class="pl-k">const</span> <span class="pl-k">string</span> SensorGUID = <span class="pl-s"><span class="pl-pds">"</span>C62F1539-84CF-4F1C-AAF3-286E63A1099C<span class="pl-pds">"</span></span>; <span class="pl-c">// unique GUID per device. Use GUIDGEN to generate new one</span></pre></div>
+</li>
+<li>
+<p>For the SendFrequency varible, you may want to try a lower frequency, like 1000 (milliseconds).  The default 60000 only publishes sensor data once a minute.  For example:  </p>
+
+<div class="highlight highlight-C#"><pre><span class="pl-c">// Define the frequency at which we want the device to send its sensor data (in milliseconds)</span>
+<span class="pl-k">const</span> <span class="pl-k">int</span> SendFrequency = <span class="pl-c1">1000</span>;</pre></div>
+</li>
+<li>Lastly, update the <code>SensorName</code>, <code>Organization</code>, and <code>Location</code> variable values to whatever you like.<br>
+</li>
+</ol>
+
+<hr>
+
+<p><a name="Task4"></a></p>
+
+<h2>Task 4 - Update the SSL Seed on the Gadgeteer</h2>
+
+<p>Your Gadgeteer device needs a current, valid set of keys to participate in the SSL communications required by AMQP.  </p>
+
+<ol>
+<li>
+<p>From the Start Menu's Search function, find the MFDeploy.exe tool and run it:</p>
+
+<p><a href="./images/04010MFDeploySearch.png" target="_blank"><img src="./images/04010MFDeploySearch.png" alt="MFDeploy.exe Search" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>In the "<strong>Device</strong>" dropdown, select USB, then select your Gadgeteer:</p>
+
+<p><a href="./images/04020Target.png" target="_blank"><img src="./images/04020Target.png" alt="USB Gadgeteer" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>From the "<strong>MFDeploy</strong>" menu bar, select "<strong>Target</strong>" | "<strong>Manage Device Keys</strong>" | "<strong>Update SSL Seed</strong>", then verify that it completes. </p>
+
+<p><a href="./images/04030Complete.png" target="_blank"><img src="./images/04030Complete.png" alt="SSL Update Complete" style="max-width:100%;"></a></p>
+</li>
+</ol>
+
+<hr>
+
+<p><a name="Task5"></a></p>
+
+<h2>Task 5 - Verify Your Results</h2>
+
+<p>You should be ready to go.  Let's deploy the code to the Gadgeteer and watch data flow in on the Connect the Dots Sample Website you created earlier.  </p>
+
+<ol>
+<li>
+<p>In Visual Studio, hit the "<strong>Start</strong>" button on the toolbar to start a debug session:</p>
+
+<p><a href="./images/05010StartDebug.png" target="_blank"><img src="./images/05010StartDebug.png" alt="Start Debug" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>In the Visual Studio "<strong>Output</strong>" Window, you should being to see messages about the Gadgeteer's IP Address, as well as periodic messages (the rate of which depends on your <code>SendFrequency</code> variable value) appear.  </p>
+
+<p><a href="./images/05020IpAddress.png" target="_blank"><img src="./images/05020IpAddress.png" alt="IP Address" style="max-width:100%;"></a></p>
+
+<p><a href="./images/05030SensorMessages.png" target="_blank"><img src="./images/05030SensorMessages.png" alt="Sensor Readings" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>If you open the "<strong>Connect the Dots Sample Web Site</strong>" you deployed in the  <strong><a href="Azure/WebSite">Connect the Dots Web Site</a></strong> Hands-On Lab you should start to see sensor readings coming in.  </p>
+
+<p><a href="./images/05040WebSite.png" target="_blank"><img src="./images/05040WebSite.png" alt="Web Site" style="max-width:100%;"></a></p>
+</li>
+</ol>
 </body>
 </html>
 <!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
