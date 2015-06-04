@@ -4,7 +4,7 @@
 
 ## Overview ##
 
-In this lab you will prepare your Azure subscription with the Service Bus namespace, Event Hubs, Storage Account and Stream Analytics jobs as required by the [ConnectTheDots.io](http://connectthedots.io) architecture:
+In this lab you will prepare your Azure subscription with the Service Bus namespace, Event Hubs, Storage Account and Stream Analytics jobs as required by the [ConnectTheDots.io](http://aka.ms/bsctd) architecture:
 
 ![Connect the Dots](./images/00010AzurePrepLabArchitecture.png)
 
@@ -27,7 +27,7 @@ To successfully complete this lab, you will need:
 
 - An active Azure Subscription.  If needed you can create a [free trial here](http://azure.microsoft.com/en-us/pricing/free-trial "Azure Free Trial").
 - A computer with access to the Internet and a web browser
-- A copy of the ConnectTheDots.io repository.  You can get the latest version [here](https://github.com/MSOpenTech/connectthedots/archive/master.zip "Connect the Dots Zip Download"). 
+- A copy of the ConnectTheDots.io repository.  You can get the latest version [here](https://github.com/BretStateham/connectthedots/archive/master.zip "Connect the Dots Zip Download"). 
 
 --
 
@@ -291,7 +291,7 @@ You will receive a warning in the portal about the Stream Analytics job using th
 
 	![DevicesInput ok](./images/06100DevicesInputOk.png)
 
-10. Switch to the "**QUERY**" page, and replace the default query syntax with that from the [Aggregates.sql](/Azure/StreamAnalyticsQueries/Aggregates.sql) query file, then click "**SAVE**"
+10. Switch to the "**QUERY**" page, and replace the default query syntax with that from the [Aggregates.sql](../../../Azure/StreamAnalyticsQueries/Aggregates.sql) query file, then click "**SAVE**"
 
 	> **Note:** The query source is being shown here as a reference.  You may want to get the latest version from the [Aggregates.sql](/Azure/StreamAnalyticsQueries/Aggregates.sql) file.
 
@@ -408,9 +408,9 @@ In this last task of the "**Azure Prep**" lab, you will create the remaining Str
 
 		| Job Name          | Query Source | Purpose | 
 		| ---               | ---   | --- | 
-		| ctdholAlert       | [Alert.sql](/Azure/StreamAnalyticsQueries/Alert.sql)  | Creates a "Temperature over 80F" alert if the temp spikes over 80&#176;F in during a five second tumbling window  |
-		| ctdholcg4pbi      | [cg4pbi.sql](/Azure/StreamAnalyticsQueries/cg4pbi.sql)  | Creates a simplified data set for use by the [PowerBI Walktrhough](/Azure/PowerBI/PBI_setup.md) |
-		| ctdholLightSensor | [LightSensor.sql](/Azure/StreamAnalyticsQueries/LightSensor.sql)  | Creates a "The Light is turned off" alert if the average "light" sensor readings for three or more readings within a five second tumbling window is less that 0.02 | 
+		| ctdholAlert       | [Alert.sql](../../../Azure/StreamAnalyticsQueries/Alert.sql)  | Creates a "Temperature over 80F" alert if the temp spikes over 80&#176;F in during a five second tumbling window  |
+		| ctdholcg4pbi      | [cg4pbi.sql](../../../Azure/StreamAnalyticsQueries/cg4pbi.sql)  | Creates a simplified data set for use by the [PowerBI Walktrhough](/Azure/PowerBI/PBI_setup.md) |
+		| ctdholLightSensor | [LightSensor.sql](../../../Azure/StreamAnalyticsQueries/LightSensor.sql)  | Creates a "The Light is turned off" alert if the average "light" sensor readings for three or more readings within a five second tumbling window is less that 0.02 | 
 
 
 	- The jobs all have the same input configuration

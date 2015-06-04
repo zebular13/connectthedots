@@ -476,7 +476,7 @@ vertical-align:1px;
 <h2>
 <a id="user-content-overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h2>
 
-<p>In this lab you will prepare your Azure subscription with the Service Bus namespace, Event Hubs, Storage Account and Stream Analytics jobs as required by the <a href="http://connectthedots.io">ConnectTheDots.io</a> architecture:</p>
+<p>In this lab you will prepare your Azure subscription with the Service Bus namespace, Event Hubs, Storage Account and Stream Analytics jobs as required by the <a href="http://aka.ms/bsctd">ConnectTheDots.io</a> architecture:</p>
 
 <p><a href="./images/00010AzurePrepLabArchitecture.png" target="_blank"><img src="./images/00010AzurePrepLabArchitecture.png" alt="Connect the Dots" style="max-width:100%;"></a></p>
 
@@ -534,7 +534,7 @@ vertical-align:1px;
 <ul>
 <li>An active Azure Subscription.  If needed you can create a <a href="http://azure.microsoft.com/en-us/pricing/free-trial" title="Azure Free Trial">free trial here</a>.</li>
 <li>A computer with access to the Internet and a web browser</li>
-<li>A copy of the ConnectTheDots.io repository.  You can get the latest version <a href="https://github.com/MSOpenTech/connectthedots/archive/master.zip" title="Connect the Dots Zip Download">here</a>. </li>
+<li>A copy of the ConnectTheDots.io repository.  You can get the latest version <a href="https://github.com/BretStateham/connectthedots/archive/master.zip" title="Connect the Dots Zip Download">here</a>. </li>
 </ul>
 
 <h2></h2>
@@ -1030,7 +1030,7 @@ The name you choose needs to be:</p>
 <p><a href="./images/06100DevicesInputOk.png" target="_blank"><img src="./images/06100DevicesInputOk.png" alt="DevicesInput ok" style="max-width:100%;"></a></p>
 </li>
 <li>
-<p>Switch to the "<strong>QUERY</strong>" page, and replace the default query syntax with that from the <a href="/Azure/StreamAnalyticsQueries/Aggregates.sql">Aggregates.sql</a> query file, then click "<strong>SAVE</strong>"</p>
+<p>Switch to the "<strong>QUERY</strong>" page, and replace the default query syntax with that from the <a href="../../../Azure/StreamAnalyticsQueries/Aggregates.sql">Aggregates.sql</a> query file, then click "<strong>SAVE</strong>"</p>
 
 <blockquote>
 <p><strong>Note:</strong> The query source is being shown here as a reference.  You may want to get the latest version from the <a href="/Azure/StreamAnalyticsQueries/Aggregates.sql">Aggregates.sql</a> file.</p>
@@ -1213,18 +1213,18 @@ The name you choose needs to be:</p>
 <tbody>
 <tr>
 <td>ctdholAlert</td>
-<td><a href="/Azure/StreamAnalyticsQueries/Alert.sql">Alert.sql</a></td>
+<td><a href="../../../Azure/StreamAnalyticsQueries/Alert.sql">Alert.sql</a></td>
 <td>Creates a "Temperature over 80F" alert if the temp spikes over 80°F in during a five second tumbling window</td>
 </tr>
 <tr>
 <td>ctdholcg4pbi</td>
-<td><a href="/Azure/StreamAnalyticsQueries/cg4pbi.sql">cg4pbi.sql</a></td>
+<td><a href="../../../Azure/StreamAnalyticsQueries/cg4pbi.sql">cg4pbi.sql</a></td>
 <td>Creates a simplified data set for use by the <a href="/Azure/PowerBI/PBI_setup.html">PowerBI Walktrhough</a>
 </td>
 </tr>
 <tr>
 <td>ctdholLightSensor</td>
-<td><a href="/Azure/StreamAnalyticsQueries/LightSensor.sql">LightSensor.sql</a></td>
+<td><a href="../../../Azure/StreamAnalyticsQueries/LightSensor.sql">LightSensor.sql</a></td>
 <td>Creates a "The Light is turned off" alert if the average "light" sensor readings for three or more readings within a five second tumbling window is less that 0.02</td>
 </tr>
 </tbody>

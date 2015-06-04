@@ -28,7 +28,7 @@ To successfully complete this lab, you will need:
 
 - An active Azure Subscription.  If needed you can create a [free trial here](http://azure.microsoft.com/en-us/pricing/free-trial "Azure Free Trial").
 
-- A copy of the ConnectTheDots.io repository.  You can get the latest version [here](https://github.com/MSOpenTech/connectthedots/archive/master.zip "Connect the Dots Zip Download"). 
+- A copy of the ConnectTheDots.io repository.  You can get the latest version [here](https://github.com/BretStateham/connectthedots/archive/master.zip "Connect the Dots Zip Download"). 
 
 - An Arduino Uno ([link](http://www.arduino.cc/en/Main/ArduinoBoardUno "Arduino Uno")) and a USB Cable
 
@@ -108,7 +108,7 @@ The SparkFun Weather Shield has a specific code library that the Arduino Sketch 
 ## Task 3 - Deploy and Test the WeatherShieldJson.ino Sketch ##
 
 1. On your computer, open the Arduino IDE
-2. In the Arduino IDE, Open the [\Devices\GatewayConnectedDevices\Arduino UNO\Weather\WeatherShieldJson\WeatherShieldJson.ino](\Devices\GatewayConnectedDevices\Arduino UNO\Weather\WeatherShieldJson\WeatherShieldJson.ino) Arduino "Sketch".
+2. In the Arduino IDE, Open the [/Devices/GatewayConnectedDevices/Arduino UNO/Weather/WeatherShieldJson/WeatherShieldJson.ino](../../../../../../Devices/GatewayConnectedDevices/Arduino UNO/Weather/WeatherShieldJson/WeatherShieldJson.ino) Arduino "Sketch".
 3. Locate the `// Constants used for the ConnectTheDots project` section in the code (should be around line 60). 
 
 	```c

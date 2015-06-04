@@ -17,7 +17,7 @@ To successfully complete this lab, you will need:
 
 - An active Azure Subscription.  If needed you can create a [free trial here](http://azure.microsoft.com/en-us/pricing/free-trial "Azure Free Trial").
 - A Windows computer with Visual Studio 2013 Community Edition or better [download](http://go.microsoft.com/?linkid=9863608).  **NOTE: YOU CAN'T USE VISUAL STUDIO 2015 FOR THIS LAB.  IT MUST BE VISUAL STUDIO 2013.**  
-- A copy of the ConnectTheDots.io repository.  You can get the latest version [here](https://github.com/MSOpenTech/connectthedots/archive/master.zip "Connect the Dots Zip Download"). 
+- A copy of the ConnectTheDots.io repository.  You can get the latest version [here](https://github.com/BretStateham/connectthedots/archive/master.zip "Connect the Dots Zip Download"). 
 - You will need to download and install the software components covered in the "**Install Dependencies**" task
 
  - .NET Framework 3.5.  This is included as a Windows Feature, but you need to verify that it is "On"

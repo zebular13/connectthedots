@@ -4,7 +4,7 @@
 
 ## Overview ##
 
-In this lab you will deploy the sample website provided in the [ConnectTheDots.io](http://connectthedots.io) repository to Azure.  
+In this lab you will deploy the sample website provided in the [ConnectTheDots.io](http://aka.ms/bsctd) repository to Azure.  
 
 ![Web Site Architecture](./images/00010WebSiteArchitecture.png) 
 
@@ -19,7 +19,7 @@ To successfully complete this lab, you will need:
 - An active Azure Subscription.  If needed you can create a [free trial here](http://azure.microsoft.com/en-us/pricing/free-trial "Azure Free Trial").
 - A Windows computer with [Visual Studio 2013 Community Edition](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx "VS2013 Community Edition Download") or better
 - The Azure SDK 2.6 or later installed for Visual Studio 2013 ([Download if needed](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409))
-- A copy of the ConnectTheDots.io repository.  You can get the latest version [here](https://github.com/MSOpenTech/connectthedots/archive/master.zip "Connect the Dots Zip Download"). 
+- A copy of the ConnectTheDots.io repository.  You can get the latest version [here](https://github.com/BretStateham/connectthedots/archive/master.zip "Connect the Dots Zip Download"). 
 - In addition you need to have successfully completed the ["Azure Prep" HOL](../AzurePrep/README.md).  
 
 
@@ -48,7 +48,7 @@ Additionally, you selected a target Azure "***&lt;region&gt;***" in which all re
 
 In this task we will modify the sample Web Site project's **web.config** file by adding the appropriate connection strings to the Azure Service Bus, Event Hubs, and Storage Account we created in the ["Azure Prep" HOL](../AzurePrep/README.md).
 
-1. Open the [/Azure/WebSite/ConnectTheDotsWebSite.sln](../../Azure/WebSite/ConnectTheDotsWebSite.sln) Solution in Visual Studio 2013 Community Edition.
+1. Open the [/Azure/WebSite/ConnectTheDotsWebSite.sln](../../../Azure/WebSite/ConnectTheDotsWebSite.sln) Solution in Visual Studio 2013 Community Edition.
 2. From the Visual Studio menu bar, select "**BUILD**" | "**Rebuild Solution**"
 
 	![Rebuild Solution](./images/01010RebuildSolution.png)
