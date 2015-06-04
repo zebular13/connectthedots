@@ -537,7 +537,7 @@ vertical-align:1px;
 <li><p>A copy of the Raspberry Pi image on an SD Card with the Gateway Service code pre-deployed.  If you prefer to configure and deploy the GatewayService yourself, you can refer to the <a href="../../../../Devices/Gateways/GatewayService/RaspberryPi-Gateway-setup.html">Original Raspberry Pi Gateway Setup Documentation</a></p></li>
 <li><p>Previous completion of the <a href="../../../../HOLs/Azure/AzurePrep/README.html">"Azure Prep" Hands-On Lab</a> </p></li>
 <li><p>Previous Completion of the <a href="../../../../HOLs/Devices/GatewayConnectedDevices/Arduino%20UNO/Weather/WeatherSheildJson/README.html">"Arduino Uno With SparkFun Weather Shield" Hands-On Lab</a></p></li>
-<li><p>Knowledge of your Raspberry Pi's IP address.</p></li>
+<li><p>Knowledge of your Raspberry Pi's IP address so you can ssh into it, or a USB-to-TTL Serial Cable so you can connect to it via serial. </p></li>
 </ul>
 
 <h2></h2>
@@ -547,10 +547,8 @@ vertical-align:1px;
 
 <ol>
 <li><a href="#Task1">Boot your Raspberry Pi off the Pre-Configured Image</a></li>
-<li><a href="#Task2">Modify the Gateway Config</a></li>
-<li><a href="#Task3">Connect the Arduino Uno</a></li>
-<li><a href="#Task4">Task 4</a></li>
-<li><a href="#Task5">Task 5</a></li>
+<li><a href="#Task2">Determine how to connect to your Raspberry Pi</a></li>
+<li><a href="#Task3">Modify the Gateway Config</a></li>
 </ol>
 
 <hr>
@@ -574,9 +572,55 @@ vertical-align:1px;
 
 <p><a href="./images/01010Connections.png" target="_blank"><img src="./images/01010Connections.png" alt="Connections" style="max-width:100%;"></a></p>
 </li>
-<li><p>Work with your event staff to determine the Raspberry Pi's IP Address</p></li>
+</ol>
+
+<hr>
+
+<p><a name="Task2"></a></p>
+
+<h2>
+<a id="user-content-task-2---determine-how-to-connect-to-your-raspberry-pi" class="anchor" href="#task-2---determine-how-to-connect-to-your-raspberry-pi" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 2 - Determine how to connect to your Raspberry Pi</h2>
+
+<p>To complete this lab, you will need to login to your Raspberry Pi.  There are actually a number of ways you can do this.  The following appendices give you a number of alternatives.  You only need use one of them, but feel free to try all of them! </p>
+
+<ul>
+<li>If you <strong>DO KNOW YOUR RASPBERRY PI'S IP ADDRESS</strong> and <strong>ARE ON THE SAME NETWORK</strong> as it you can
+
+<ul>
+<li>Use SSH (PuTTY is a popular ssh tool for Windows) to connect</li>
+<li>You can use Remote Desktop (There is a Remote Desktop App for Mac OSx) </li>
+</ul>
+</li>
+<li>If you  <strong>DO NOT KNOW YOUR RASPBERRY PI'S IP ADDRESS</strong>
+
+<ul>
+<li>You can connect using a USB-to-Serial Cable</li>
+<li>You can connect an HDMI Monitor, Keyboard and Mouse to the Pi.<br>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>Based on your knowledge (or lack of knowledge) of your Raspberry Pi's IP Address and your available hardware (USB-to-TTL cable, or Monitor, Keyboard, and Mouse) choose from one of the following methods to connect to your Raspberry Pi.  Each of the following methods is described in detail at the end of this document.  Use that documentation to determine how best to connect to your Raspberry Pi, then return to <a href="#Task3">Task 3</a>:</p>
+
+<ol>
+<li><a href="#Appx1">Connect to the Raspberry Pi using the USB-to-TTL Cable</a></li>
+<li><a href="#Appx2">Connect to the Raspberry Pi using SSH</a></li>
+<li><a href="#Appx3">Connect to the Raspberry Pi using Remote Desktop</a></li>
+<li><a href="#Appx4">Connect to the Raspberry Pi using an HDMI Monitor, Keyboard and Mouse</a></li>
+</ol>
+
+<hr>
+
+<p><a name="Task3"></a></p>
+
+<h2>
+<a id="user-content-task-2---modify-the-gateway-config" class="anchor" href="#task-2---modify-the-gateway-config" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 2 - Modify the Gateway Config</h2>
+
+<ol>
+<li><p>Use the previous task to determine how best to connect to your Raspberry Pi.  Here', we'll assume SSH, but any of the above methods are valid. </p></li>
 <li>
-<p>Use an ssh client (You can use <a href="http://www.chiark.greenend.org.uk/%7Esgtatham/putty/download.html" title="PuTTY Downloads">PuTTY</a> on Windows) or a Remote Desktop Client (mstsc.exe on Windows) to connect to the IP Address of your Raspberry Pi and login with the credentials:</p>
+<p>Connect to the Raspberry Pi and login with the credentials:</p>
 
 <ul>
 <li>Login:    <strong>pi</strong>
@@ -584,8 +628,6 @@ vertical-align:1px;
 <li>Password: <strong>raspberry</strong>
 </li>
 </ul>
-
-<p><a href="./images/01020PuttyConfiguration.png" target="_blank"><img src="./images/01020PuttyConfiguration.png" alt="Putty Configuration" style="max-width:100%;"></a></p>
 
 <p><a href="./images/01030PuttyConnection.png" target="_blank"><img src="./images/01030PuttyConnection.png" alt="Putty Connection" style="max-width:100%;"></a>  </p>
 </li>
@@ -673,9 +715,275 @@ EventHubDeviceDisplayName=<span class="pl-s"><span class="pl-pds">"</span>Sensor
 <p><a href="./images/01110Reboot.png" target="_blank"><img src="./images/01110Reboot.png" alt="Reboot" style="max-width:100%;"></a></p>
 </li>
 <li>
-<p>When the Raspberry Pi starts back up, you should now be able to go to your website and see sensor values coming in! </p>
+<p>When the Raspberry Pi starts back up, you should now be able to go to your website and see sensor values coming in! <strong>ASSUMING YOUR ARDUINO IS CONFIGURED AND CONNECTED VIA USB TO THE RASPBERRY PI</strong> </p>
 
 <p><a href="./images/01120WebPage.png" target="_blank"><img src="./images/01120WebPage.png" alt="Sensors Readings" style="max-width:100%;"></a></p>
+</li>
+</ol>
+
+<hr>
+
+<hr>
+
+<h2>
+<a id="user-content-raspberry-pi-connection-methods" class="anchor" href="#raspberry-pi-connection-methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Raspberry Pi Connection Methods</h2>
+
+<hr>
+
+<hr>
+
+<p><a name="Appx1"></a></p>
+
+<h3>
+<a id="user-content-connect-to-the-raspberry-pi-using-the-usb-to-ttl-cable" class="anchor" href="#connect-to-the-raspberry-pi-using-the-usb-to-ttl-cable" aria-hidden="true"><span class="octicon octicon-link"></span></a>Connect to the Raspberry Pi using the USB-to-TTL Cable</h3>
+
+<ol>
+<li>
+<p>First, make sure you have an appropriate USB-to-TTL Serial Cable.  Not just any cable will do.  The Raspberry Pi uses 3v logic on it's GPIO pins. You need a cable that deals correctly with 3v logic levels and not 5v logic levels.  Something like the <a href="https://www.adafruit.com/products/954">USB to TTL Serial Cable</a> from Adafruit.</p>
+
+<p><a href="./images/A01010-USBtoTTLCable.png" target="_blank"><img src="./images/A01010-USBtoTTLCable.png" alt="USB to TTL Serial Cable" style="max-width:100%;"></a></p>
+</li>
+<li><p><strong>DISCONNECT ANY POWER FROM THE RASPBERRY PI</strong>. The USB-to-TTL Cable will supply the power needed for your Raspberry Pi to run.  You <strong>DO NOT</strong> want the Micro USB Power Supply cable plugged in as well.  You only want to power the Raspberry Pi from a single source.  </p></li>
+<li><p><strong>MAKE SURE THE USB-TO-TTL CABLE IS <em>NOT</em> PLUGGED INTO YOUR COMPUTER'S USB PORT</strong>.  To start, neither end of the cable should be connected to anything.  We'll start by connecting the individual wires to the appropriate pins on the Raspberry Pi, then we'll plug it into the computer.  g</p></li>
+<li>
+<p>Connect the <strong>5V</strong>, <strong>GND</strong>, <strong>TX</strong>, and *<em>RX *</em> wires to the appropriate pins on the Rasbperry Pi:</p>
+
+<table>
+<thead>
+<tr>
+<th>Wire</th>
+<th>Color</th>
+<th align="right">GPIO Pin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5V</td>
+<td>Red</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>GND</td>
+<td>Black</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td>TX</td>
+<td>White</td>
+<td align="right">8</td>
+</tr>
+<tr>
+<td>RX</td>
+<td>Green</td>
+<td align="right">10</td>
+</tr>
+</tbody>
+</table>
+
+<p><a href="./images/A01020-USBtoTTLConnectedToPi.png" target="_blank"><img src="./images/A01020-USBtoTTLConnectedToPi.png" alt="USB to TTL Cable Connected" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Here is a close-up view of the wire-to-pin connections</p>
+
+<p><a href="./images/A01030-USBtoTTLCablePinsCloseup.png" target="_blank"><img src="./images/A01030-USBtoTTLCablePinsCloseup.png" alt="USB to TTL Cable Pinout Closeup" style="max-width:100%;"></a> </p>
+</li>
+<li>
+<p>Once you have the wires connected correctly, you can plug the USB end of the cable into your computer's USB port.  <strong>AGAIN, MAKE SURE THE MICRO USB POWER CABLE IS NOT CONNECTED TO THE RASPBERRY PI</strong></p>
+
+<p><a href="./images/A01040-ComputerConnected.png" target="_blank"><img src="./images/A01040-ComputerConnected.png" alt="Computer Connected" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>When you connect the cable to your Windows Computer for the first time, you should see the USB driver install automatically.  If not, you may need to download the driver for your computer.  </p>
+
+<ul>
+<li>Windows Driver - <a href="http://www.prolific.com.tw/US/ShowProduct.aspx?p_id=225&amp;pcid=41">http://www.prolific.com.tw/US/ShowProduct.aspx?p_id=225&amp;pcid=41</a>
+</li>
+<li>Mac OSx Driver - <a href="http://www.prolific.com.tw/US/ShowProduct.aspx?p_id=229&amp;pcid=41">http://www.prolific.com.tw/US/ShowProduct.aspx?p_id=229&amp;pcid=41</a>
+</li>
+</ul>
+</li>
+<li>
+<p>On Windows, you'll need to determine the COM port that was assigned to the serial connection.  From your Control Panel, open the "<strong>Device Manager</strong>" and under the "<strong>Ports (COM &amp; LPT)</strong>" header, locate the COM port that was assigned to the "<strong>Prolific USB-to-Serial Comm Port (COMx)</strong>" .  Make note of the COM port listed at the end.  That is what you will use to connect to your Pi. </p>
+
+<p><a href="./images/A01050ProlificCOMPort.png" target="_blank"><img src="./images/A01050ProlificCOMPort.png" alt="Prolific COM Port" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Then using the terminal software of your choice (PuTTY is a popular one for Windows, here is a link to an <a href="http://the.earth.li/%7Esgtatham/putty/latest/x86/putty-0.64-installer.exe">installer</a> ) (<a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/screen.1.html">Screen</a> is a popular tool for Mac OSx and Linux), connect to the COM port you discovered above at a baud rate of 115200:  </p>
+
+<p><a href="./images/A01060PuttySerialConnection.png" target="_blank"><img src="./images/A01060PuttySerialConnection.png" alt="PuTTY Serial Connection" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>When the connection window opens, press the <code>ENTER</code> key on your keyboard.  If the Raspberry Pi is still booting, you will see the boot messages.  Regardless, you will eventually be prompted to login:</p>
+
+<ul>
+<li>Login:    <strong>pi</strong>
+</li>
+<li>Password: <strong>raspberry</strong>
+</li>
+</ul>
+
+<p><a href="./images/A01070SerialLogin.png" target="_blank"><img src="./images/A01070SerialLogin.png" alt="Serial Login" style="max-width:100%;"></a></p>
+</li>
+<li><p>Once you are logged in, you can run any of the command line commands on the Raspberry Pi.  You can't start a graphical session though, so <strong>don't try</strong> running <strong>startx</strong>.  </p></li>
+<li>
+<p>One of the first things you may want to do once you are connected is to retrieve the Raspberry Pi's IP Address(es). At the command prompt enter <code>ifconfig</code> (short for "interface config") and copy the IP Addresses for your eth0 (Ethernet) and wlan0 (WiFi) interfaces where they exist.  </p>
+
+<p><a href="./images/A01080IfConfig.png" target="_blank"><img src="./images/A01080IfConfig.png" alt="ifconfig" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Another helpful command is <code>iwconfig</code> (wireless config).  It will show you the status of your wireless network, including which wireless network (SSID) you are connected to:</p>
+
+<p><a href="./images/A01090iwconfig.png" target="_blank"><img src="./images/A01090iwconfig.png" alt="iwconfig" style="max-width:100%;"></a></p>
+</li>
+<li><p>Otherwise, now that you are connected, you DO NOT need to ssh into the Raspberry Pi to issue commands.  You are in.  In fact, you can maintain this connection even after a reboot (like after issuing a <code>sudo reboot</code> command) </p></li>
+</ol>
+
+<hr>
+
+<p><a name="Appx2"></a></p>
+
+<h2>
+<a id="user-content-connect-to-the-raspberry-pi-using-ssh" class="anchor" href="#connect-to-the-raspberry-pi-using-ssh" aria-hidden="true"><span class="octicon octicon-link"></span></a>Connect to the Raspberry Pi using SSH</h2>
+
+<p>If you are on the same network as your Raspberry Pi and you know it's IP address, and easy way to connect is using <a href="http://en.wikipedia.org/wiki/Secure_Shell">SSH</a>. To use SSH on Windows, you'll need an SSH client.  Again here, <a href="http://the.earth.li/%7Esgtatham/putty/latest/x86/putty-0.64-installer.exe">PuTTY</a> is a popular SSH client for Windows. Mac OSx and Linux distrubutions have an SSH client installed by default.  </p>
+
+<p>For this example, we'll assume you are using PuTTY on Windows.</p>
+
+<ol>
+<li>
+<p>Open PuTTY and configure an SSH connection to your Raspberry Pi using it's IP Address, leave the port at the default value of 22, then click the "<strong>Open</strong>" button</p>
+
+<p><a href="./images/A02010SSHConfig.png" target="_blank"><img src="./images/A02010SSHConfig.png" alt="Putty Configuration" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>If this is the first time you've connected using PuTTY you may receive a Security Alert regarding the certificate that is used.  Click "<strong>Yes</strong>" to confirm the connection:</p>
+
+<p><a href="./images/A02010PuTTYSecurityAlert.png" target="_blank"><img src="./images/A02010PuTTYSecurityAlert.png" alt="PuTTY Security Alert" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Finally, when prompted, login using the credentials:</p>
+
+<ul>
+<li>Login:    <strong>pi</strong>
+</li>
+<li>Password: <strong>raspberry</strong>
+</li>
+</ul>
+
+<p><a href="./images/A02030SSHLogin.png" target="_blank"><img src="./images/A02030SSHLogin.png" alt="SSH Login" style="max-width:100%;"></a></p>
+</li>
+</ol>
+
+<hr>
+
+<p><a name="Appx3"></a></p>
+
+<h2>
+<a id="user-content-connect-to-the-raspberry-pi-using-remote-desktop" class="anchor" href="#connect-to-the-raspberry-pi-using-remote-desktop" aria-hidden="true"><span class="octicon octicon-link"></span></a>Connect to the Raspberry Pi using Remote Desktop</h2>
+
+<p>Another option for connecting to your Raspberry Pi over the network is using the Windows "Remote Desktop" client.  As with SSH you'll need to know your Raspberry Pi's IP Address and be on the same network as the Raspberry Pi.  In addition, prior to connecting with "Remote Desktop" you will have had to first connect to the Pi using another method, and install "<strong>XRDP</strong>":</p>
+
+<p><code>sudo apt-get install xrdp</code></p>
+
+<p>Then followed up with a reboot</p>
+
+<p><code>sudo reboot</code></p>
+
+<p>Once you have done that you can connect using a "Remote Desktop" client.  Windows as the Remote Desktop client built in, there is one for Mac OSx <a href="https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417?mt=12">here</a>.</p>
+
+<p>Here, we'll assume you are using the Windows Remote Desktop client (<code>mstsc.exe</code>). </p>
+
+<ol>
+<li>
+<p>On your Windows computer, From the "<strong>Run</strong>" box on the start menu, or a command prompt, run the command:</p>
+
+<p><code>mstsc /v:&lt;YourRaspberryPiIpAddress&gt;</code></p>
+</li>
+<li>
+<p>For example:</p>
+
+<p><code>mstsc /v:10.10.10.160</code></p>
+
+<p><a href="./images/A03010MsTsc.png" target="_blank"><img src="./images/A03010MsTsc.png" alt="mstsc" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>If you are prompted to confirm the identity of the remote computer, click "<strong>Yes</strong>"</p>
+
+<p><a href="./images/A03020Warning.png" target="_blank"><img src="./images/A03020Warning.png" alt="Confirm" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Then, in the Remote Desktop Window, login with the default Raspberry Pi Credentials:</p>
+
+<ul>
+<li>Login:    <strong>pi</strong>
+</li>
+<li>Password: <strong>raspberry</strong>
+</li>
+</ul>
+
+<p><a href="./images/A03030MsTscLogin.png" target="_blank"><img src="./images/A03030MsTscLogin.png" alt="RDP Login" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Once you are logged in, you can do a number of things.  If you need a command prompt, run "<strong>LXTerminal</strong>":</p>
+
+<p><a href="./images/A03040LXTerminal.png" target="_blank"><img src="./images/A03040LXTerminal.png" alt="LXTerminal" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>You can configure you WiFi Connection:</p>
+
+<p><a href="./images/A03050WiFiConfig.png" target="_blank"><img src="./images/A03050WiFiConfig.png" alt="WiFi Config" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>You can open a Web Browser</p>
+
+<p><a href="./images/A03060Browser.png" target="_blank"><img src="./images/A03060Browser.png" alt="Open Browser" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Open a Text Editor</p>
+
+<p><a href="./images/A03050LeafPad.png" target="_blank"><img src="./images/A03050LeafPad.png" alt="Text Editor" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>To disconnect your session, you can "<strong>Logout</strong>":</p>
+
+<p><a href="./images/A03070Logout.png" target="_blank"><img src="./images/A03070Logout.png" alt="Logout" style="max-width:100%;"></a></p>
+</li>
+</ol>
+
+<hr>
+
+<p><a name="Appx4"></a></p>
+
+<h2>
+<a id="user-content-connect-to-the-raspberry-pi-using-an-hdmi-monitor-keyboard-and-mouse" class="anchor" href="#connect-to-the-raspberry-pi-using-an-hdmi-monitor-keyboard-and-mouse" aria-hidden="true"><span class="octicon octicon-link"></span></a>Connect to the Raspberry Pi using an HDMI Monitor, Keyboard and Mouse</h2>
+
+<p>With all of the above options above, it's easy to forget that the Raspberry Pi is it's own computer.  We don't NEED to use a remote computer to connect to it.  Sometimes the easiest solution is the most direct.  </p>
+
+<p>If you have access to an HDMI Monitor, and HDMI Cable, and a USB Keyboard and Mouse, you can connect directly to the Raspberry Pi:</p>
+
+<p><a href="./images/A04010HardwareConnections.png" target="_blank"><img src="./images/A04010HardwareConnections.png" alt="Hardware Config" style="max-width:100%;"></a></p>
+
+<p>I'ts pretty simple</p>
+
+<ol>
+<li>Connect the HDMI Monitor to the Raspberry PI's HDMI Port using a standard HDMI cable.</li>
+<li>Plug in a USB Keyboard and Mouse (and yes, wireless keyboards and mice with a USB dongle work too)!</li>
+<li>Connect the "<strong>Micro USB Power</strong>" cable to turn on the PI.<br>
+</li>
+<li>
+<p>When prompted, login with the default credentials</p>
+
+<ul>
+<li>Login:    <strong>pi</strong>
+</li>
+<li>Password: <strong>raspberry</strong>
+</li>
+</ul>
+</li>
+<li>
+<p>At this point you have the most direct connection possible on the PI.  You can run command line tools as well as the LX Windows graphical environment by running:</p>
+
+<p><code>startx</code> </p>
 </li>
 </ol>
 

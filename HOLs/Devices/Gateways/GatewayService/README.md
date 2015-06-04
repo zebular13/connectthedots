@@ -110,7 +110,7 @@ Based on your knowledge (or lack of knowledge) of your Raspberry Pi's IP Address
 
 ---
 
-<a name="Task2"></a>
+<a name="Task3"></a>
 ## Task 2 - Modify the Gateway Config ##
 
 1. Use the previous task to determine how best to connect to your Raspberry Pi.  Here', we'll assume SSH, but any of the above methods are valid. 
@@ -197,7 +197,7 @@ Based on your knowledge (or lack of knowledge) of your Raspberry Pi's IP Address
 
 ---
 
-<a href="Appx1"></a>
+<a name="Appx1"></a>
 ### Connect to the Raspberry Pi using the USB-to-TTL Cable ###
 
 1. First, make sure you have an appropriate USB-to-TTL Serial Cable.  Not just any cable will do.  The Raspberry Pi uses 3v logic on it's GPIO pins. You need a cable that deals correctly with 3v logic levels and not 5v logic levels.  Something like the [USB to TTL Serial Cable](https://www.adafruit.com/products/954) from Adafruit.
@@ -262,7 +262,7 @@ Based on your knowledge (or lack of knowledge) of your Raspberry Pi's IP Address
 
 ---
 
-<a href="Appx2"></a>
+<a name="Appx2"></a>
 ## Connect to the Raspberry Pi using SSH ##
 
 If you are on the same network as your Raspberry Pi and you know it's IP address, and easy way to connect is using [SSH](http://en.wikipedia.org/wiki/Secure_Shell). To use SSH on Windows, you'll need an SSH client.  Again here, [PuTTY](http://the.earth.li/~sgtatham/putty/latest/x86/putty-0.64-installer.exe) is a popular SSH client for Windows. Mac OSx and Linux distrubutions have an SSH client installed by default.  
@@ -286,7 +286,7 @@ For this example, we'll assume you are using PuTTY on Windows.
 
 ---
 
-<a href="Appx3"></a>
+<a name="Appx3"></a>
 ## Connect to the Raspberry Pi using Remote Desktop ##
 
 Another option for connecting to your Raspberry Pi over the network is using the Windows "Remote Desktop" client.  As with SSH you'll need to know your Raspberry Pi's IP Address and be on the same network as the Raspberry Pi.  In addition, prior to connecting with "Remote Desktop" you will have had to first connect to the Pi using another method, and install "**XRDP**":
@@ -344,7 +344,7 @@ Here, we'll assume you are using the Windows Remote Desktop client (`mstsc.exe`)
 
 ---
 
-<a href="Appx4"></a>
+<a name="Appx4"></a>
 ## Connect to the Raspberry Pi using an HDMI Monitor, Keyboard and Mouse ##
 
 With all of the above options above, it's easy to forget that the Raspberry Pi is it's own computer.  We don't NEED to use a remote computer to connect to it.  Sometimes the easiest solution is the most direct.  
