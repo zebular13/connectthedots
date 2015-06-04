@@ -69,13 +69,30 @@ To successfully complete this lab, you will need:
 
 1. [Boot your Raspberry Pi off the Pre-Configured Image](#Task1)
 1. [Modify the Gateway Config](#Task2)
-1. [Connect the Arduino Uno](#Task3)
-1. [Task 4](#Task4)
-1. [Task 5](#Task5)
 
 ---
 
-<a name="Task1" />
+## Connecting to your Raspberry Pi ##
+
+To complete this lab, you will need to login to your Raspberry Pi.  There are actually a number of ways you can do this.  The following appendices give you a number of alternatives.  You only need use one of them, but feel free to try all of them! 
+
+- If you **DO KNOW YOUR RASPBERRY PI'S IP ADDRESS** and **ARE ON THE SAME NETWORK** as it you can
+	- Use SSH (PuTTY is a popular ssh tool for Windows) to connect
+	- You can use Remote Desktop (There is a Remote Desktop App for Mac OSx) 
+- If you  **DO NOT KNOW YOUR RASPBERRY PI'S IP ADDRESS**
+	- You can connect using a USB-to-Serial Cable
+	- You can connect an HDMI Monitor, Keyboard and Mouse to the Pi.  
+
+Based on your knowledge (or lack of knowledge) of your Raspberry Pi's IP Address and your available hardware (USB-to-TTL cable, or Monitor, Keyboard, and Mouse) choose from one of the following methods to connect to your Raspberry Pi:
+
+1. [Connect to the Raspberry Pi using the USB-to-TTL Cable](#Appx1)
+2. [Connect to the Raspberry Pi using SSH](#Appx2)
+3. [Connect to the Raspberry Pi using Remote Desktop](#Appx3)
+4. [Connect to the Raspberry Pi using an HDMI Monitor, Keyboard and Mouse](#Appx4)
+
+---
+
+<a name="Task1"></a>
 ## Task 1 - Boot your Raspberry Pi off the Pre-Configured Image ##
 
 1. Ensure that the SD Card with the pre-configured image is installed in the Raspberry Pi 
@@ -87,6 +104,12 @@ To successfully complete this lab, you will need:
 	> **Note:** If you don't have the Arduino ready yet, that's ok.  You can plug it in later.  
 
 	![Connections](./images/01010Connections.png)
+
+
+<a name="Task2"></a>
+## Task 2 - Modify the Gateway Config ##
+
+
 
 6. Work with your event staff to determine the Raspberry Pi's IP Address
 7. Use an ssh client (You can use [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html "PuTTY Downloads") on Windows) or a Remote Desktop Client (mstsc.exe on Windows) to connect to the IP Address of your Raspberry Pi and login with the credentials:
@@ -162,5 +185,69 @@ To successfully complete this lab, you will need:
 18. When the Raspberry Pi starts back up, you should now be able to go to your website and see sensor values coming in! 
 
 	![Sensors Readings](./images/01120WebPage.png)
+
+---
+
+---
+
+## Raspberry Pi Connection Methods ##
+
+---
+
+---
+
+<a href="Appx1"></a>
+### Connect to the Raspberry Pi using the USB-to-TTL Cable ###
+
+1. First, make sure you have an appropriate USB-to-TTL Serial Cable.  Not just any cable will do.  The Raspberry Pi uses 3v logic on it's GPIO pins. You need a cable that deals correctly with 3v logic levels and not 5v logic levels.  Something like the [USB to TTL Serial Cable](https://www.adafruit.com/products/954) from Adafruit.
+
+	![USB to TTL Serial Cable](./images/A01010-USBtoTTLCable.png)
+
+2. **DISCONNECT ANY POWER FROM THE RASPBERRY PI**. The USB-to-TTL Cable will supply the power needed for your Raspberry Pi to run.  You **DO NOT** want the Micro USB Power Supply cable plugged in as well.  You only want to power the Raspberry Pi from a single source.  
+
+3.  **MAKE SURE THE USB-TO-TTL CABLE IS *NOT* PLUGGED INTO YOUR COMPUTER'S USB PORT**.  To start, neither end of the cable should be connected to anything.  We'll start by connecting the individual wires to the appropriate pins on the Raspberry Pi, then we'll plug it into the computer.  g
+
+4. Connect the **5V**, **GND**, **TX**, and **RX ** wires to the appropriate pins on the Rasbperry Pi:
+
+	| Wire | Color | Pin | 
+	| ---  | ---   | --- |
+	| 5V   | Red   | 2   |
+    | GND  | Black | 6   |
+    | TX   | White | 8   | 
+    | RX   | Green | 10  |
+
+	![USB to TTL Cable Connected](./images/A01020-USBtoTTLConnectedToPi.png)
+
+5. Here is a close-up view of the wire-to-pin connections
+
+   ![USB to TTL Cable Pinout Closeup](./images/A010030-USBtoTTLCablePinsCloseup.png)	
+
+6. Once you have the wires connected correctly, you can plug the USB end of the cable into your computer's USB port.  **AGAIN, MAKE SURE THE MICRO USB POWER CABLE IS NOT CONNECTED TO THE RASPBERRY PI**
+
+	![Computer Connected](./images/A01040-ComputerConnected.png)
+
+7.  When you connect the cable to your Windows Computer for the first time, you should see the USB driver install automatically.  If not, you may need to download the driver for your computer.  
+
+	- Windows Driver - http://www.prolific.com.tw/US/ShowProduct.aspx?p_id=225&pcid=41
+	- Mac OSx Driver - http://www.prolific.com.tw/US/ShowProduct.aspx?p_id=229&pcid=41
+
+8. On Windows, you'll need to determine the COM port that was assigned to the serial connection.  From your Control Panel, open the "**Device Manager**" and under the "**Ports *(COM & LPT)**" header, locate the COM port that was assigned to the 
+
+
+---
+
+<a href="Appx2"></a>
+## Connect to the Raspberry Pi using SSH ##
+
+---
+
+<a href="Appx3"></a>
+## Connect to the Raspberry Pi using Remote Desktop ##
+
+---
+
+<a href="Appx4"></a>
+## Connect to the Raspberry Pi using an HDMI Monitor, Keyboard and Mouse ##
+
 
 
