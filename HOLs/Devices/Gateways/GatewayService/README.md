@@ -68,8 +68,9 @@ To successfully complete this lab, you will need:
 ## Tasks ##
 
 1. [Boot your Raspberry Pi off the Pre-Configured Image](#Task1)
-2. [Determine how to connect to your Raspberry Pi](#Task2)
-1. [Modify the Gateway Config](#Task3)
+2. [Connect your Raspberry Pi to the Network](#Task2)
+3. [Determine how to connect to your Raspberry Pi](#Task3)
+4. [Modify the Gateway Config](#Task3)
 
 ---
 
@@ -90,7 +91,23 @@ To successfully complete this lab, you will need:
 ---
 
 <a name="Task2"></a>
-## Task 2 - Determine how to connect to your Raspberry Pi ##
+## Task 2 - Connect your Raspberry Pi to the Network ##
+
+In this lab, the Raspberry Pi fills the "Field Gateway" role, and is responsible for gathering sensor data published by the Arduino connected to it, and forwarding that data on over the Internet to the "**ehdevices**" event hub we provisioned previously.  In order for that to happen, the Raspberry Pi must have a connection to the Internet.  You can do this one of two ways:
+
+- **A hardwired connection via the Ethernet jack on board the Raspberry Pi** - The Ethernet option is simpler as it requires less configuration on the Raspberry Pi (it should just connect as long as the network it is plugged into is configured properly).
+- **A WiFi connection via a USB WiFi adapter** - The WiFi option requires more configuration on the Pi, but doesn't require a physical hardwired connection.  Both are perfectly fine, it just depends on what you have available. 
+
+Use one of the following links to connect your Raspberry Pi to the Network:
+
+- [Connect the Raspberry Pi to the Network via Ethernet](#Appx5)
+- [Connect the Raspberry Pi to the Network via WiFi Manually](#Appx6)
+- [Connect the Raspberry Pi to the Network via WiFi with the GUI](#Appx7)
+
+---
+
+<a name="Task3"></a>
+## Task 3 - Determine how to connect to your Raspberry Pi ##
 
 To complete this lab, you will need to login to your Raspberry Pi.  There are actually a number of ways you can do this.  The following appendices give you a number of alternatives.  You only need use one of them, but feel free to try all of them! 
 
@@ -103,10 +120,10 @@ To complete this lab, you will need to login to your Raspberry Pi.  There are ac
 
 Based on your knowledge (or lack of knowledge) of your Raspberry Pi's IP Address and your available hardware (USB-to-TTL cable, or Monitor, Keyboard, and Mouse) choose from one of the following methods to connect to your Raspberry Pi.  Each of the following methods is described in detail at the end of this document.  Use that documentation to determine how best to connect to your Raspberry Pi, then return to [Task 3](#Task3):
 
-1. [Connect to the Raspberry Pi using the USB-to-TTL Cable](#Appx1)
-2. [Connect to the Raspberry Pi using SSH](#Appx2)
-3. [Connect to the Raspberry Pi using Remote Desktop](#Appx3)
-4. [Connect to the Raspberry Pi using an HDMI Monitor, Keyboard and Mouse](#Appx4)
+- [Connect to the Raspberry Pi using the USB-to-TTL Cable](#Appx1)
+- [Connect to the Raspberry Pi using SSH](#Appx2)
+- [Connect to the Raspberry Pi using Remote Desktop](#Appx3)
+- [Connect to the Raspberry Pi using an HDMI Monitor, Keyboard and Mouse](#Appx4)
 
 ---
 
@@ -364,8 +381,125 @@ I'ts pretty simple
 	- Login:	**pi**
 	- Password:	**raspberry**
 
-5. At this point you have the most direct connection possible on the PI.  You can run command line tools as well as the LX Windows graphical environment by running:
+5. At this point you have the most direct connection possible on the PI.  You can run command line tools as well as the LXDE (**L**ightweight **X**11 **D**esktop **E**nvironment) graphical environment by running:
 
 	`startx` 
 
+---
+
+---
+
+## Raspberry Pi Network Connection Methods ##
+
+---
+
+---
+
+<a name="Appx5"></a>
+## Connect the Raspberry Pi to the Network via Ethernet ##
+
+Connecting the Raspbery Pi to an Ethernet network should be as simple as just plugging in the Ethernet cable to both the Pi and the network.  
+
+This assumes that the network you are connecting the Pi to is properly configured with DHCP and routing to the Internet. 
+
+![Ethernet Connection](./images/A05010-EthernetConnection.png)
+
+You can can use of of the methods described in [Task 3 - Determine how to connect to your Raspberry Pi](#Task3) to connect to your raspberry pi, and to identify it's ip address using `ifconfig`
+
+![Ethernet IP Address](./images/A05020-IfConfigEthernetIp.png)
+
+---
+
+<a name="Appx6"></a>
+## Connect the Raspberry Pi to the Network via WiFi Manually ##
+
+Connecting the Raspberry Pi to a WiFi network requires a little more effort because you need to configure the Raspberry Pi with the proper WiFi network SSID and Password.
+
+This documentation assumes that the WiFi network you are connected it is UNGATED.  That means that there is not an intermediary web page login that must be completed before you are connected to the network.  If you are on a Gated network that does require a web page login, you will need to connect your Raspberry Pi to a [HDMI monitor, keyboard & mouse](#Appx4) and complete the WiFi connection using the GUI (`startx`) .    
+
+First, make sure that the WiFi USB Adapter is connected to your Raspberry Pi, and that the Raspberry Pi is turned on. 
+
+![WiFi Connection](./images/A06010-WiFiConnection.png)
+
+Next, use on of the methods described in [Task 3 - Determine how to connect to your Raspberry Pi](#Task3) to connect to your Raspberry Pi (probably the [USB-to-TTL cable](#Appx1), or a direct [HDMI monitor, keyboard & mouse](#Appx4) setup).
+
+1. Once you are connected, you need to edit the WPA Supplicant config file (`/etc/wpa_supplicant/wpa_supplicant.conf`) file with your WiFi network SSID and password.  At the Raspberry Pi command prompt run the following command:|
+
+	| **Note:** you can use the **Tab** key in linux to help you complete path names.  For example, if you type `/etc/wpa` then press **Tab** the `/etc/wpa_supplicant/` path will be completed.  Then keep typing and add `wpa` again, then again press **Tab** and the full  `/etc/wpa_supplication/wpa_supplicant.conf` should be completed.  Using **Tab Completion** helps save you typing, and helps with fewer typos.    
+
+
+	`sudo nano /etc/wpa_supplication/wpa_supplicant.conf`
+
+	![Edit wpa supplication config with Nano](./images/A06020-SudoNanoWpaConf.png)
+
+
+2. Use the keyboard arrows and keys to modify the `network{...} config to match your venue's WiFi SSID and Password.
+
+	| **Note:** The following screen shot shows a sample of connecting to a network with an **ssid** of "**msiotcamp**" and a **psk** (Pre-Shared Key) also of "**msiotcamp**".  You will need to know the proper ssid and psk to use for your WiFi network.  
+
+	![WPA Supplicant Config](./images/A06030-WpaSupplicantConfig.png)
  
+3. Once you have modified the wpa_supplication.conf file, in Nano, press **Ctrl-X** to exit, then press "**Y**" to confirm saving the changes, and press "**ENTER**"  to confirm the `/etc/wpa_supplication/wpa_supplicant.conf` file name
+
+	![Save Changes](./images/A06040-SaveChanges.png)
+
+	![Overwrite File](./images/A06045-OverwiteFile.png)
+
+4. You may need to reboot the Pi (you may not, it may just work right away).  If you do need to reboot the Raspberry Pi though use `sudo reboot` then log back in when it comes back up:
+
+	`sudo reboot`
+
+5. Once your are logged back into your Raspberry Pi, you should be able to use `ifconfig` to view your Raspberry Pi's IP address:
+
+	![WiFi Config](./images/A06050-IfConfigWiFiIp.png)
+
+6. You can also use `iwconfig` to verify the WiFi network you are connected to:
+
+	![WiFi Config](./images/A06060-WiFConfig.png)
+ 
+
+---
+
+<a name="Appx7"></a>
+## Connect the Raspberry Pi to the Network via WiFi with the GUI ##
+
+If you do have a GUI option available on your Raspberry Pi, either because you have connected a [HDMI monitor, keyboard & mouse](#Appx4) and have run `startx` to launch LXDE (the **L**ightweight **X**11 **D**esktop **E**nvironment),
+
+![Monitor Setup](./images/A07020-MonitorAndWiFi.png) 
+
+
+Or you can connect over a separate Ethernet network connection using [RDP](#Appx3)
+
+![Ethernet And WiFi](./images/A07010-EthernetAndWiFi.png) 
+
+then you can use the WiFi configuration in LXDE to configure your WiFi connection.  This saves tedious manual editing of the wpa_supplication.conf file.  
+
+1. Once in LXDE, click on the WiFi network icon on the LXDE task bar:
+
+	![WiFi Icon](./images/A07030-WiFiIcon.png)
+
+2. Then, click on the WiFi SSID you want to connect to (**msiotcamp** in this case): 
+
+	![WiFi SSID](./images/A07040-PickSSID.png)
+
+3. And enter the proper Pre-Shared Key for the network (**msiotcamp** in this case):
+
+	![WiFI PSK](./images/A07050-PreSharedKey.png)
+
+4. You can verify your connection status by hovering over the WiFi icon:
+
+	![WiFi Status](./images/A07060-WiFiStatus.png)
+
+5. You can also verify your connection using **"LXTerminal** and running `ifconfig` and `iwconfig`:
+
+	![LXTerminal](./images/A07062-LXTerminal.png)
+
+	![ifconfig](./images/A07064-LXIfConfig.png)	
+
+	![iwconfig](./images/A07066-LXIwConfig.png)
+ 
+
+6. If you need to reboot, you can do that right from within LXDE:
+
+	![Reboot](./images/A07070-Reboot.png)
+
