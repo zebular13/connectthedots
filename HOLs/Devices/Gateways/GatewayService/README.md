@@ -98,7 +98,7 @@ In this lab, the Raspberry Pi fills the "Field Gateway" role, and is responsible
 - **A hardwired connection via the Ethernet jack on board the Raspberry Pi** - The Ethernet option is simpler as it requires less configuration on the Raspberry Pi (it should just connect as long as the network it is plugged into is configured properly).
 - **A WiFi connection via a USB WiFi adapter** - The WiFi option requires more configuration on the Pi, but doesn't require a physical hardwired connection.  Both are perfectly fine, it just depends on what you have available. 
 
-Use one of the following links to connect your Raspberry Pi to the Network:
+Use one of the following links to connect your Raspberry Pi to the Network, then continue with [Task 3](#Task3):
 
 - [Connect the Raspberry Pi to the Network via Ethernet](#Appx5)
 - [Connect the Raspberry Pi to the Network via WiFi Manually](#Appx6)
@@ -118,7 +118,7 @@ To complete this lab, you will need to login to your Raspberry Pi.  There are ac
 	- You can connect using a USB-to-Serial Cable
 	- You can connect an HDMI Monitor, Keyboard and Mouse to the Pi.  
 
-Based on your knowledge (or lack of knowledge) of your Raspberry Pi's IP Address and your available hardware (USB-to-TTL cable, or Monitor, Keyboard, and Mouse) choose from one of the following methods to connect to your Raspberry Pi.  Each of the following methods is described in detail at the end of this document.  Use that documentation to determine how best to connect to your Raspberry Pi, then return to [Task 3](#Task3):
+Based on your knowledge (or lack of knowledge) of your Raspberry Pi's IP Address and your available hardware (USB-to-TTL cable, or Monitor, Keyboard, and Mouse) choose from one of the following methods to connect to your Raspberry Pi.  Each of the following methods is described in detail at the end of this document.  Use that documentation to determine how best to connect to your Raspberry Pi, then return to [Task 4](#Task4):
 
 - [Connect to the Raspberry Pi using the USB-to-TTL Cable](#Appx1)
 - [Connect to the Raspberry Pi using SSH](#Appx2)
@@ -127,8 +127,8 @@ Based on your knowledge (or lack of knowledge) of your Raspberry Pi's IP Address
 
 ---
 
-<a name="Task3"></a>
-## Task 2 - Modify the Gateway Config ##
+<a name="Task4"></a>
+## Task 4 - Modify the Gateway Config ##
 
 1. Use the previous task to determine how best to connect to your Raspberry Pi.  Here', we'll assume SSH, but any of the above methods are valid. 
 
