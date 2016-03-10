@@ -1,4 +1,4 @@
-# "Conntect the Dots Sample Web Site" Hands-On Lab #
+# "Connect the Dots Sample Web Site" Hands-On Lab #
 
 ---
 
